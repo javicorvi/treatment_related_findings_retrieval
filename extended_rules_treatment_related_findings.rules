@@ -1,0 +1,46 @@
+$STATICAL_SYMBOL = "/<|>|=|<=|>=|!=|<>/"
+$DOSIS_KEY = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
+
+//Example
+{
+  // ruleType is "text", "tokens", "composite", or "filter"
+  ruleType: "tokens",
+  // pattern to be matched  
+  pattern: ( ( [ { ner:CLINICAL_DOMAIN } ]+) /attributable/),
+  // value associated with the expression for which the pattern was matched
+  // matched expressions are returned with "DATE_OF_BIRTH" as the value
+  // (as part of the MatchedExpression class)
+  result: "EXAMPLE"
+}
+
+//treatement finding with domain
+{
+  // ruleType is "text", "tokens", "composite", or "filter"
+  ruleType: "tokens",
+  // pattern to be matched  
+  pattern: ( ( [ { ner:CLINICAL_DOMAIN } | { ner:BODY_WEIGHT_DOMAIN }  | { ner:BODY_WEIGHT_GAIN_DOMAIN }  | { ner:CARDIOVASCULAR_DOMAIN } | { ner:MACROSCOPIC_FINDINGS_DOMAIN } 
+  | { ner:MICROSCOPIC_FINDINGS_DOMAIN } | { ner:ORGAN_MEASUREMENT_DOMAIN } | { ner:PHARMACOKINETICS_PARAMETERS_DOMAIN } | { ner:TUMOR_FINDINGS_DOMAIN } 
+  | { ner:RESPIRATORY_FINDINGS_DOMAIN } | { ner:DEATH_DIAGNOSIS_DOMAIN } | { ner:FOOD_WATER_CONSUMPTION_DOMAIN } | { ner:ECG_DOMAIN } 
+  | { ner:LABORATORY_FINDINGS_DOMAIN } | { ner:VITAL_SIGNS_DOMAIN } ]+) []+ ( [ { ner:TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD } ]+) ),
+  result: "TREATMENT_RELATED_FINDING"
+}
+
+//treatement finding with domain
+{
+  // ruleType is "text", "tokens", "composite", or "filter"
+  ruleType: "tokens",
+  // pattern to be matched  
+  pattern: ( ( [ { ner:TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD } ]+) []+ ( [ { ner:CLINICAL_DOMAIN } | { ner:BODY_WEIGHT_DOMAIN }  | { ner:BODY_WEIGHT_GAIN_DOMAIN }  | { ner:CARDIOVASCULAR_DOMAIN } | { ner:MACROSCOPIC_FINDINGS_DOMAIN } 
+  | { ner:MICROSCOPIC_FINDINGS_DOMAIN } | { ner:ORGAN_MEASUREMENT_DOMAIN } | { ner:PHARMACOKINETICS_PARAMETERS_DOMAIN } | { ner:TUMOR_FINDINGS_DOMAIN } 
+  | { ner:RESPIRATORY_FINDINGS_DOMAIN } | { ner:DEATH_DIAGNOSIS_DOMAIN } | { ner:FOOD_WATER_CONSUMPTION_DOMAIN } | { ner:ECG_DOMAIN } 
+  | { ner:LABORATORY_FINDINGS_DOMAIN } | { ner:VITAL_SIGNS_DOMAIN } ]+)   ),
+  result: "TREATMENT_RELATED_FINDING"
+}
+
+
+{(/p/ $STATICAL_SYMBOL ([{ner:NUMBER }])) => "STATICAL_SIGNIFICANCE" }
+{( ([{ner:STATICAL_SIGNIFICANCE }]) /or/ ([{ner:STATICAL_SIGNIFICANCE }])   ) => "STATICAL_SIGNIFICANCE_COMP" }
+{( ([{ner:NUMBER}]) /mg/kg/day/ ) => "COMPLETE_DOSIS" }
+{( ([{ner:NUMBER}]) /mg/kg/dose/ ) => "COMPLETE_DOSIS" }
+{( ([{ner:NUMBER}]) /mg/kg/d/ ) => "COMPLETE_DOSIS" }
+{( ([{word::IS_NUM}]) $DOSIS_KEY ) => "DOSIS" }
