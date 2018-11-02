@@ -36,11 +36,11 @@ $DOSIS_KEY = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
   | { ner:LABORATORY_FINDINGS_DOMAIN } | { ner:VITAL_SIGNS_DOMAIN } ]+)   ),
   result: "TREATMENT_RELATED_FINDING"
 }
-
-
 {(/p/ $STATICAL_SYMBOL ([{ner:NUMBER }])) => "STATICAL_SIGNIFICANCE" }
-{( ([{ner:STATICAL_SIGNIFICANCE }]) /or/ ([{ner:STATICAL_SIGNIFICANCE }])   ) => "STATICAL_SIGNIFICANCE_COMP" }
-{( ([{ner:NUMBER}]) /mg/kg/day/ ) => "COMPLETE_DOSIS" }
-{( ([{ner:NUMBER}]) /mg/kg/dose/ ) => "COMPLETE_DOSIS" }
-{( ([{ner:NUMBER}]) /mg/kg/d/ ) => "COMPLETE_DOSIS" }
+{( ([{ner:STATICAL_SIGNIFICANCE }]) /or|and/ ([{ner:STATICAL_SIGNIFICANCE }])   ) => "STATICAL_SIGNIFICANCE_COMP" }
+{( ([{word::IS_NUM}]) ([{word:"mg/kg/day"}])  ) => "COMPLETE_DOSIS" }
+{( ([{word::IS_NUM}]) ([{word:"mg/kg/dose"}])  ) => "COMPLETE_DOSIS" }
+{( ([{word::IS_NUM}]) ([{word:"mg/kg/d"}])  ) => "COMPLETE_DOSIS" }
 {( ([{word::IS_NUM}]) $DOSIS_KEY ) => "DOSIS" }
+{( ([{word::IS_NUM}]) ([{ner:DURATION}]+)) => "DURATION_DOSIS" }
+{( ([{ner:DURATION}]+) ([{word::IS_NUM}])) => "DURATION_DOSIS" }
