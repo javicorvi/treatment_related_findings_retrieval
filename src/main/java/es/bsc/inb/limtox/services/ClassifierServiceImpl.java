@@ -31,8 +31,6 @@ import edu.stanford.nlp.classify.ColumnDataClassifier;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations;
-import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.ling.Datum;
 import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.MentionsAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.NamedEntityTagAnnotation;
@@ -40,6 +38,8 @@ import edu.stanford.nlp.ling.CoreAnnotations.PartOfSpeechAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.TextAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.ling.Datum;
 import edu.stanford.nlp.ling.tokensregex.CoreMapExpressionExtractor;
 import edu.stanford.nlp.ling.tokensregex.Env;
 import edu.stanford.nlp.ling.tokensregex.MatchedExpression;
@@ -52,13 +52,14 @@ import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.semgraph.SemanticGraph;
 import edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation;
-import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations.SentimentAnnotatedTree;
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeCoreAnnotations.TreeAnnotation;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.ErasureUtils;
-import es.bsc.inb.limtox.model.HepatotoxicityTerm;
+import es.bsc.inb.limtox.model.Domain;
+import es.bsc.inb.limtox.model.ToxicityRisk;
+import es.bsc.inb.limtox.model.TreatmentRelatedFinding;
 @Service
 class ClassifierServiceImpl implements ClassifierService {
 
@@ -197,11 +198,9 @@ class ClassifierServiceImpl implements ClassifierService {
 					 }
 					 Datum<String,String> d = cdc.makeDatumFromLine(line_to_classify);
 					 
-					 HashMap<String,String> treatment_related_finding = new HashMap<String,String>();
-					 
 					 if(is_sentences_classification) {
 						 bw.write(cdc.classOf(d) + "\t" + cdc.scoresOf(d).getCount(cdc.classOf(d)) + "\t" + data[0] + "\t" + data[1] + "\t" + data[2] + "\t" + data[3] + "\n");
-					}else {
+					 }else {
 						 bw.write(cdc.classOf(d) + "\t" + cdc.scoresOf(d).getCount(cdc.classOf(d)) + "\t" + data[0] + "\t" + data[1] + "\t" + data[2] + "\t" + data[3] + "\t" + data [4] + "\n");
 						 tagging(pipeline, id, data [4], file_to_classify.getName(), bw, extractor);
 					 }
@@ -237,6 +236,7 @@ class ClassifierServiceImpl implements ClassifierService {
 		 * @throws MoreThanOneEntityException
 		 */
 		private void tagging(StanfordCoreNLP pipeline, String id, String text_to_tag, String fileName, BufferedWriter bw, CoreMapExpressionExtractor extractor) {
+			
 			//String text = " pepepe p<0.05 or p  > 0.05, increase liver toxicity";
 			Annotation document = new Annotation(text_to_tag.toLowerCase());
 			//Annotation document = new Annotation(text);
@@ -244,11 +244,14 @@ class ClassifierServiceImpl implements ClassifierService {
 			pipeline.annotate(document);
 	        List<CoreMap> sentences = document.get(SentencesAnnotation.class);
 	        for(CoreMap sentence: sentences) {
+	        	TreatmentRelatedFinding finding = new TreatmentRelatedFinding();
+	        	finding.setStudyId("ID_999");
+	        	finding.setDomain("SR");
 	        	Boolean lowLevelAnalisys =false;
-	        	List<CoreMap> entityMentions = sentence.get(MentionsAnnotation.class);
+	        	//List<CoreMap> entityMentions = sentence.get(MentionsAnnotation.class);
 	    		try {
 	    			bw.write(sentence.get(TextAnnotation.class)+ "\n");
-	        		for (CoreMap entityMention : entityMentions) {
+	        		/*for (CoreMap entityMention : entityMentions) {
 		    			String keyword = entityMention.get(TextAnnotation.class);
 		        		String entityType = entityMention.get(CoreAnnotations.EntityTypeAnnotation.class);
 		        		CoreLabel token = entityMention.get(TokensAnnotation.class).get(0);
@@ -256,26 +259,116 @@ class ClassifierServiceImpl implements ClassifierService {
 					    if(entityType!=null && entityType.endsWith("_DOMAIN")) {
 					    	lowLevelAnalisys=true;
 		        		}
-					}
+					}*/
 	        		List<MatchedExpression> matchedExpressions = extractor.extractExpressions(sentence);
 			    	// print out the matched expressions
 			        for (MatchedExpression me : matchedExpressions) {
 			        	bw.write(id + "\t"+ me.getCharOffsets().getBegin() + "\t" + me.getCharOffsets().getEnd() + "\t" + me.getText() + "\t" + me.getValue() + "\n");
 						if(me.getValue().get().equals("TREATMENT_RELATED_FINDING")) {
+							finding.setRecordFounded(true);
 							lowLevelAnalisys=true;
 						}
-			        }
+						
+						retrieveDomainOfStudy(finding, me);
+						retrieveRiskOfFinding(finding, me);
+						
+						// statical significance retrieval
+						if(me.getValue().get().equals("STATICAL_SIGNIFICANCE")) {
+							finding.setStatisticalSignificanceOfFinding(me.getText());
+						}
+						// dosis retrieval
+						else if(me.getValue().get().equals("COMPLETE_DOSIS") || me.getValue().get().equals("DOSIS")) {
+							finding.setDosis(me.getText());
+						}
+						// study of day of finding retrieval
+						else if(me.getValue().get().equals("DURATION_DOSIS")) {
+							finding.setStudyDayOfFinding(me.getText());
+						}
+						//sex retrieval
+						else if(me.getValue().get().toString().endsWith("_SEX")) {
+							if(me.getValue().get().equals("MALE_SEX")) {
+								finding.setSex('M');
+							}else if(me.getValue().get().equals("FEMALE_SEX")) {
+								finding.setSex('F');
+							}
+						}else if(me.getValue().get().equals("INCREASE_MANIFESTATION_FINDING") || me.getValue().get().equals("DECREASE_MANIFESTATION_FINDING") ||
+								me.getValue().get().equals("TRANSITORY_MANIFESTATION_FINDING") || me.getValue().get().equals("JUSTPRESENT_MANIFESTATION_FINDING")) {
+							finding.setStudyDayOfFinding(me.getText());
+						} else
+							retrieveRiskOfFinding(finding, me);
+					}
 			        //More analisys in the sentence
 			        if(lowLevelAnalisys) {
 			        	this.sentenceAnalisys(sentence, bw);
 			        }
+			        
+			        if(finding.getRecordFounded()) {
+		    			bw.write(finding.toString());
+		    		}
+			        
 			        bw.flush();
 	    		} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+	    		
+	    		
+	    		
 	        }
 		}
+
+	private void retrieveRiskOfFinding(TreatmentRelatedFinding finding, MatchedExpression me) {
+		if(me.getValue().get().toString().endsWith("_RISK_LEVEL")) {
+			if(me.getValue().get().equals("NOEL_RISK_LEVEL")) {
+				finding.setRisk(ToxicityRisk.NOEL);
+			}else if(me.getValue().get().equals("LOEL_RISK_LEVEL")) {
+				finding.setRisk(ToxicityRisk.LOEL);
+			}else if(me.getValue().get().equals("NOAEL_RISK_LEVEL")) {
+				finding.setRisk(ToxicityRisk.NOAEL);
+			}else if(me.getValue().get().equals("LOAEL_RISK_LEVEL")) {
+				finding.setRisk(ToxicityRisk.NOAEL);
+			}
+		 }
+	}
+		
+	/**
+	 * Retrieve Domain of finding	
+	 * @param finding
+	 * @param me
+	 */
+	private void retrieveDomainOfStudy(TreatmentRelatedFinding finding, MatchedExpression me) {
+		if(me.getValue().get().equals("BODY_WEIGHT_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.BW);
+		}else if(me.getValue().get().equals("BODY_WEIGHT_GAIN_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.BG);
+		}else if(me.getValue().get().equals("CLINICAL_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.CL);
+		}else if(me.getValue().get().equals("CARDIOVASCULAR_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.CV);
+		}else if(me.getValue().get().equals("MACROSCOPIC_FINDINGS_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.MA);
+		}else if(me.getValue().get().equals("MICROSCOPIC_FINDINGS_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.MI);
+		}else if(me.getValue().get().equals("ORGAN_MEASUREMENT_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.OM);
+		}else if(me.getValue().get().equals("PHARMACOKINETICS_PARAMETERS_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.PP);
+		}else if(me.getValue().get().equals("TUMOR_FINDINGS_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.TF);
+		}else if(me.getValue().get().equals("RESPIRATORY_FINDINGS_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.RE);
+		}else if(me.getValue().get().equals("DEATH_DIAGNOSIS_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.DD);
+		}else if(me.getValue().get().equals("FOOD_WATER_CONSUMPTION_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.FW);
+		}else if(me.getValue().get().equals("ECG_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.EG);
+		}else if(me.getValue().get().equals("LABORATORY_FINDINGS_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.LB);
+		}else if(me.getValue().get().equals("VITAL_SIGNS_DOMAIN")) {
+			finding.setDomainOfFinding(Domain.VS);
+		}
+	}
 
 		/**
 		 * 
