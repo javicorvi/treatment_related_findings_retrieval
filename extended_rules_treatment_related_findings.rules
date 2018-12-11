@@ -4,8 +4,14 @@ $DOSIS_KEY = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
 //$MALE_SEX_KEY = "/male|males|masculine|masculine|macho/"
 //$FEMALE_SEX_KEY = "/female|females|feminine|feminines/"
 
+//{ ruleType: "text", pattern: /\Qpotassium/creatinine ejemplo + - * [] % ( pepe ))\E/, result:  "anatomy_etox_send"}
+
+{ ruleType: "text", pattern: /potassium\/creatinine \\ ejemplo \+ \- \* \[\] \% \( pepe \)\)/, result:  "anatomy_etox_send"}
+
 {([{ ner:MALE_SEX }]+) => "MALE_SEX" }
 {([{ ner:FEMALE_SEX }]+) => "FEMALE_SEX" }
+
+{([{ ner:TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD }]+) => "TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD" }
 
 {([{ ner:BODY_WEIGHT_DOMAIN }]+) => "BODY_WEIGHT_DOMAIN" }
 {([{ ner:BODY_WEIGHT_GAIN_DOMAIN }]+) => "BODY_WEIGHT_GAIN_DOMAIN" }
@@ -37,7 +43,7 @@ $DOSIS_KEY = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
 
 //Example
 {
-  // ruleType is "text", "tokens", "composite", or "filter"
+  // ruleType is "text", "tokens", "composite", or "filter"(/p/ $STATICAL_SYMBOL ([{ner:NUMBER }]))
   ruleType: "tokens",
   // pattern to be matched  
   pattern: ( ( [ { ner:CLINICAL_DOMAIN } ]+) /attributable/),

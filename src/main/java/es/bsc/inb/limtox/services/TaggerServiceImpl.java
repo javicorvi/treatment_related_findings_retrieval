@@ -19,20 +19,22 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import edu.stanford.nlp.classify.ColumnDataClassifier;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.MentionsAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.NamedEntityTagAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.PartOfSpeechAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
@@ -58,23 +60,26 @@ import edu.stanford.nlp.trees.TreeCoreAnnotations.TreeAnnotation;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.ErasureUtils;
 import es.bsc.inb.limtox.model.Domain;
+import es.bsc.inb.limtox.model.EtoxSENDTerm;
 import es.bsc.inb.limtox.model.ToxicityRisk;
 import es.bsc.inb.limtox.model.TreatmentRelatedFinding;
 @Service
-class ClassifierServiceImpl implements ClassifierService {
+class TaggerServiceImpl implements TaggerService {
 
 	static final Logger classifierLog = Logger.getLogger("classifierLog");
 	
-	 // key for matched expressions
-	  public static class MyMatchedExpressionAnnotation implements CoreAnnotation<List<CoreMap>> {
+	Map<String, EtoxSENDTerm> etoxSENDTerms = new HashMap<String, EtoxSENDTerm>();
+	
+	// key for matched expressions
+	public static class MyMatchedExpressionAnnotation implements CoreAnnotation<List<CoreMap>> {
 	    public Class<List<CoreMap>> getType() {
 	      return ErasureUtils.<Class<List<CoreMap>>> uncheckedCast(String.class);
 	    }
-	  }
+	}
 
 	
 	
-	public void classify(String propertiesParametersPath) {
+	public void execute(String propertiesParametersPath) {
 		try {
 			classifierLog.info("Classify articles with properties :  " +  propertiesParametersPath);
 			Properties propertiesParameters = this.loadPropertiesParameters(propertiesParametersPath);
@@ -89,6 +94,12 @@ class ClassifierServiceImpl implements ClassifierService {
 			String outputDirectoryPath = propertiesParameters.getProperty("outputDirectory");
 			String relevantLabel = propertiesParameters.getProperty("relevantLabel");
 			String is_sentences_classification_ = propertiesParameters.getProperty("is_sentences_classification");
+			
+			String etox_send_dict = propertiesParameters.getProperty("etox_send_dict");
+			String etox_anatomy_dict = propertiesParameters.getProperty("etox_anatomy_dict");
+			String etox_moa_dict = propertiesParameters.getProperty("etox_moa_dict");
+			String etox_in_life_obs_dict = propertiesParameters.getProperty("etox_in_life_obs_dict");
+			
 			Boolean is_sentences_classification = false;
 			if(is_sentences_classification_!=null & is_sentences_classification_.equals("true")) {
 				is_sentences_classification = true;
@@ -106,15 +117,36 @@ class ClassifierServiceImpl implements ClassifierService {
 			
 		    List<String> filesProcessed = readFilesProcessed(outputDirectoryPath); 
 		    
+		    String etox_send_codelist_rules = "etox_send_codelist_rules.txt";
+		    generateRulesForTaggingEtoxSEND(etox_send_dict, etox_send_codelist_rules);
+		    
+		    String etox_anatomy_rules = "etox_anatomy_rules.txt";
+		    generateRulesForTaggingEtoxAnatomy(etox_anatomy_dict, etox_anatomy_rules);
+		    
+		    
+		    String etox_moa_rules = "etox_moa_rules.txt";
+		    generateRulesForTaggingEtoxMOA(etox_moa_dict, etox_moa_rules);
+		    
+		    String etox_in_life_obs_rules = "etox_in_life_obs_rules.txt";
+		    generateRulesForTaggingEtoxInLifeObservation(etox_in_life_obs_dict, etox_in_life_obs_rules);
 		    
 		    Properties props = new Properties();
 			props.put("annotators", "tokenize, ssplit, pos, lemma, ner, regexner, entitymentions, parse, natlog, openie, sentiment");
+			
+			
 			//regener is for adding tab separated tagger
 			props.put("regexner.mapping", "etransafe_rules_manual_curated.txt");
 			props.put("regexner.posmatchtype", "MATCH_ALL_TOKENS");
 			
+			
 			props.put("rulesFiles", "extended_rules_treatment_related_findings.rules");
+			
+			/*props.put("rulesFiles", "extended_rules_treatment_related_findings.rules,"+etox_send_codelist_rules+","+etox_anatomy_rules+","+etox_moa_rules+","+
+					etox_in_life_obs_rules);*/
+			
+			//props.put("rulesFiles", "etox_send_codelist_terms.txt");
 			//props.setProperty("tokenize.class", "true");
+			
 			
 			
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -126,8 +158,8 @@ class ClassifierServiceImpl implements ClassifierService {
 		    // set up an environment with reasonable defaults
 		    Env env = TokenSequencePattern.getNewEnv();
 		    // set to case insensitive
-		    env.setDefaultStringMatchFlags(NodePattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
-		    env.setDefaultStringPatternFlags(Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+		    /*env.setDefaultStringMatchFlags(NodePattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+		    env.setDefaultStringPatternFlags(Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);*/
 
 		    // build the CoreMapExpressionExtractor
 		    CoreMapExpressionExtractor extractor = CoreMapExpressionExtractor.createExtractorFromFiles(env, rulesFiles);
@@ -149,6 +181,101 @@ class ClassifierServiceImpl implements ClassifierService {
 		}  catch (Exception e) {
 			classifierLog.error("Generic error in the classification step",e);
 		}
+	}
+
+	private void generateRulesForTaggingEtoxSEND(String inputPath, String rulesPathOutput) throws IOException {
+		BufferedWriter termWriter = new BufferedWriter(new FileWriter(rulesPathOutput));
+		Set<String> terms = new HashSet<String>();
+		for (String line : ObjectBank.getLineIterator(inputPath, "utf-8")) {
+			if(!line.startsWith("keyword")) {
+				String[] data = line.split("\t");
+				terms.add("{ ruleType: \"text\", pattern: /\\Q" + data[0] + "\\E/, result:  \"" +  data[1].toLowerCase()+"_etox_send\"}\n");
+			}
+		}
+		for (String string : terms) {
+			termWriter.write(string);
+			termWriter.flush();
+		}
+		termWriter.close();
+	}
+
+	private void generateRulesForTaggingEtoxMOA(String inputPath, String rulesPathOutput) throws IOException {
+		BufferedWriter termWriter = new BufferedWriter(new FileWriter(rulesPathOutput));
+		Set<String> terms = new HashSet<String>();
+		for (String line : ObjectBank.getLineIterator(inputPath, "utf-8")) {
+			if(!line.startsWith("keyword")) {
+				String[] data = line.split("\t");
+				terms.add("{ ruleType: \"text\", pattern: /\\Q" + data[0] + "\\E/, result:  \"" +  data[1].toLowerCase()+"_etox_send\"}\n");
+			}
+		}
+		for (String string : terms) {
+			termWriter.write(string);
+			termWriter.flush();
+		}
+		termWriter.close();
+	}
+	
+	private void generateRulesForTaggingEtoxInLifeObservation(String inputPath, String rulesPathOutput) throws IOException {
+		BufferedWriter termWriter = new BufferedWriter(new FileWriter(rulesPathOutput));
+		Set<String> terms = new HashSet<String>();
+		for (String line : ObjectBank.getLineIterator(inputPath, "utf-8")) {
+			if(!line.startsWith("keyword")) {
+				String[] data = line.split("\t");
+				terms.add("{ ruleType: \"text\", pattern: /\\Q" + data[0] + "\\E/, result:  \"" +  data[1].toLowerCase()+"_etox_send\"}\n");
+			}
+		}
+		for (String string : terms) {
+			termWriter.write(string);
+			termWriter.flush();
+		}
+		termWriter.close();
+	}
+	
+	private void generateRulesForTaggingEtoxAnatomy(String inputPath, String rulesPathOutput) throws IOException {
+		BufferedWriter termWriter = new BufferedWriter(new FileWriter(rulesPathOutput));
+		Set<String> terms = new HashSet<String>();
+		for (String line : ObjectBank.getLineIterator(inputPath, "utf-8")) {
+			if(!line.startsWith("keyword")) {
+				String[] data = line.split("\t");
+				terms.add("{ ruleType: \"text\", pattern: /\\Q" + getScapedKeyWord(data[0]) + "\\E/, result:  \"" +  data[1].toLowerCase()+"_etox_send\"}\n");
+			}
+		}
+		for (String string : terms) {
+			termWriter.write(string);
+			termWriter.flush();
+		}
+		termWriter.close();
+	}
+
+
+
+	private String getScapedKeyWord(String keyword) {
+		String example ="potassium/creatinine \\\\ ejemplo + - * [] % ( pepe ))";
+		String char_b = "/";
+		String char_e = "/";
+		
+		example.replaceAll("/", "\\/").
+		replaceAll("/", "\\/").
+		replaceAll("(", "\\(").
+		replaceAll(")", "\\)").
+		replaceAll("[", "\\[").
+		replaceAll("]", "\\]").
+		replaceAll("{", "\\{").
+		replaceAll("}", "\\}").
+		replaceAll("*", "\\*").
+		replaceAll("-", "\\-").
+		replaceAll("^", "\\^").
+		replaceAll(".", "\\.").
+		replaceAll("?", "\\?").
+		replaceAll("+", "\\+").
+		replaceAll("|", "\\|").
+		replaceAll("/", "\\/").
+		replaceAll("/", "\\/");
+		//scape all special characters, it cannot be used \Q and \E because of a bug in the Standford NLP Core library, 
+		// the / is not scaped if its arounded  \Q \E by the framework because is used to delimited the begin and end of a string.
+		//So we have to scape all the special characters with \, for example \/ \( \) etc.
+		
+		return char_b + example + char_e;
 	}
 
 	private List<String> readFilesProcessed(String outputDirectoryPath) {
@@ -237,9 +364,9 @@ class ClassifierServiceImpl implements ClassifierService {
 		 */
 		private void tagging(StanfordCoreNLP pipeline, String id, String text_to_tag, String fileName, BufferedWriter bw, CoreMapExpressionExtractor extractor) {
 			
-			//String text = " pepepe p<0.05 or p  > 0.05, increase liver toxicity";
-			Annotation document = new Annotation(text_to_tag.toLowerCase());
-			//Annotation document = new Annotation(text);
+			String text = "potassium/creatinine \\ ejemplo + - * [] % ( pepe )) body-weight pepepe p<0.05 or p  > 0.05, treatment related finding increase liver toxicity Urine protein/creatinine ratio (Prot-U/Cre)";
+			//Annotation document = new Annotation(text_to_tag.toLowerCase());
+			Annotation document = new Annotation(text);
 			//run all Annotators on this text
 			pipeline.annotate(document);
 	        List<CoreMap> sentences = document.get(SentencesAnnotation.class);
@@ -260,7 +387,7 @@ class ClassifierServiceImpl implements ClassifierService {
 					    	lowLevelAnalisys=true;
 		        		}
 					}*/
-	        		List<MatchedExpression> matchedExpressions = extractor.extractExpressions(sentence);
+	    			List<MatchedExpression> matchedExpressions = extractor.extractExpressions(sentence);
 			    	// print out the matched expressions
 			        for (MatchedExpression me : matchedExpressions) {
 			        	bw.write(id + "\t"+ me.getCharOffsets().getBegin() + "\t" + me.getCharOffsets().getEnd() + "\t" + me.getText() + "\t" + me.getValue() + "\n");
@@ -453,5 +580,6 @@ class ClassifierServiceImpl implements ClassifierService {
 		}
 		return null;
 	 }
+
 	 
 }

@@ -1,0 +1,2208 @@
+{ ruleType: "text", pattern: /\QPRKCB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDrosGluCl, putative\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA-B receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSlc16 family of monocarboxylate transporters\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFTase-beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTryptase alpha-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCamk protein kinase pkd family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUCY1A1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGastric H(+)/K(+) ATPase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q27 kDa interstitial collagenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOxidoreductase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPDH 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QType I protein geranyl-geranyltransferase subunit alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADORA2B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2Y(AC)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QV-yes-1 Yamaguchi sarcoma viral related oncogene homolog\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCGIP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCY9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVascular endothelial growth factor receptor 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistamine H1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRING finger protein 48\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCGI-PDE B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin (5-HT) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCH-R1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstaglandin D2 receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QcAMP-specific 3',5'-cyclic phosphodiesterase 4D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1 group h member 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q(R)-limonene 6-monooxygenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNicastrin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA-dependent protein kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPMNL-CL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMuscarinic acetylcholine receptor M3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEPO-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPurine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYP2C10\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase 13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-hydroxytryptamine receptor 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-5 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 4, mitochondrial\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDGA2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene B-Raf\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonocarboxylate transporter 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QThrombin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUCSA2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIARS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnalA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTumor necrosis factor, membrane form\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTPSAB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QARK-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERK activator kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGelatinase B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QToll-like receptor 7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluA4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEosinophil peroxidase heavy chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QARK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAph-1alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCyclooxygenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPolo-like kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-glucosidase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonoamine transporters; Norepinephrine & dopamine\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP-binding cassette sub-family C member 7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOleamide hydrolase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QcAMP-specific 3',5'-cyclic phosphodiesterase 4B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 3, mitochondrial\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGLUH1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIAP homolog B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD143\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMuscarinic acetylcholine receptor M5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPS1-CTF12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTumor necrosis factor, soluble form\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBACE1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluN2B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMch receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDCP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTryptase-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDipeptidyl peptidase IV membrane form\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUCY1A3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene c-ErbB-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMOR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRHR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCMKBR4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonocyte secretory protein JE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-secretase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGastric H(+)/K(+) ATPase subunit alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QACAT-related gene product 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase FRT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCTSO\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCTSK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOTRPC1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCMKBR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCX5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPRC1E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhisU\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSF receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QACTH receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-IAP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA1B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMemapsin-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCMKR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR1B3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFactor X light chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNCC\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDopamine D1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBK-2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPeroxisome proliferator-activated receptor alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLSK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKC-L\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCell division protein kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeutrophil collagenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNa(+)/bile acid cotransporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCamk protein kinase camk1 family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInsulin-like growth factor I receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAGTR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRas proteins prenyltransferase subunit alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSkin fibroblast elastase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0901\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP2K1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAnaplastic lymphoma kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERK-6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QV1bR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase group\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QThiazide-sensitive sodium-chloride cotransporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGardner-Rasheed feline sarcoma viral (v-fgr) oncogene homolog\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCathepsin O\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADRBK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD49B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCNR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMOR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein YT16\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase pkc family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCholecystokinin-1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-hydroxytryptamine receptor 6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNTCP2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMetabotropic glutamate receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCachectin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSolute carrier family 6 member 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMicrosomal prostaglandin E synthase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome p450 family 2d\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-1 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP-glycoprotein 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstaglandin E2 receptor EP3 subtype\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C alpha type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGCS-beta-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABABR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCystic fibrosis transmembrane conductance regulator\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKC-beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCD\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnalC\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBDKRB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCY5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMuscarinic acetylcholine receptor M1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-trypsin chain 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTransporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHIV-1 retropepsin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QChemoattractant receptor-homologous molecule expressed on Th2 cells\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp59-HCK/p60-HCK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMitoxantrone resistance-associated protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCY7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPolymerase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD49D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAIK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD192\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstanoid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeuropeptide Y receptor type 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QD(2C) dopamine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG1/S-specific cyclin-E2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCKRA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAC8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYSLT2R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBone resoption\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor 13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVascular endothelial growth factor receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEag-related protein 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOpioid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAsp 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdrenergic receptor alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRNF48\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGamma-secretase subunit APH-1B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAGTR1B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCX3C chemokine receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDPP IV\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCXCR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEstrogen synthase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium/hydrogen exchanger\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCholesteryl ester transfer protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR-8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBK-1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFibroblast growth factor receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlycine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCH receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB4B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNOS2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein Pfdn6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase 11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QS-adenosyl-L-homocysteine hydrolase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCB2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCDw338\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRetinoic acid receptor gamma\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeuropeptide y receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADAMTS-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTer1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPK/ERK kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1 group i member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QH2-K region expressed gene 2, rat orthologue\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYP2C9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QElastase-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCLG\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C chemokine receptor type 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTryptase I\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistamine H2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFibroblast growth factor receptor 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMast cell degranulation\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNK-2R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIGF-I receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD26\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-4B chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAspartyl protease 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C chemokine receptor type 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCol11a2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSte protein kinase ste7 family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIKKB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAromatase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCNR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-K1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, NMDA 2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCyclin-dependent kinase 2/cyclin E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInducible NO synthase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0936\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNK-1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-trypsin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHPGDS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFGFR-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA-dependent protein kinase catalytic subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAngiotensin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTopoisomerase II\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QpcbA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFatty-acid amide hydrolase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGastric triacylglycerol lipase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QI-kappa-B kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q(S)-limonene 7-monooxygenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPK 12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome P450 MP-8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QStuart factor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCalcium channel, L type, alpha-1 polypeptide, isoform 1, cardiac muscle\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDihydroorotate oxidase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP34CDC2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-3C/D chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBreast cancer resistance protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0422\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPK11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA gyrase subunit B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInhibitor of nuclear factor kappa-B kinase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor 119\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCHL1A2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA-directed RNA polymerase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEnzyme\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-2 adrenergic receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhME\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-2 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QV28\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenosylhomocysteinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstanoid EP1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMembrane-associated aspartic protease 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTACR3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qpp60c-src\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHTR4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCY3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytosolic epoxide hydrolase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLOC224733l-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-1a adrenergic receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTRY4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCell wall synthesis\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMKK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCoagulation factor X\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPenicillin-binding protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHematopoietic prostaglandin D synthase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QITGA2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QStress-activated protein kinase 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMatrix metalloproteinase-9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCdk2ap1-ps1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIBAT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGpr51\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAspartic protease a1a subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMatrix protein 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSqualene epoxidase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCalcium channel, L type, alpha-1 polypeptide, isoform 3, skeletal muscle\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFRT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-1C chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHepatocyte NOS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein farnesyltransferase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSRC2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlyT1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor HG55\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPSNL2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-2C chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUCY1B3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QB2R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluN3B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHMG-CoA reductase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QB3galt4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACNA1F\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QJTK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-LO\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHTR6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCY1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPKK 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDH kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPR24\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeurokinin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor 44\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAMPA-selective glutamate receptor 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QROCK-I\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CDw198\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSecreted protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUC1A2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCK-A receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHsd17b8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCathepsin K\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type II\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSAPK4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluN2D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCalcium channel auxiliary subunit gamma family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBradykinin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVEGFR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 2, mitochondrial\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHK IV\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnPKC-nu\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAMPA-selective glutamate receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluA2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhCB2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSAPK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIsoleucine--tRNA ligase, cytoplasmic\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear receptor subfamily 3 group C member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUCY1B1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluN1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP-type atpase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCollagen receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPlatelet membrane glycoprotein IIIa\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnPKC-theta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QALK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCa(2+)-inhibitable adenylyl cyclase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTRY2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAD4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene-like protein c-ErbB-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSolute carrier family 12 member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin 2 (5-HT2) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTACR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBacterial DNA gyrase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, AMPA 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPGE receptor EP4 subtype\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp38b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA gyrase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QITGA4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0744\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDHOdehase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase B-raf\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLIPF\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C epsilon type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGamma-aminobutyric acid type B receptor subunit 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase Fyn\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAcra7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCannabinoid receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADP-glucose receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABRA2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSCYAR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-HT-5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACH1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVanilloid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstaglandin G/H synthase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFADK 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHPN321\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMP dehydrogenase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMITR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QUncharacterized protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor 97\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp61-Yes\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome P450 19A1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNPY5R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACH3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERG\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNucleotide-like receptor (family a gpcr)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNPK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMitogen-activated protein kinase 12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAPH-1b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPK13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGuanylate cyclase soluble subunit alpha-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QB1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOther cytosolic protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTNF-a\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHCK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNK-1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHTR1EL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMultidrug resistance protein 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIL-8R B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMC4-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA-B-R2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMetallo protease mae clan\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP4B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C nu type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSAPK2b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMatrix metalloproteinase 12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDipeptidyl peptidase IV soluble form\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAC-III\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, NMDA 3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QISBT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCollagenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTheta-secretase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-HT1E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QJAK-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMDAR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKCNQ1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QH-PGDS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTachykinin receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qand\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTRYP2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase Fgr\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase ICK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAcyl-CoA retinol O-fatty-acyltransferase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFMS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QARO1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5HTT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QcAMP-dependent chloride channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QStress-activated protein kinase 2b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPSEN2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome P450 MP-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCannabinoid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCAAX farnesyltransferase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTachykinin receptor 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFocal adhesion kinase-related nonkinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCell growth-inhibiting gene 29 protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin-2 CTF subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QaPKC-lambda/iota\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutathione S-transferase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein-tyrosine kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFTase-alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMEK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q82 kDa matrix metalloproteinase-9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMatrix metalloproteinase-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-1 adrenergic receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNPYY1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE-5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMEK 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene c-Fms\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNPY1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QESTRB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSolute carrier family 12 member 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPlacenta-specific ATP-binding cassette transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAHCY\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAntidiuretic hormone receptor 1b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNPYR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFms-like tyrosine kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnPKC-mu\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLipid-phosphate phosphatase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate [NMDA] receptor subunit epsilon-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFactor X heavy chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHedgehog pathway\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q72 kDa type IV collagenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp53Lyn\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase 13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-X3-C chemokine receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QROCK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHematopoietic cell kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCommon acute lymphocytic leukemia antigen\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin H2-alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPNLIP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPotassium-transporting ATPase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB2C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIntegrin alpha-2/beta-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTPS2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTXA2-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGabbr2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSebaceous Gland\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSFE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMetallo protease m12b subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-site APP cleaving enzyme 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhET-AR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNa-Cl symporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP pyrophosphate-lyase 6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLck/Yes-related novel protein tyrosine kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QReceptor tyrosine-protein kinase erbB-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCMK-BRL1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCETP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR3C4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIAP-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase mTOR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIN2B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C CKR-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD49b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD10\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QASBT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylyl cyclase 9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type III\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHYRC1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMu-type opioid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated calcium channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBradykinin B1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSolute carrier family 10 member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QK5-5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMesotrypsinogen\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR2C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMIHB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QJW2225\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeutral endopeptidase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProton pump\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCysteinyl leukotriene receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlyT-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHRH1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIN2D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNicotinic acetylcholine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACN1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHH2R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase rock subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD49d\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMDR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-2 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome p450 family 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRAK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C CKR-5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA-PKcs\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAurora-related kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonocyte chemotactic protein 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNKR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-1 adrenergic receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase vegfr family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRAR-gamma\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, AMPA 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPhosphodiesterase 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QUnclassified protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QShort peptide receptor (family a gpcr)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QALK tyrosine kinase receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QH+/K+-exchanging ATPase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGCK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCNE1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP pyrophosphate-lyase 8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIntracellular domain 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QET-A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEther-a-go-go-related protein 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTrypsin-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOXTR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin 1a (5-HT1a) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QN-methyl-D-aspartate receptor subtype 3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor GPCR21\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNa(+)-dependent ileal bile acid transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDPDE4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2Y(cyc)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCholesterol 25-hydroxylase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMXR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2Y11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q11-DH\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2RY11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCell division control protein 2 homolog\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHORK3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPotassium-transporting ATPase alpha chain 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMacrophage colony stimulating factor receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD115\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYSLT1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin 2c (5-HT2c) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPSENEN\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACNL1A3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLC12A1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACNA1D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSmall molecule receptor (family a gpcr)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear receptor subfamily 3 group C member 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QJTK8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA-BR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEstrogen receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-dependent L-type calcium channel subunit alpha-1C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPDH1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPD2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPyruvate dehydrogenase kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin receptor 6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPIa\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP pyrophosphate-lyase 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPI3K-beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSmall molecule receptor (family c gpcr)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qv-Raf murine sarcoma viral oncogene homolog B1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-secretase (BACE)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACNL1A1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QYES\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonoamine oxidase B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCholecystokinin A receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSoluble guanylate cyclase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFRP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDHK3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCLG4A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVLA-4 subunit alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstanoid EP2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase Chk\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate [NMDA] receptor subunit zeta-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDrd5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutathione-dependent PGD synthase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type 8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSacm2l-ps2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin enhancer protein 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type 6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QN-methyl-D-aspartate receptor subunit NR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin receptor 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEnkephalinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPR35\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qneuronal acetylcholine receptor subunit alpha-7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSEH\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDHK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNKNAR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPlatelet activating factor receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHRH3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine kinase-type cell surface receptor HER4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNitric oxide synthase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPS2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTransient receptor potential channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFGR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOsm-9-like TRP channel 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPIIIa\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp55-Fgr\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase src family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMetallo protease\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFYN\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCC-CKR-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenosine receptor A2b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCyclooxygenase-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNa-Cl cotransporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKC-alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInosine-5'-monophosphate dehydrogenase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTAC1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlucose-dependent insulinotropic receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDPDE2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLDL receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAcetylcholine receptor protein subunit alpha-L1, putative\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE4B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase Aurora-B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR3C2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPTL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA3D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEGFR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMC2R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDopamine transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlucokinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta tubulin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C motif chemokine 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAtypical protein kinase pdhk subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp164 ROCK-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCQ\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5ht1a\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin K-alpha-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPTGES\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAtypical protein kinase group\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTryptase beta-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDK3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCTSO2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNPY1-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYP2DL1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSlc superfamily of solute carriers\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInhibitor of nuclear factor kappa B kinase beta subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstaglandin E synthase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin 3 (5-HT3) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C chemokine receptor type 8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QS31\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIon channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTrypsin I\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVEGFR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q67 kDa matrix metalloproteinase-9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-2B chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor HG57\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLC1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMetallo protease mam clan\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdrenergic receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKCNA5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC7A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistamine H3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase fgfr family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFNTA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSERT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-1B chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2Y purinoceptor 12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA1973\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qs80HER4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeurokinin A receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPhosphatidylinositol 4,5-bisphosphate 3-kinase 110 kDa catalytic subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, NMDA 2D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene Syn\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPIK3CB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QD(4) dopamine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDipeptidyl peptidase 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-K3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPhosphodiesterase 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QICD2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDopamine D2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonoamine oxidase type B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRARG\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAngiotensin-converting enzyme, soluble form\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCFTR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCHRM4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCalcium channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCMK-BRL-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease s1a subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCC-CKR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QME\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QB1 bradykinin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QType-2 angiotensin II receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGb1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAPH1A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIN3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE4D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFamily a g protein-coupled receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDopamine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPS-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QN-methyl D-aspartate receptor subtype 2C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMitogen-activated protein kinase p38 beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAnandamide amidohydrolase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCyclic GMP-inhibited phosphodiesterase B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR1I1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp34 protein kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIGF1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD221\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPyruvate dehydrogenase kinase isoform 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKMK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-ubiquitous chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAcetylcholine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMelanocortin receptor 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMu opioid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNOS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAspartic protease ad clan\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QN-methyl D-aspartate receptor subtype 2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSTM2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate [NMDA] receptor subunit epsilon-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGnRH receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPancreatic lipase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase ATR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMelanocortin receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD195\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-hydroxytryptamine receptor 1E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYP19A1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKC-gamma\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAK-related kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIKK-beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCM\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHydrolase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOther protein kinase group\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKCL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNENA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-site amyloid precursor protein cleaving enzyme 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLipid-like ligand receptor (family a gpcr)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QgyrB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA4A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAph-1beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMDAR3B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDKII\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNOS type II\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCDC2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCK1-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDipeptidyl peptidase 4 soluble form\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVanilloid receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase dmpk family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase bark subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhIAP2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCamk protein kinase group\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated potassium channel subunit Kv1.5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated calcium channel subunit alpha Cav1.2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCationic trypsinogen\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAVPR1B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp180erbB4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIntegrin alpha-IV\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIKs producing slow voltage-gated potassium channel subunit alpha KvLQT1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMacrophage colony-stimulating factor 1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOPRM1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHTR1E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 7A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRho-associated, coiled-coil-containing protein kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 1, mitochondrial\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPR44\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCI\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBACE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBrain trypsinogen\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCmgc protein kinase cdc2 subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTrypsin II\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVasopressin and oxytocin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q11-beta-HSD1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-domain 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERBB3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHGF/SF receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdrenocorticotropic hormone receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase p38 gamma\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeuropeptide Y receptor type 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-4A chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPoly[ADP-ribose] synthase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnPKC-iota\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIsoleucyl-tRNA synthetase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCysteine protease\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERK6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase p38 alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QER-beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGuanylate cyclase soluble subunit beta-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAurora kinase B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QH3R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QChannel conductance-controlling ATPase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKCB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhNR3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2Y(ADP)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKynurenic acid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QROCK-II\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR3B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAtypical protein kinase C-lambda/iota\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHPCN1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFibroblast collagenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp60-Src\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD338\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q22 kDa interstitial collagenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRas proteins prenyltransferase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAspartic protease a22a regulatory subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium/taurocholate cotransporting polypeptide\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QN-terminal fragment\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QALOX5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAIM-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin receptor 5A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCC-CKR-5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeurokinin 2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase pkc alpha subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP-8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKC-A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QJanus kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIonotropic glutamate receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAT1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPGDS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenosine A2b receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCB2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear tyrosine protein kinase RAK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QrpoB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QASP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKininase II\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHMGCR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNicotinic acetylcholine receptor beta subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMC4R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVitamin D3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTNFSF2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCyclin-dependent kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIA2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium channel protein type IX subunit alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFGFR4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHSD11B1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstaglandin-H2 D-isomerase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0253\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-adrenergic receptor kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGCS-alpha-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QUNQ579/PRO1141\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDihydroorotate Dehydrogenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRho-associated, coiled-coil-containing protein kinase I\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD49 antigen-like family member B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLC10A1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QI-kappa-B-kinase beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKCNA9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMyeloperoxidase light chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5HT transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCRTH2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-3 adrenergic receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIntestinal cell kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIKK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin-1 CTF12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLeukotriene receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMDA receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase ABL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDHODH\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCK-AR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QparD\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QABCG2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QD(5) dopamine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QExtracellular signal-regulated kinase 6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPD 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHuman endogenous peptide hormone\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEpigenetic regulator\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMIP-1alpha-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLigand-gated ion channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP pyrophosphate-lyase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTrypsin-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear factor NF-kappa-B inhibitor kinase beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFLT1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene c-Abl\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAWAT1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMitogen-activated protein kinase kinase kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRSS4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QcGMP-inhibited 3',5'-cyclic phosphodiesterase A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPaf receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QB lymphocyte kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFocal adhesion kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIA4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSMAP45\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear receptor subfamily 1 group I member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPurinergic receptor P2Y11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNCSTN\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBCRP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDiacylglycerol O-acyltransferase 2-like protein 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD49 antigen-like family member D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGLUR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInterstitial collagenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCa(2+)/calmodulin-activated adenylyl cyclase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTrpV1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase Yes\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-X3-C CKR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGSTS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QABCC7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome P-450MP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein S182\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPtdIns-3-kinase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylyl cyclase 7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAbelson tyrosine-protein kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylyl cyclase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPCR97\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMitogen-activated protein kinase p38 delta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPPAR alpha/gamma\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRM2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDelta opioid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLong-chain-alcohol O-fatty-acyltransferase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenosine deaminase complexing protein 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBRADYB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTumor necrosis factor ligand superfamily member 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnPKC-epsilon\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKC2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKQT-like 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 3 group c member 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C zeta type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRho-associated protein kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QReceptor tyrosine-protein kinase erbB-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHMTMF81\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAO-B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEther-a-go-go-related gene potassium channel 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUCSA3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCKAR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSubstance-K receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin er ca2+ leak channel family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium-dependent serotonin transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPPP1R71\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QElectrochemical transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNPYY5-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAtriopeptidase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QmGluR5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSlc12 family of cation-coupled chloride transporters\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTumor necrosis factor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 3 group c member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-4 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERBB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLTD4 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCC chemokine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylyl cyclase 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFAAH\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QETRA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPLK-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCannabinoid CB1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QStructural protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMDAR2C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInterleukin-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD7b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAurora- and IPL1-like midbody-associated protein 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QToll-like and il-1 receptors\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD10\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLC6A9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFractalkine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPurinergic receptor P2Y13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTSC\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEPO\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C eta type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCAF\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCalcium channel auxiliary subunit alpha2delta family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 3 group a member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1 group b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2T(AC)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase-related protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdoHcyase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNTCP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-tubulin 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin-1 CTF subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-dependent L-type calcium channel subunit alpha-1S\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium channel protein type 9 subunit alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q84 kDa myeloperoxidase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHepatocyte growth factor receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated calcium channel subunit alpha Cav1.4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHER1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylyl cyclase 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNFKBIKB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInhibitor of apoptosis protein 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QALP56\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHEP-NOS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMDAR2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-tubulin 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSoluble epoxide hydrolase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRSS2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLXR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHER3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1 group h\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAspartic protease\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRO/MGSA receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYP19\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNK-3R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPGE2 receptor EP4 subtype\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-4A chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAT1BR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD182\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGastric receptor I\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCysLTR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnPKC-delta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QM-CSF-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRT1-A1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-ARK-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLipid transfer protein I\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDopamine reuptake\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-secretase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTSase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBLK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCmgc protein kinase cdk group\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp55-Blk\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNot applicable\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase ABL1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase insr family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRSS1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNK1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHGF receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase pkc eta subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAngiotensin II type-2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPDH-II\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QThromboxane A2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPSEN1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPR13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGamma-aminobutyric acid receptor subunit alpha-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-HT-5A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase 12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q3-hydroxy-3-methylglutaryl-coenzyme A reductase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QcAMP-specific 3',5'-cyclic phosphodiesterase 4C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVascular endothelial growth factor receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCY8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCmgc protein kinase mak\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhimB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBRAF1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAGTR1A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C gamma type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDihydrotestosterone receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAbelson murine leukemia viral oncogene homolog 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMuscarinic acetylcholine receptor M4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTRYP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0619\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluN2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBACE2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRM5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenosine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFAK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMetabotropic glutamate receptor 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA1149\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase met family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1 group c member 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase receptor FLT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome p450 family 2c\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA1060\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInosine-5'-monophosphate dehydrogenase (IMPDH)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstaglandin E2 receptor EP4 subtype\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QITGB3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTRP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPARP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEDNRA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPhosphodiesterase 11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVDR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QM-Phase Cell Cycle\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-2A chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDopamine D5 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSP1999\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBumetanide-sensitive sodium-(potassium)-chloride cotransporter 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAEPLC\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QH2R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-1A chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA1A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCB-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, NMDA 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKC-lambda/iota\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPlatelet-activating factor receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp460\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEpoxide hydratase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C beta type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLCK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCMKBR5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMuscarinic acetylcholine receptor M2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPGE receptor EP3 subtype\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCDK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta class V\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPeroxisome proliferator-activated receptor gamma\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCGI-PDE A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCZ\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QChloride channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGCS-beta-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp38-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAngiotensin-converting enzyme\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNPYR5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstanoid TP receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVitamin D receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-HT4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlycogen synthase kinase-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAD3LP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCapsaicin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSec61-ps\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase pkc delta subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenosine receptor A3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPDH 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMemapsin-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUCY1A2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE46\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGelatinase A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QcAMP-specific 3',5'-cyclic phosphodiesterase 4A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QJAK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCMKBR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluA3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHERG\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPIK3C1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADP-ribosyltransferase diphtheria toxin-like 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAngiotensin II receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUC1B3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRNA polymerase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAmine oxidase [flavin-containing] B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhNR2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSte protein kinase khs subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhERG-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2RX7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2X purinoceptor 7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCMKBR3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHexokinase type IV\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFRK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRPD3-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRho kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB4A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFibroblast growth factor receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QN-methyl-D-aspartate receptor subunit 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhMOP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNitric oxide synthase, inducible\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGCS-beta-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium/taurocholate cotransporting polypeptide, ileal\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPRC1B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMetallo protease m13 family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-tubulin 3E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPK/ERK kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD334\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAspartyl protease 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNPY-Y5 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonocyte chemoattractant protein 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C chemokine receptor type 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated ion channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAcetylcholinesterase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADAM-TS 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADPRT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluN2C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAC3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene tyrosine-protein kinase Src\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOT-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5ht1f\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHemopoietic cell kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP2K2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QErythropoietin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTryptase alpha/beta-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCysteinyl leukotriene receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD191\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium-(potassium)-chloride cotransporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QActivated factor Xa heavy chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGnrh receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMET\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVascular endothelial growth factor receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonocyte chemotactic and activating factor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCX3CR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtease\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAsp 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistamine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNTF\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGonadotropin-releasing hormone receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase jakb family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease s9b subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBDKRB2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSoluble guanylate cyclase small subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCY6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPI3Kbeta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBCRP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAGTR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase srm\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFLT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q11-beta-hydroxysteroid dehydrogenase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTarget\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPGR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease sc clan\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABABR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBaculoviral IAP repeat-containing protein 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAnandamide amidohydrolase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSQLE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-3 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QArachidonate 5-lipoxygenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCY4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhIAP-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIleal sodium-dependent bile acid transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QT cell-specific protein-tyrosine kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPancreatic triacylglycerol lipase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type I\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPhosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit beta isoform\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHSD11L\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeutral endopeptidase 24.11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-3 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADAMTS4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRPD3L1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLyase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDown region aspartic protease\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR3A2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCG\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPPOL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAT2R1B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QA disintegrin and metalloproteinase with thrombospondin motifs 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin 5 beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPARP-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp56-LCK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QacrB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSAHH\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMHC class II\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProgesterone receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear receptor subfamily 3 group A member 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTransferase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA-B receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q72 kDa gelatinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIAP2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADPRT 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTP103\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNorepinephrine transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLymphocyte cell-specific protein-tyrosine kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated sodium channel subunit alpha Nav1.7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstanoid EP4 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKifc1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C chemokine receptor type 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIleRS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKD1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPyruvate dehydrogenase kinase isoform 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp56Lyn\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSomatostatin receptor-like protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QE4ICD\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCmgc protein kinase gsk family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene c-Met\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCHR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD193\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGuanylate cyclase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGamma-secretase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C mu type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCalcium\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSlc09 family of sodium/hydrogen exchangers\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFibroblast growth factor receptor 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD243\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCNR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCmgc protein kinase rck family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCAAX farnesyltransferase subunit alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, NMDA 2B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVPR3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEpidermal growth factor receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEstrogen receptor alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCT1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG1/S-specific cyclin-E1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBile acid transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated sodium channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAcyl-CoA wax alcohol acyltransferase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAnionic trypsinogen\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSAPK3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAndrogen receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGST class-sigma\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGPR119\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE21\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QABL1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEPER\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QStress-activated protein kinase 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome P-450AROM\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA B receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutathione-requiring prostaglandin D synthase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADORA3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease s33 family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type IV\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTachykinin receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCY2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPTK5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKD\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFLT-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAcrb4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTPSB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSphingosine-dependent protein kinase-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMRK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDL1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor 51\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTranscription factor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QChemokine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTkl protein kinase group\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCathepsin X\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHH3R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLow-density lipoprotein receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCmgc protein kinase mapk family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPKK 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCmgc protein kinase p38 subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKDC\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGamma-secretase subunit PEN-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNK2R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDipeptidyl peptidase IV\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDual specificity mitogen-activated protein kinase kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q(S)-limonene 6-monooxygenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEpoxide hydrolase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGnRH-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGGTase-I-alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSDK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAMPA-selective glutamate receptor 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDiacylglycerol O-acyltransferase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPK 11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin-stabilization factor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C (PKC)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSTM-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMD-R1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlycogen phosphorylase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEPHX2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear receptor subfamily 1 group B member 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVascular permeability factor receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase p38 beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGamma-secretase subunit APH-1A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCP-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeuronal acetylcholine receptor subunit beta-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonocyte chemoattractant protein 1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 10\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-trypsin chain 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFNTB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPTGDR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QB2 bradykinin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome p450\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDXS1179E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluN3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGuanylate cyclase soluble subunit alpha-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRho-associated protein kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCSF-1-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVasopressin V1b receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlucuronosyltransferase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1 group b member 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QICK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic AMPA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q92 kDa gelatinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase Srms\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCyclin-dependent kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp58c-Fgr\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRenal carcinoma antigen NY-REN-35\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene c-Yes\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCXCR-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAtaxia telangiectasia and Rad3-related protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTAC3R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDihydroorotate dehydrogenase (quinone), mitochondrial\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEosinophil peroxidase light chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSCN9A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMitogen-activated protein kinase 11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA gyrase subunit A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTrypsin III\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase EPK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAMPA-selective glutamate receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeutrophil elastase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMembrane-associated aspartic protease 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCH-1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type V\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase D1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein phosphatase 1 regulatory subunit 71\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPK 13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADCP2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDOR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDiglyceride acyltransferase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAbcg subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAGRP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAntigen NY-CO-9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSRC\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QH-ERG\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUC1A3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKCNH2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin 1b (5-HT1b) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProton pump beta chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeurotransmitter receptor (family c gpcr)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDH kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0520\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome p450 family 19\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCX3C chemokine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-hydroxytryptamine receptor 5A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMLR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPotassium voltage-gated channel subfamily A member 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSRC1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPfdn6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSolute carrier family 6 member 9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInterleukin-13 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMelanin-concentrating hormone receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium/bile acid cotransporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase p38\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAT2R1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-HT5A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDrd1a\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type VI\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPhf1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QH1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qgaba-a receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDopamine D4 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA1C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTNFA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear receptor subfamily 3 group C member 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOther protein kinase plk family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUCY1B2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPeptidyl-cysteine S-nitrosylase NOS2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCP-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKACA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnPKC-eta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFRNK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInterleukin-8 receptor B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPSF\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG protein-coupled receptor 44\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTkl protein kinase raf family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluA1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLiver X receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnPKC-D1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhNE-Na\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-tubulin ubiquitous\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEPK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-tubulin 3C/D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCmgc protein kinase cdk family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLC12A3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEndothelin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRANTES-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAtp-binding cassette\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEndothelin A receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD294\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin 1d (5-HT1d) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMatrix metalloproteinase 13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-HT-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCDKN1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C CKR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPI3-kinase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMEF2-interacting transcription repressor MITR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCholecystokinin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCLG1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPAF-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhGPCR21\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAurora 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp59Hck\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2RY12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP4A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNicotinic acetylcholine receptor alpha subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C delta type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QStuart-Prower factor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNK-3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPSNL1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKVLQT1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QThrombin & trypsin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEB11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPore-forming toxins (proteins and peptides)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, AMPA 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C CKR-8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene c-Src\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp125FAK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QT-cell activation antigen CD26\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSte protein kinase group\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAD5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-HT6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0288\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNPY5-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCMKBRL1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACH2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene-like protein c-ErbB-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q92 kDa type IV collagenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRT1-A3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCholesterol absorption\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMKK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMitogen-activated protein kinase 13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAPH-1a\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMast cell\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRetinol O-fatty-acyltransferase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHydrogen potassium atpase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, AMPA 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCDC28A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCP-1-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGamma-aminobutyric acid type B receptor subunit 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYPIIC9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMP dehydrogenase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCH1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase D3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAD3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QARAT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAngiotensin II type-1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADAM-TS4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACNA1S\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCANN6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMatrix metalloproteinase-8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDipeptidyl carboxypeptidase I\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA-directed RNA polymerase beta chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAPK12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTACR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate [NMDA] receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMatrix metalloproteinase-12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1 group c member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlycogen synthase kinase-3 beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEndothelin-1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGastric lipase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAspartic protease a22a subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp160ROCK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHTT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCSF-1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPhosphodiesterase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDebrisoquine 4-hydroxylase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCysteine protease c1a family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPotassium channels\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCHL1A1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCannabinoid receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOther protein kinase aur family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QE5-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein-tyrosine kinase 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPTGER3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTRY3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type VII\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-site APP cleaving enzyme 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, NMDA 3B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnPKC-zeta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase Lyn\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTNF-alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein farnesyltransferase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QD(1B) dopamine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA-B-R1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNAD(+) ADP-ribosyltransferase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMEK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMatrix metalloproteinase-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C theta type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin 2a (5-HT2a) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMEK 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSurface antigen\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTRY1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOxytocin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCHEMR13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCholesterol\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QABCP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPGY1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta class IIa\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLC-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSolute carrier family 10 member 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene Lck\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD26\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QmGluR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin-stabilization factor-like\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstaglandin E2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPTGER4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCXC chemokine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP-binding cassette sub-family B member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDHK4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIN2C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEPP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPurinergic receptor P2Y\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QJTK7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C CKR-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QYES1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKCG\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QReceptor tyrosine-protein kinase erbB-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP pyrophosphate-lyase 7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin-2 NTF subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACNL1A2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin 7 (5-HT7) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIleal Na(+)/bile acid cotransporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCathepsin O2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp94\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEraser\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QD-OR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCHRM5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q89 kDa myeloperoxidase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSTK-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNa(+)/taurocholate transport protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTNF\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDACL1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRho-associated, coiled-coil-containing protein kinase II\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QN-methyl-D-aspartate receptor subtype 3B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNK3R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDopamine D3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QROCK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTNFR2-TRAF-signaling complex protein 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase PRKCD\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase 12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp150\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp61Hck\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPTGDS2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPhosphodiesterase 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTPS1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHM145\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKidney-specific Na-K-Cl symporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCSF1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAuxiliary transport protein\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2X7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSlc10 family of sodium-bile acid co-transporters\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin receptor 1E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor 35\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase Lck\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIkBKB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR2B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdrenergic receptor beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHTR5A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeurokinin B receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRho-associated protein kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase grk family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAMPA receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated potassium channel subunit Kv11.1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPhosphodiesterase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVasopressin V3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAcetylcholine receptor protein alpha 1, 2, 3, 4 invertebrate, putative\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QUNQ418/PRO852\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACN2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIntracellular domain 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCSF-1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCannabinoid CB2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMyeloperoxidase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFRAP-related protein 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-HT-6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP-binding cassette sub-family G member 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLD78 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCalcium channel auxiliary subunit beta family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-dependent L-type calcium channel subunit alpha-1D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSrc-like kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGabbr1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTYMS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP pyrophosphate-lyase 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase abl family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QnAChRa7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCXC-R2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-6 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA(A) receptor subunit alpha-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLaryngeal cancer kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QACTH-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOPRD\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR3C3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase Met\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type 9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDrd4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMetallo protease m10a subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase FRK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIRS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHexokinase-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMacrophage metalloelastase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp160 ROCK-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNK-2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBARK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPeptide receptor (family a gpcr)\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2Z receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA A receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNOS2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPEN2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADMP-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYSLT2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEag homolog\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRT1-Hb\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase fak family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVLA-2 subunit alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QACE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C CKR-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCholesterol uptake\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCmkbr8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDGAT1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTrypsin-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTAC2R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCEH\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDPDE3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase PLK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEosinophil eotaxin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeurokinin 3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C iota type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMelanocortin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPrimary active transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCysteine protease ca clan\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSmall-inducible cytokine A2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBIRC2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNARAD\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPDH2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAChE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE32\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMu opiate receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACNA1C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCLG4B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDHK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMembrane receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-dependent L-type calcium channel subunit alpha-1F\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type 7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0511\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInsulin-like growth factor 1 receptor alpha chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPAFr\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdrenocorticotropin receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C delta type catalytic subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCholecystokinin receptor type A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC7B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA-BR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKM11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-1 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin B-alpha-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPTK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QICD1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADPG-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine-protein kinase ATR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine protease pa clan\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProstanoid EP3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear receptor subfamily 3 group C member 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate [NMDA] receptor subunit epsilon-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome P450 PB-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2Y12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAIM1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA polymerase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QADABP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QABCB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERBB4 intracellular domain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHK4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKMK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKD3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAVPR V3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QThymidylate synthase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRAFB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QABL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMonoamine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QM-OR-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR3C1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCarboxylic acid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2Y12 platelet ADP receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeuroendocrine sodium channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QType-1 angiotensin II receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlucocorticoid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKCE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerotonin 1 (5-HT1) receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QACTHR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE4A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCC-CKR-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYPXIX\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome p450 family 19a\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSTK5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDGAT\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0688\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHRH2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP pyrophosphate-lyase 9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated potassium channel subunit Kv7.1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACN4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase JAK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase HCK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDipeptidyl peptidase 4 membrane form\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP-12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCKR3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLOG5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDual specificity mitogen-activated protein kinase kinase; MEK1/2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCC-CKR-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTopoisomerase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLYN\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPoly [ADP-ribose] polymerase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInducible NOS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMineralocorticoid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIL8RB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLOC224733l-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCGIPDE1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase aurora-B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-lipoxygenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QESR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeuronal acetylcholine receptor subunit beta-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPSFL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QJW5625\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR2D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHYRC\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYAR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium channel protein type IX alpha subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5ht3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMC2-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium- and chloride-dependent glycine transporter 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSqualene monooxygenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-III\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKD1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD246\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIN3B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE4C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMiscellaneous ion channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0600\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPyruvate dehydrogenase kinase isoform 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5ht1b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAPH1B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSolute carrier family 16 member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QUrate exporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QN-methyl D-aspartate receptor subtype 2D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEPOR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase jaka family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDelta-type opioid receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAT1AR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTk protein kinase group\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSTK12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPMNL collagenase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProto-oncogene c-Fyn\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome P450-DB1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp59-Fyn\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qpp125FAK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGb2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDual specificity mitogen-activated protein kinase kinase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIntegrin alpha-4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMPO\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type IX\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPEX\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPS-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q4ICD\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCyclic GMP-inhibited phosphodiesterase A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBRAF\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPS1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMHC class II region expressed gene KE2, isoform CRA_a\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCT 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase, olfactive type\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor ionotropic, NMDA 2C\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCHR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeuronal acetylcholine receptor protein alpha-7 subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated potassium channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein farnesyltransferase/geranylgeranyltransferase type-1 subunit alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGluR-K2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIKK-B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRNAP subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCyclooxygenase-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLeukocyte migration\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLeukocyte C-terminal Src kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCN\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInosine-5'-monophosphate dehydrogenase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYPIID6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPI3-kinase beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta chemokine receptor-like 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMDAR3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine kinase-type cell surface receptor HER3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGpcr8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCNE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhICK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB2B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTkl protein kinase stkr family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD194\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFibroblast growth factor receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qmetallo protease m2 family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSPR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate receptor 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCL\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKM13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNicotinic acetylcholine receptor alpha4/beta2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMyeloperoxidase heavy chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTranscriptase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLeukocyte extravasation\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2Y purinoceptor 11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QReceptor protein-tyrosine kinase erbB-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlutamate [NMDA] receptor subunit epsilon-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInsulin-like growth factor 1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QN-methyl D-aspartate receptor subtype 2B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase egfr family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAVPR V1b\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAndrogen Receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLeukocyte elastase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGNRHR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGCS-alpha-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin beta-8 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QElane\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMatrix metalloproteinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIN1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-domain 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPoly [ADP-ribose] polymerase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERBB4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QiNOS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTopoisomerase IV\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSlc06 neurotransmitter transporter family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIA1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKCA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBB6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAtypical protein kinase pikk family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPLK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPurinergic receptor P1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInterleukin-4 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRho-associated, coiled-coil-containing protein kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFamily c g protein-coupled receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-C chemokine receptor type 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRKCH\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPyruvate dehydrogenase kinase isoform 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC20orf148\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSTK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIntegrin alpha-2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFYN-related kinase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEstrogen receptor beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeuromedin-K receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTBXA2R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBifunctional epoxide hydrolase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIleal sodium/bile acid cotransporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMitogen-activated protein kinase p38 gamma\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPresenilin-1 NTF subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QScatter factor receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIsomerase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHD7a\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPotassium-transporting ATPase subunit beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAurora/IPL1-related kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QRxrb\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCDK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPoly [ADP-ribose] polymerase-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QS-mephenytoin 4-hydroxylase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDAC10\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QETA-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCR-5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGP3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated calcium channel subunit alpha Cav1.1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPGE2-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDGAT2L3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGuanylate cyclase soluble subunit beta-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSRMS\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDPP4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QG-protein coupled receptor 24\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome P450 2D6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 5\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHIV-1 fusion coreceptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPKC-B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine-protein kinase Blk\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMDAR-L\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAVPR3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QF10\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q5-HT-1E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMOP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCorticosteroid 11-beta-dehydrogenase isozyme 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMacrophage elastase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhERG1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QChemokine synthesis\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTrypsin IV\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAP kinase p38 delta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPN1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDHTR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGuanylate cyclase soluble subunit beta-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHH1R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAggrecanase-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp110beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLCK\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEPX\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBARK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGSK3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSKR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCL2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGUCSB3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAPI1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QhisW\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QETA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA3E\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QChrnb2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDK4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEosinophil peroxidase\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMPGES-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGCS-alpha-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKCNA8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFAK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 7B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDiacylglycerol acyltransferase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMetabotropic glutamate receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTKF\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSTPK13\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPeripheral sodium channel 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDNA-PK catalytic subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNR3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLC10A2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCC-CKR-8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDPDE1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QFAAH1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCACNAF1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIA3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMuscarinic acetylcholine receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAIRK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGABA receptor alpha-2 subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCB-R\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenosine A3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QgyrA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSubstance-P receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QparA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP pyrophosphate-lyase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCysteinyl leukotriene D4 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTransient receptor potential cation channel subfamily V member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPD 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCALLA\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSte protein kinase ste20 family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKIAA0037\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE43\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTBE-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEndothelin receptor ET-A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-3E chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QATP pyrophosphate-lyase 3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCD_antigen=CD61\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPD1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSoluble guanylate cyclase large subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSerine/threonine-protein kinase GSK3A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOPRD1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBradykinin B2 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGSK-3 alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAT2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSCYA2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCB2B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNKCC2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIleal bile acid transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGELB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QC-X-C chemokine receptor type 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTyrosine protein kinase pdgfr family\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDRAP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylate cyclase type VIII\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMAOB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMacrophage inflammatory protein 1-alpha receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTkl protein kinase stkr type 1 subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPARP1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlycogen synthase kinase-3 alpha\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCyclin-dependent kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHC11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPotassium channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QDCP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCYP2D6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMDAR2D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCCNE2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNEP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QOther ion channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPI3-kinase p110-beta subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPTAFR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERK activator kinase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QASP2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGLUR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-2 adrenergic receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Qp58-Fgr\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTubulin alpha-6 chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAspartic-like protease 56 kDa\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-tubulin 6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPurinergic receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAURKB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QKYNA receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPLK1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 3 group c member 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMCHR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGLUR3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QMMP-9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QASP21\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCysteinyl leukotriene receptor 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAgc protein kinase pkc iota subfamily\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QChrnb4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QcGMP-inhibited 3',5'-cyclic phosphodiesterase B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAspartic protease aa clan\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 3 group c member 4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGLURC\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCalcium channel, L type, alpha-1 polypeptide, isoform 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QProtein kinase C delta type regulatory subunit\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIMPDH-I\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERG-1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAlpha-tubulin 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QERBB\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCytochrome P450 2C9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHDRP\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEla2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeurokinin 1 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QLDLR\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylyl cyclase 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTestis-specific alpha-tubulin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 3 group a\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 3 group a member 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated potassium channel HK2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\Q1,25-dihydroxyvitamin D3 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHistone deacetylase 9\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPeroxisome proliferator-activated receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QInsulin-like growth factor 1 receptor beta chain\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCcr8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QY5 receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNeprilysin\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLC16A1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QEPN\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylyl cyclase 8\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGRIN2A\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBKR2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 3 group c\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated calcium channel subunit alpha Cav1.3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTLR7\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1 group c\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSodium-(potassium)-chloride cotransporter 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QApical sodium-dependent bile acid transporter\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPotassium voltage-gated channel subfamily KQT member 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPotassium voltage-gated channel subfamily H member 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNMDAR2B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QCysLTR1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPDE3B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QTUBA3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSigma receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHexokinase-D\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QBeta-site amyloid precursor protein cleaving enzyme 2\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylyl cyclase 6\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPurinergic receptor P2Y12\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QNuclear hormone receptor subfamily 1 group i\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QARTD1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QSLC6A4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPtdIns-3-kinase subunit p110-beta\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPlatelet membrane glycoprotein Ia\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QIntegrin beta-3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QP2X receptor\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QVoltage-gated L-type calcium channel\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHSD11\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPGE2 receptor EP3 subtype\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QGlycine transporter 1\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QPRSS3\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHigh affinity interleukin-8 receptor B\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QHER4\E/, result:  "moa_etox_send"}
+{ ruleType: "text", pattern: /\QAdenylyl cyclase 4\E/, result:  "moa_etox_send"}
