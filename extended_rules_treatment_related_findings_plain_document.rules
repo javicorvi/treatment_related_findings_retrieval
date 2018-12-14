@@ -6,7 +6,7 @@ $DOSIS_KEY = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
 
 //{ ruleType: "text", pattern: /\Qpotassium/creatinine ejemplo + - * [] % ( pepe ))\E/, result:  "anatomy_etox_send"}
 
-{ ruleType: "text", pattern: /potassium\/creatinine \\ ejemplo \+ \- \* \[\] \% \( pepe \)\)/, result:  "anatomy_etox_send"}
+//{ ruleType: "text", pattern: /potassium \& creatinine \\ ejemplo \+ \- \* \[\] \% \( pepe \)\)  \$ \\b/, result:  "anatomy_etox_send"}
 
 {([{ ner:MALE_SEX }]+) => "MALE_SEX" }
 {([{ ner:FEMALE_SEX }]+) => "FEMALE_SEX" }
@@ -54,6 +54,7 @@ $DOSIS_KEY = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
 }
 
 //treatement finding with domain
+
 {
   // ruleType is "text", "tokens", "composite", or "filter"
   ruleType: "tokens",
@@ -61,21 +62,22 @@ $DOSIS_KEY = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
   pattern: ( ( [ { ner:CLINICAL_DOMAIN } | { ner:BODY_WEIGHT_DOMAIN }  | { ner:BODY_WEIGHT_GAIN_DOMAIN }  | { ner:CARDIOVASCULAR_DOMAIN } | { ner:MACROSCOPIC_FINDINGS_DOMAIN } 
   | { ner:MICROSCOPIC_FINDINGS_DOMAIN } | { ner:ORGAN_MEASUREMENT_DOMAIN } | { ner:PHARMACOKINETICS_PARAMETERS_DOMAIN } | { ner:TUMOR_FINDINGS_DOMAIN } 
   | { ner:RESPIRATORY_FINDINGS_DOMAIN } | { ner:DEATH_DIAGNOSIS_DOMAIN } | { ner:FOOD_WATER_CONSUMPTION_DOMAIN } | { ner:ECG_DOMAIN } 
-  | { ner:LABORATORY_FINDINGS_DOMAIN } | { ner:VITAL_SIGNS_DOMAIN } ]+) []+ ( [ { ner:TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD } ]+) ),
+  | { ner:LABORATORY_FINDINGS_DOMAIN } | { ner:VITAL_SIGNS_DOMAIN } ]+) []{0,3} ( [ { ner:TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD } ]+) ),
   result: "TREATMENT_RELATED_FINDING"
 }
 
 //treatement finding with domain
-{
+//{
   // ruleType is "text", "tokens", "composite", or "filter"
-  ruleType: "tokens",
+  //ruleType: "tokens",
   // pattern to be matched  
-  pattern: ( ( [ { ner:TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD } ]+) []+ ( [ { ner:CLINICAL_DOMAIN } | { ner:BODY_WEIGHT_DOMAIN }  | { ner:BODY_WEIGHT_GAIN_DOMAIN }  | { ner:CARDIOVASCULAR_DOMAIN } | { ner:MACROSCOPIC_FINDINGS_DOMAIN } 
-  | { ner:MICROSCOPIC_FINDINGS_DOMAIN } | { ner:ORGAN_MEASUREMENT_DOMAIN } | { ner:PHARMACOKINETICS_PARAMETERS_DOMAIN } | { ner:TUMOR_FINDINGS_DOMAIN } 
-  | { ner:RESPIRATORY_FINDINGS_DOMAIN } | { ner:DEATH_DIAGNOSIS_DOMAIN } | { ner:FOOD_WATER_CONSUMPTION_DOMAIN } | { ner:ECG_DOMAIN } 
-  | { ner:LABORATORY_FINDINGS_DOMAIN } | { ner:VITAL_SIGNS_DOMAIN } ]+)   ),
-  result: "TREATMENT_RELATED_FINDING"
-}
+ // pattern: ( ( [ { ner:TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD } ]+) []+ ( [ { ner:CLINICAL_DOMAIN } | { ner:BODY_WEIGHT_DOMAIN }  | { ner:BODY_WEIGHT_GAIN_DOMAIN }  | { ner:CARDIOVASCULAR_DOMAIN } | { ner:MACROSCOPIC_FINDINGS_DOMAIN } 
+ // | { ner:MICROSCOPIC_FINDINGS_DOMAIN } | { ner:ORGAN_MEASUREMENT_DOMAIN } | { ner:PHARMACOKINETICS_PARAMETERS_DOMAIN } | { ner:TUMOR_FINDINGS_DOMAIN } 
+  //| { ner:RESPIRATORY_FINDINGS_DOMAIN } | { ner:DEATH_DIAGNOSIS_DOMAIN } | { ner:FOOD_WATER_CONSUMPTION_DOMAIN } | { ner:ECG_DOMAIN } 
+ // | { ner:LABORATORY_FINDINGS_DOMAIN } | { ner:VITAL_SIGNS_DOMAIN } ]+)   ),
+ // result: "TREATMENT_RELATED_FINDING"
+//}
+
 {(/p/ $STATICAL_SYMBOL ([{ner:NUMBER }])) => "STATICAL_SIGNIFICANCE" }
 {( ([{ner:STATICAL_SIGNIFICANCE }]) /or|and/ ([{ner:STATICAL_SIGNIFICANCE }])   ) => "STATICAL_SIGNIFICANCE_COMP" }
 {( ([{word::IS_NUM}]) ([{word:"mg/kg/day"}])  ) => "COMPLETE_DOSIS" }

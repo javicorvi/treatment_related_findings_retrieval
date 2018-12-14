@@ -61,6 +61,21 @@ public class TreatmentRelatedFinding {
 	private String statisticalSignificanceOfFinding;
 	
 	/**
+	 * Route of administration
+	 */
+	private String routeOfAdministration;
+	
+	/**
+	 * Strain of the test
+	 */
+	private String strainOfTest;
+	
+	/**
+	 * pk parameters
+	 */
+	private String pkParameters;
+	
+	/**
 	 * Dosis description
 	 */
 	private String dosis;
@@ -172,6 +187,25 @@ public class TreatmentRelatedFinding {
 	} 
 	
 	
+	
+	public String getRouteOfAdministration() {
+		return routeOfAdministration;
+	}
+	public void setRouteOfAdministration(String routeOfAdministration) {
+		this.routeOfAdministration = routeOfAdministration;
+	}
+	public String getStrainOfTest() {
+		return strainOfTest;
+	}
+	public void setStrainOfTest(String strainOfTest) {
+		this.strainOfTest = strainOfTest;
+	}
+	public String getPkParameters() {
+		return pkParameters;
+	}
+	public void setPkParameters(String pkParameters) {
+		this.pkParameters = pkParameters;
+	}
 	public String toString() {
 		return "studyId\t"+studyId+"\n"+
 				"domain\t"+domain+"\n"+
@@ -188,5 +222,6 @@ public class TreatmentRelatedFinding {
 				"dosis\t"+dosis+"\n"+
 				"isTreatmentRelated\t"+isTreatmentRelated+"\n";
 	}
+	
 	
 }
