@@ -68,6 +68,7 @@ import es.bsc.inb.limtox.model.EtoxSENDTerm;
 import es.bsc.inb.limtox.model.Manifestation;
 import es.bsc.inb.limtox.model.ToxicityRisk;
 import es.bsc.inb.limtox.model.TreatmentRelatedFinding;
+import es.bsc.inb.limtox.util.StopWords;
 @Service
 class TaggerServiceImpl implements TaggerService {
 
@@ -84,8 +85,6 @@ class TaggerServiceImpl implements TaggerService {
 	    }
 	}
 
-	
-	
 	public void execute(String propertiesParametersPath) {
 		try {
 			log.info("Classify articles with properties :  " +  propertiesParametersPath);
@@ -107,6 +106,8 @@ class TaggerServiceImpl implements TaggerService {
 			String etox_moa_dict = propertiesParameters.getProperty("etox_moa_dict");
 			String etox_in_life_obs_dict = propertiesParameters.getProperty("etox_in_life_obs_dict");
 			String generateGATEFormat = propertiesParameters.getProperty("generateGATEFormat");
+			
+			
 			
 			
 			String cdi_send_terminology_dict = propertiesParameters.getProperty("cdis_send_terminology_dict");
@@ -149,6 +150,8 @@ class TaggerServiceImpl implements TaggerService {
 		    
 		    String cdi_send_terminology_rules = "cdis_send_terminology_rules.txt";
 		    generateRulesForTaggingCDISEND(cdi_send_terminology_dict, cdi_send_terminology_rules);
+		    
+		    
 		    
 		    
 		    Properties props = new Properties();
@@ -258,7 +261,11 @@ class TaggerServiceImpl implements TaggerService {
 		for (String line : ObjectBank.getLineIterator(inputPath, "utf-8")) {
 			if(!line.startsWith("keyword")) {
 				String[] data = line.split("\t");
-				terms.add("{ ruleType: \"text\", pattern: " + getScapedKeyWord(data[0].toLowerCase()) + ", result:  \"" +  data[1].toLowerCase()+"_etox_send\"}\n");
+				if(data.length==9 && !data[8].trim().equals("")) {
+					terms.add("{ ruleType: \"text\", pattern: " + getScapedKeyWord(data[0].toLowerCase()) + ", result:  \"" +  data[8].toLowerCase()+"_etox_send\"}\n");
+				}else {
+					terms.add("{ ruleType: \"text\", pattern: " + getScapedKeyWord(data[0].toLowerCase()) + ", result:  \"" +  data[1].toLowerCase()+"_etox_send\"}\n");
+				}
 			}
 		}
 		for (String string : terms) {
@@ -284,35 +291,6 @@ class TaggerServiceImpl implements TaggerService {
 		}
 		termWriter.close();
 	}
-
-
-//	private String getScapedKeyWord(String keyword) {
-//		//String example ="potassium/creatinine \\ ejemplo + - * \b [] % ( pepe ))";
-//		String char_b = "/";
-//		String char_e = "/";
-//		keyword = keyword.replaceAll("\\/", "\\\\/").
-//		replaceAll("\\(", "\\\\(").
-//		replaceAll("\\)", "\\\\)").
-//		replaceAll("\\[", "\\\\[").
-//		replaceAll("\\]", "\\\\]").
-//		replaceAll("\\{", "\\\\{").
-//		replaceAll("\\}", "\\\\}").
-//		replaceAll("\\*", "\\\\*").
-//		replaceAll("\\-", "\\\\-").
-//		replaceAll("\\^", "\\\\^").
-//		replaceAll("\\.", "\\\\.").
-//		replaceAll("\\?", "\\\\?").
-//		replaceAll("\\+", "\\\\+").
-//		replaceAll("\\%", "\\\\%").
-//		replaceAll("\\$", "\\\\$").
-//		replaceAll("\\$", "\\\\$").
-//		replaceAll("\\|", "\\\\|");
-//		//scape all special characters, it cannot be used \Q and \E because of a bug in the Standford NLP Core library, 
-//		// the / is not scaped if its arounded  \Q \E by the framework because is used to delimited the begin and end of a string.
-//		//So we have to scape all the special characters with \, for example \/ \( \) etc.
-//		
-//		return char_b +  keyword + char_e;
-//	}
 	
 	private String getScapedKeyWord(String keyword) {
 		//String example ="potassium/creatinine \\ ejemplo + - * \b [] % ( pepe ))";
@@ -392,6 +370,8 @@ class TaggerServiceImpl implements TaggerService {
 								 line_to_classify = "\t" + data[0] + "\t \t" + data[4]; 
 							 }
 							 Datum<String,String> d = cdc.makeDatumFromLine(line_to_classify);
+							 
+							 
 							 if(is_sentences_classification) {
 								 bw.write(cdc.classOf(d) + "\t" + cdc.scoresOf(d).getCount(cdc.classOf(d)) + "\t" + data[0] + "\t" + data[1] + "\t" + data[2] + "\t" + data[3] + "\n");
 							 }else {
@@ -480,9 +460,7 @@ class TaggerServiceImpl implements TaggerService {
 			        		break;
 			        	}
 			        	bw.write(id + "\t"+ (me.getCharOffsets().getBegin()+1) + "\t" + me.getCharOffsets().getEnd() + "\t" + me.getText() + "\t" + me.getValue().get() + "\n");
-						
-			        	
-			        	if(me.getValue().get().equals("TREATMENT_RELATED_FINDING")) {
+						if(me.getValue().get().equals("TREATMENT_RELATED_FINDING")) {
 							finding.setRecordFounded(true);
 							lowLevelAnalisys=true;
 						} 
@@ -535,8 +513,7 @@ class TaggerServiceImpl implements TaggerService {
 			        
 			        bw.flush();
 	    		} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					log.error("IOError Exception " , e);
 				}
 	    	}
 		}
@@ -554,26 +531,26 @@ class TaggerServiceImpl implements TaggerService {
 		 */
 		private void tagging2(StanfordCoreNLP pipeline, String id, String text_to_tag, String fileName, BufferedWriter bw, CoreMapExpressionExtractor extractor, Boolean isPlainText) {
 			//String text = "tyrosine protein kinase abl family subcutaneously, in the neck region potassium & creatinine \\ ejemplo + - * [] % ( pepe )) skin, hair loss, head $ \b body-weight pepepe p<0.05 or p  > 0.05, treatment related finding increase liver toxicity Urine protein/creatinine ratio (Prot-U/Cre)";
-			String text = " * - [ ] ^ glucose (uglu body-weight-gain  xxx xxxx treatment related finding both pinnae reddened  post dose";
+			//String text = " * - [ ] ^ glucose (uglu body-weight-gain  xxx xxxx treatment related finding both pinnae reddened  post dose";
+			String text = "** =p<001 test 5 to 300 mg/kg -11 % ( p  -0.01 ) and -9 % ( p < 0.05) test -11 % (p < 0.01)";
+			//String text = "* (p < 0.05) or ** (p < 0.01) peppepepepe 5 to 300 mg/kg pepepepe 87 mg  pepeep ** (p < 0.01)";
 			long startTime = System.currentTimeMillis();
-			//Annotation document = new Annotation(text_to_tag.toLowerCase());
-			
-			Annotation document = new Annotation(text.toLowerCase());
+			Annotation document = new Annotation(text_to_tag.toLowerCase());
+			//Annotation document = new Annotation(text.toLowerCase());
 			//run all Annotators on this text
 			pipeline.annotate(document);
 			long endTime = System.currentTimeMillis();
 			log.info(" Annotation document execution time  " + (endTime - startTime) + " milliseconds");
-	        try {
-	    			
-	        		List<CoreLabel> tokens = document.get(TokensAnnotation.class);
-	        		
-	        		List<CoreMap> entityMentions = document.get(MentionsAnnotation.class);
-	        		
+	        try {	/*List<CoreLabel> tokens = document.get(TokensAnnotation.class);
+	        		List<CoreMap> entityMentions = document.get(MentionsAnnotation.class);*/
 	        		List<MatchedExpression> matchedExpressions = extractor.extractExpressions(document);
 			    	// print out the matched expressions
 			        for (MatchedExpression me : matchedExpressions) {
 			        	if(!(me.getText().length()< 4 && ( me.getValue().get().equals("sexpop_etox_send") || me.getValue().get().equals("lbtest_etox_send") || me.getValue().get().equals("moa_etox_send") || me.getValue().get().equals("strain_etox_send")))) {
-			        		bw.write(id + "\t"+ (me.getCharOffsets().getBegin()) + "\t" + me.getCharOffsets().getEnd() + "\t" + me.getText() + "\t" + me.getValue().get() + "\n");
+			        		//For more specification find data from dictionary
+			        		if(!StopWords.stopWordsEn.contains(me.getText())) {
+			        			bw.write(id + "\t"+ (me.getCharOffsets().getBegin()) + "\t" + me.getCharOffsets().getEnd() + "\t" + me.getText().replaceAll("\n", " ") + "\t" + me.getValue().get() + "\n");
+			        		}
 			        	}
 			        }
 			        

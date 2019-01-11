@@ -26,7 +26,7 @@ class Main {
 			e1.printStackTrace();
 		}
     	Gate.setGateHome(new File("/home/jcorvi/GATE_Developer_8.5.1/"));
-		 Gate.setPluginsHome(new File("/home/jcorvi/GATE_Developer_8.5.1/"));
+		Gate.setPluginsHome(new File("/home/jcorvi/GATE_Developer_8.5.1/"));
         
         mainService.execute(properties_parameters_path);
     }      

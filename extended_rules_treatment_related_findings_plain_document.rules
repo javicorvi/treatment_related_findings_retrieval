@@ -1,8 +1,9 @@
 $STATICAL_SYMBOL = "/<|>|=|<=|>=|!=|<>/"
-$DOSIS_KEY = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
-
-//$MALE_SEX_KEY = "/male|males|masculine|masculine|macho/"
-//$FEMALE_SEX_KEY = "/female|females|feminine|feminines/"
+$STATICAL_SEP_KEY = "/and|or|to|,/"
+$PARENTESIS = "/-LRB-|-RRB-/"
+$PERCENTAJE = "/%/"
+$DOSE_UNIT = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
+$DOSE_SEP = "/to|-/"
 
 //{ ruleType: "text", pattern: /\Qpotassium/creatinine ejemplo + - * [] % ( pepe ))\E/, result:  "anatomy_etox_send"}
 
@@ -79,10 +80,27 @@ $DOSIS_KEY = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
 //}
 
 {(/p/ $STATICAL_SYMBOL ([{ner:NUMBER }])) => "STATICAL_SIGNIFICANCE" }
-{( ([{ner:STATICAL_SIGNIFICANCE }]) /or|and/ ([{ner:STATICAL_SIGNIFICANCE }])   ) => "STATICAL_SIGNIFICANCE_COMP" }
-{( ([{word::IS_NUM}]) ([{word:"mg/kg/day"}])  ) => "COMPLETE_DOSIS" }
-{( ([{word::IS_NUM}]) ([{word:"mg/kg/dose"}])  ) => "COMPLETE_DOSIS" }
-{( ([{word::IS_NUM}]) ([{word:"mg/kg/d"}])  ) => "COMPLETE_DOSIS" }
-{( ([{word::IS_NUM}]) $DOSIS_KEY ) => "DOSIS" }
+{( (/p/ $STATICAL_SYMBOL ([{ner:NUMBER }])) $STATICAL_SEP_KEY (/p/ $STATICAL_SYMBOL ([{ner:NUMBER }]))   ) => "STATICAL_SIGNIFICANCE" }
+
+//{( $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) $PARENTESIS ) => "STATICAL_SIGNIFICANCE" }
+
+{ (( [/\**/] $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) ) $PARENTESIS ) => "STATICAL_SIGNIFICANCE" }
+{ (( [/\**/] $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) ) $PARENTESIS $STATICAL_SEP_KEY* ( [/\**/] $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) ) $PARENTESIS ) => "STATICAL_SIGNIFICANCE" }
+
+
+{(([{word::IS_NUM}]) $PERCENTAJE $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) $PARENTESIS ) => "STATICAL_SIGNIFICANCE" }
+
+{(([{word::IS_NUM}]) $PERCENTAJE $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) $PARENTESIS $STATICAL_SEP_KEY ([{word::IS_NUM}]) $PERCENTAJE $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) $PARENTESIS ) => "STATICAL_SIGNIFICANCE2" }
+
+
+{( ([{ner:NUMBER }]) /\%/ /\(/ /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) /\)/ ) => "STATICAL_SIGNIFICANCE2222" }
+//{( (/(/ ([{ner:NUMBER }])) /%/ /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) /)/) $STATICAL_SEP_KEY ( ([{ner:NUMBER }])) /%/ /(/ $STATICAL_SYMBOL ([{ner:NUMBER }]) /)/)   ) => "STATICAL_SIGNIFICANCE3333" }
+
+
+{( ([{word::IS_NUM}] ([{ner:DOSE_UNIT}]))  ) => "DOSE" }
+{( ([{word::IS_NUM}] $DOSE_SEP [{word::IS_NUM}] ([{ner:DOSE_UNIT}]))  ) => "DOSE" }
+
+
+
 {( ([{word::IS_NUM}]) ([{ner:DURATION}]+)) => "DURATION_DOSIS" }
 {( ([{ner:DURATION}]+) ([{word::IS_NUM}])) => "DURATION_DOSIS" }
