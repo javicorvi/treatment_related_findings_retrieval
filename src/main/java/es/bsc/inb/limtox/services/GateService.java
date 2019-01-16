@@ -4,4 +4,8 @@ public interface GateService {
 
 	public void generateGateFormat(String inputGATEFile, String plainAnnotationsFiles, String outPutGateFile);
 	
+	
+	public void countAnnotationForDirectory(String inputDirectory);
+		
+	
 }

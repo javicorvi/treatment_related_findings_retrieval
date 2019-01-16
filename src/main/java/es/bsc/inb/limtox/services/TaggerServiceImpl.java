@@ -68,6 +68,7 @@ import es.bsc.inb.limtox.model.EtoxSENDTerm;
 import es.bsc.inb.limtox.model.Manifestation;
 import es.bsc.inb.limtox.model.ToxicityRisk;
 import es.bsc.inb.limtox.model.TreatmentRelatedFinding;
+import es.bsc.inb.limtox.util.PropertiesUtil;
 import es.bsc.inb.limtox.util.StopWords;
 @Service
 class TaggerServiceImpl implements TaggerService {
@@ -88,7 +89,7 @@ class TaggerServiceImpl implements TaggerService {
 	public void execute(String propertiesParametersPath) {
 		try {
 			log.info("Classify articles with properties :  " +  propertiesParametersPath);
-			Properties propertiesParameters = this.loadPropertiesParameters(propertiesParametersPath);
+			Properties propertiesParameters = PropertiesUtil.loadPropertiesParameters(propertiesParametersPath);
 			log.info("Classify articles with the model  :  " +  propertiesParameters.getProperty("classificatorModel"));
 			log.info("Input directory with the articles to classify : " + propertiesParameters.getProperty("inputDirectory"));
 			log.info("Outup directory with the relevant articles : " + propertiesParameters.getProperty("outputDirectory"));
@@ -395,8 +396,8 @@ class TaggerServiceImpl implements TaggerService {
 			 }
 			 
 			 if(generate_gate_format) {
-				 String inputGateFile = file_to_classify.getAbsolutePath().substring(0, file_to_classify.getAbsolutePath().indexOf("_PLAIN.txt")) + "_GATE.xml";
-				 String outputGATE_File = outputFile.substring(0, outputFile.indexOf("_PLAIN.txt")) + "_GATE_ANNOTATED.xml";
+				 String inputGateFile = file_to_classify.getAbsolutePath().replace("PLAIN", "GATE").replace(".txt", ".xml");
+				 String outputGATE_File = outputFile.replace("PLAIN", "GATE_ANNOTATED").replace(".txt", ".xml");
 				 gateService.generateGateFormat(inputGateFile, outputFile ,outputGATE_File);
 			 }
 			 
@@ -532,8 +533,12 @@ class TaggerServiceImpl implements TaggerService {
 		private void tagging2(StanfordCoreNLP pipeline, String id, String text_to_tag, String fileName, BufferedWriter bw, CoreMapExpressionExtractor extractor, Boolean isPlainText) {
 			//String text = "tyrosine protein kinase abl family subcutaneously, in the neck region potassium & creatinine \\ ejemplo + - * [] % ( pepe )) skin, hair loss, head $ \b body-weight pepepe p<0.05 or p  > 0.05, treatment related finding increase liver toxicity Urine protein/creatinine ratio (Prot-U/Cre)";
 			//String text = " * - [ ] ^ glucose (uglu body-weight-gain  xxx xxxx treatment related finding both pinnae reddened  post dose";
-			String text = "** =p<001 test 5 to 300 mg/kg -11 % ( p  -0.01 ) and -9 % ( p < 0.05) test -11 % (p < 0.01)";
-			//String text = "* (p < 0.05) or ** (p < 0.01) peppepepepe 5 to 300 mg/kg pepepepe 87 mg  pepeep ** (p < 0.01)";
+			//String text = " = p = harry ** =p<001 test 5 to 300 mg/kg -11 % ( p  -0.01 ) and -9 % ( p < 0.05) test -11 % (p < 0.01)";
+			//String text = "* (p < 0.05) or ** (p < 0.01) peppepepepe 5 to 300 mg/kg pepepepe 87 mg  pepeep ** (p < 0.01)   ffff  10, 30, and 100 mg/kg";
+			
+			//String text = "Neither the distribution nor the morphological appearance give any conclusions as to these being treatment-related.";
+			//String text = "+6%, p<0.05 and +31%, p<0.01";
+			//String text = "The comparison of mean values of absolute and relative organ weights of the test article treated animals to the corresponding values of the control did not reveal a clear-cut statistically significant compound-related effect.";
 			long startTime = System.currentTimeMillis();
 			Annotation document = new Annotation(text_to_tag.toLowerCase());
 			//Annotation document = new Annotation(text.toLowerCase());
@@ -667,7 +672,7 @@ class TaggerServiceImpl implements TaggerService {
 			finding.setDomainOfFinding(Domain.EG);
 		}else if(me.getValue().get().equals("LABORATORY_FINDINGS_DOMAIN")) {
 			finding.setDomainOfFinding(Domain.LB);
-		}else if(me.getValue().get().equals("VITAL_SIGNS_DOMAIN")) {
+		}else if(me.getValue().get().equals("VITAL_SIGNS_DOMcountAnnotationsAIN")) {
 			finding.setDomainOfFinding(Domain.VS);
 		}
 	}
@@ -756,5 +761,4 @@ class TaggerServiceImpl implements TaggerService {
 		return null;
 	 }
 
-	 
 }

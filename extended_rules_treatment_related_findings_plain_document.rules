@@ -1,4 +1,4 @@
-$STATICAL_SYMBOL = "/<|>|=|<=|>=|!=|<>/"
+$STATICAL_SYMBOL = "/<|>|=|<=|>=|!=|<>|≤|/"
 $STATICAL_SEP_KEY = "/and|or|to|,/"
 $PARENTESIS = "/-LRB-|-RRB-/"
 $PERCENTAJE = "/%/"
@@ -79,22 +79,19 @@ $DOSE_SEP = "/to|-/"
  // result: "TREATMENT_RELATED_FINDING"
 //}
 
+
+
+//STATICAL SIGNIFICANCE
 {(/p/ $STATICAL_SYMBOL ([{ner:NUMBER }])) => "STATICAL_SIGNIFICANCE" }
 {( (/p/ $STATICAL_SYMBOL ([{ner:NUMBER }])) $STATICAL_SEP_KEY (/p/ $STATICAL_SYMBOL ([{ner:NUMBER }]))   ) => "STATICAL_SIGNIFICANCE" }
-
-//{( $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) $PARENTESIS ) => "STATICAL_SIGNIFICANCE" }
-
 { (( [/\**/] $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) ) $PARENTESIS ) => "STATICAL_SIGNIFICANCE" }
 { (( [/\**/] $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) ) $PARENTESIS $STATICAL_SEP_KEY* ( [/\**/] $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) ) $PARENTESIS ) => "STATICAL_SIGNIFICANCE" }
-
-
 {(([{word::IS_NUM}]) $PERCENTAJE $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) $PARENTESIS ) => "STATICAL_SIGNIFICANCE" }
-
 {(([{word::IS_NUM}]) $PERCENTAJE $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) $PARENTESIS $STATICAL_SEP_KEY ([{word::IS_NUM}]) $PERCENTAJE $PARENTESIS /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) $PARENTESIS ) => "STATICAL_SIGNIFICANCE2" }
-
-
 {( ([{ner:NUMBER }]) /\%/ /\(/ /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) /\)/ ) => "STATICAL_SIGNIFICANCE2222" }
-//{( (/(/ ([{ner:NUMBER }])) /%/ /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) /)/) $STATICAL_SEP_KEY ( ([{ner:NUMBER }])) /%/ /(/ $STATICAL_SYMBOL ([{ner:NUMBER }]) /)/)   ) => "STATICAL_SIGNIFICANCE3333" }
+
+//{ ((  /=/ /p/ $STATICAL_SYMBOL ([{ner:NUMBER }]) ) ) => "STATICAL_SIGNIFICANCE" }
+//{ ruleType: "text", pattern: (/=/ /p/ /=/), result:  "STATICAL_SIGNIFICANCE"}
 
 
 {( ([{word::IS_NUM}] ([{ner:DOSE_UNIT}]))  ) => "DOSE" }
