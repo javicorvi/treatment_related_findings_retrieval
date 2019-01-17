@@ -188,7 +188,8 @@ class TaggerServiceImpl implements TaggerService {
 
 		    // build the CoreMapExpressionExtractor
 		    CoreMapExpressionExtractor extractor = CoreMapExpressionExtractor.createExtractorFromFiles(env, rulesFiles);
-			BufferedWriter filesPrecessedWriter = new BufferedWriter(new FileWriter(outputDirectoryPath + File.separator + "list_files_processed.dat", true));
+			BufferedWriter filesProcessedWriter = new BufferedWriter(new FileWriter(outputDirectoryPath + File.separator + "list_files_processed.dat", true));
+			//BufferedWriter filesProcessedWriterGeneralDocumentInformation = new BufferedWriter(new FileWriter(outputDirectoryPath + File.separator + "list_files_processed.dat", true));
 		    if (java.nio.file.Files.isDirectory(Paths.get(inputDirectoryPath))) {
 				File inputDirectory = new File(inputDirectoryPath);
 				File[] files =  inputDirectory.listFiles();
@@ -196,13 +197,13 @@ class TaggerServiceImpl implements TaggerService {
 					if(file_to_classify.getName().endsWith(".txt") && filesProcessed!=null && !filesProcessed.contains(file_to_classify.getName())){
 						Boolean result = this.process(file_to_classify, cdc, outputDirectory, relevantLabel, is_sentences_classification, pipeline, extractor,isPlainText.equals("true"), generate_gate_format);
 						if(result) {
-							filesPrecessedWriter.write(file_to_classify.getName()+"\n");
-							filesPrecessedWriter.flush();
+							filesProcessedWriter.write(file_to_classify.getName()+"\n");
+							filesProcessedWriter.flush();
 						}
 					}
 				}
 			}
-		    filesPrecessedWriter.close();
+		    filesProcessedWriter.close();
 		}  catch (Exception e) {
 			log.error("Generic error in the classification step",e);
 		}
@@ -350,6 +351,7 @@ class TaggerServiceImpl implements TaggerService {
 	 private Boolean process(File file_to_classify,  ColumnDataClassifier cdc , File outputDirectory, String relevantLabel, Boolean is_sentences_classification, StanfordCoreNLP pipeline, CoreMapExpressionExtractor extractor, Boolean isPlainText,Boolean generate_gate_format) {
 		 long startTime = System.currentTimeMillis();
 		 String outputFile = outputDirectory.getAbsoluteFile() + File.separator + file_to_classify.getName();
+		 
 		 File fout = new File(outputFile);
 		 FileOutputStream fos;
 		 try {
@@ -534,8 +536,7 @@ class TaggerServiceImpl implements TaggerService {
 			//String text = "tyrosine protein kinase abl family subcutaneously, in the neck region potassium & creatinine \\ ejemplo + - * [] % ( pepe )) skin, hair loss, head $ \b body-weight pepepe p<0.05 or p  > 0.05, treatment related finding increase liver toxicity Urine protein/creatinine ratio (Prot-U/Cre)";
 			//String text = " * - [ ] ^ glucose (uglu body-weight-gain  xxx xxxx treatment related finding both pinnae reddened  post dose";
 			//String text = " = p = harry ** =p<001 test 5 to 300 mg/kg -11 % ( p  -0.01 ) and -9 % ( p < 0.05) test -11 % (p < 0.01)";
-			//String text = "* (p < 0.05) or ** (p < 0.01) peppepepepe 5 to 300 mg/kg pepepepe 87 mg  pepeep ** (p < 0.01)   ffff  10, 30, and 100 mg/kg";
-			
+			//String text = "* (p < 0.05) or ** (p < 0.01) peppepepepe 5 to 300 mg/kg pepepepe 87 mg  pepeep ** (p < 0.01)   ffff  10, 30, and 100 mg/kg lallal pulmonary inspection lalalla related effect found javier  compound-related effect";
 			//String text = "Neither the distribution nor the morphological appearance give any conclusions as to these being treatment-related.";
 			//String text = "+6%, p<0.05 and +31%, p<0.01";
 			//String text = "The comparison of mean values of absolute and relative organ weights of the test article treated animals to the corresponding values of the control did not reveal a clear-cut statistically significant compound-related effect.";
@@ -548,26 +549,36 @@ class TaggerServiceImpl implements TaggerService {
 			log.info(" Annotation document execution time  " + (endTime - startTime) + " milliseconds");
 	        try {	/*List<CoreLabel> tokens = document.get(TokensAnnotation.class);
 	        		List<CoreMap> entityMentions = document.get(MentionsAnnotation.class);*/
+	        		List<CoreLabel> tokens= document.get(TokensAnnotation.class);
+			        List<CoreMap> sentences= document.get(SentencesAnnotation.class);
+			        bw.write(id + "\t0\t0\t" + tokens.size() + "\tTOKENS\t" + "STANDFORD_CORE_NLP" + "\n");
+			        bw.write(id + "\t0\t0\t" + sentences.size() + "\tSENTENCES\t" + "STANDFORD_CORE_NLP" + "\n");
 	        		List<MatchedExpression> matchedExpressions = extractor.extractExpressions(document);
 			    	// print out the matched expressions
 			        for (MatchedExpression me : matchedExpressions) {
 			        	if(!(me.getText().length()< 4 && ( me.getValue().get().equals("sexpop_etox_send") || me.getValue().get().equals("lbtest_etox_send") || me.getValue().get().equals("moa_etox_send") || me.getValue().get().equals("strain_etox_send")))) {
 			        		//For more specification find data from dictionary
 			        		if(!StopWords.stopWordsEn.contains(me.getText())) {
-			        			bw.write(id + "\t"+ (me.getCharOffsets().getBegin()) + "\t" + me.getCharOffsets().getEnd() + "\t" + me.getText().replaceAll("\n", " ") + "\t" + me.getValue().get() + "\n");
+			        			String source = "";
+			        			String label = "";
+			        			if(me.getValue().get().toString().endsWith("_etox_send")) {
+			        				source = "ETOX";
+			        				//label = me.getValue().get().toString().replaceAll("_etox_send", "");
+			        			}else {
+			        				source = "MANUAL";
+			        			}
+			        			label = me.getValue().get().toString();
+			        			bw.write(id + "\t"+ (me.getCharOffsets().getBegin()) + "\t" + me.getCharOffsets().getEnd() + "\t" + me.getText().replaceAll("\n", " ") + "\t" + label + "\t" + source + "\n");
 			        		}
 			        	}
 			        }
-			        
 			        //List<SequenceMatchResult<CoreMap>> multiMatcher.findNonOverlapping(tokens);
 			        
 			        bw.flush();
 	    		} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					log.error("TaggerServiceImpl :: tagging2 :: IOException ", e);
 				}
-	    	
-		}
+	    }
 		
 		
 		
