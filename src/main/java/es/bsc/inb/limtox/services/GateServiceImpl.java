@@ -230,10 +230,14 @@ public class GateServiceImpl implements GateService {
 						    			toxicolodyReportWitAnnotations.getAnnotations("MANIFESTATION_OF_FINDING").add(startOff, endOff, label, features);
 						    		}else if(label.contains("route_")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "ROUTE_OF_ADMINISTRATION", features);
-						    		}else if(label.contains("lbtest")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "LBTEST", features);
-						    		}else if(label.contains("anatomy")) {
+						    		}else if(label.contains("lbtest") || label.contains("test name") || label.contains("test code")) {
+						    			toxicolodyReportWitAnnotations.getAnnotations("TEST SHORT NAME(SRTSTCD)").add(startOff, endOff,  label.replaceAll("_cdisc_send", "").replaceAll("_etox_send", ""), features);
+						    		}else if(label.contains("neoplasm type") || label.contains("non-neoplastic finding type")) {
+						    			toxicolodyReportWitAnnotations.getAnnotations("FINDING (SRFNDNG)").add(startOff, endOff, label.replaceAll("_cdisc_send", ""), features);
+						    		}else if(label.contains("anatomy") || label.contains("anatomical location")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "ANATOMY", features);
+						    		}else if(label.contains("specimen")) {
+						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "SPECIMEN", features);
 						    		}else if(label.contains("species")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "SPECIES", features);
 						    		}else if(label.contains("moa")) {
@@ -258,6 +262,9 @@ public class GateServiceImpl implements GateService {
 						    			FeatureMap features2 = gate.Factory.newFeatureMap();
 						    			features2.put("quantity", text);
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, (label+"_quantity").toUpperCase(), features2);
+						    		}else if(source.equals("cdisc")){
+						    			//log.error("Error reading line: \n " + line,e);
+						    			toxicolodyReportWitAnnotations.getAnnotations("CDISC").add(startOff, endOff, label.replaceAll("_cdisc_send", ""), features);
 						    		}else {
 						    			//log.error("Error reading line: \n " + line,e);
 						    			toxicolodyReportWitAnnotations.getAnnotations("UNKNOW").add(startOff, endOff, label, features);

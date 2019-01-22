@@ -1,6 +1,8 @@
 treatment related finding	TREATMENT_RELATED_EFFECT_DETECTED
 treatment related findings	TREATMENT_RELATED_EFFECT_DETECTED
 treatment related effect	TREATMENT_RELATED_EFFECT_DETECTED
+treatment-related effect	TREATMENT_RELATED_EFFECT_DETECTED
+treatment-related effects	TREATMENT_RELATED_EFFECT_DETECTED
 treatment related effects	TREATMENT_RELATED_EFFECT_DETECTED
 treatment-related-finding	TREATMENT_RELATED_EFFECT_DETECTED
 treatment-related-findings	TREATMENT_RELATED_EFFECT_DETECTED
@@ -13,9 +15,14 @@ further finding	TREATMENT_RELATED_EFFECT_DETECTED
 related findings	TREATMENT_RELATED_EFFECT_DETECTED
 related finding	TREATMENT_RELATED_EFFECT_DETECTED
 effect of treatment	TREATMENT_RELATED_EFFECT_DETECTED
+were regarded or suspected to be treatment-related	TREATMENT_RELATED_EFFECT_DETECTED
+were regarded to be treatment-related	TREATMENT_RELATED_EFFECT_DETECTED
+were considered to be treatment-related	TREATMENT_RELATED_EFFECT_DETECTED
+suspected to be treatment-related	TREATMENT_RELATED_EFFECT_DETECTED
 no compound-related effect	NO_TREATMENT_RELATED_EFFECT_DETECTED
 not treatment-related	NO_TREATMENT_RELATED_EFFECT_DETECTED
 no compound-related effect	NO_TREATMENT_RELATED_EFFECT_DETECTED
+rather than a treatment-related effect	NO_TREATMENT_RELATED_EFFECT_DETECTED
 not considered as a compound-related effect	NO_TREATMENT_RELATED_EFFECT_DETECTED
 no evidence for treatment-related effects	NO_TREATMENT_RELATED_EFFECT_DETECTED
 no evidence for treatment-related effect	NO_TREATMENT_RELATED_EFFECT_DETECTED
@@ -31,6 +38,9 @@ no relevant compound-related effect	NO_TREATMENT_RELATED_EFFECT_DETECTED
 no relevant compound-related effects	NO_TREATMENT_RELATED_EFFECT_DETECTED
 not suspicious for a treatment-related effect	NO_TREATMENT_RELATED_EFFECT_DETECTED
 unrelated to the treatment	NO_TREATMENT_RELATED_EFFECT_DETECTED
+not to be treatment-related	NO_TREATMENT_RELATED_EFFECT_DETECTED
+not regarded to be treatment-related	NO_TREATMENT_RELATED_EFFECT_DETECTED
+not regarded as being treatment-related	NO_TREATMENT_RELATED_EFFECT_DETECTED
 increase|increased|increasing	INCREASE_MANIFESTATION_FINDING
 decrease|decreased|decreasing	DECREASE_MANIFESTATION_FINDING
 transitory	TRANSITORY_MANIFESTATION_FINDING
@@ -119,6 +129,8 @@ food or water consumption	FOOD_WATER_CONSUMPTION_DOMAIN
 food and water intake	FOOD_WATER_CONSUMPTION_DOMAIN
 food or water intake	FOOD_WATER_CONSUMPTION_DOMAIN
 higher food consumption	FOOD_WATER_CONSUMPTION_DOMAIN
+feed intake	FOOD_WATER_CONSUMPTION_DOMAIN
+feed consumption	FOOD_WATER_CONSUMPTION_DOMAIN
 ecg	ECG_DOMAIN
 electrocardiographic	ECG_DOMAIN
 laboratory findings	LABORATORY_FINDINGS_DOMAIN
@@ -143,4 +155,4 @@ lowest-observed-adverse-effect level	LOAEL_RISK_LEVEL
 lowest-observed-adverse-effect-level	LOAEL_RISK_LEVEL
 lowest concentration	LOAEL_RISK_LEVEL
 dietary administration	ROUTE_OF_ADMINISTRATION
-g|mg|kg|lb|ml|dg|ng|mcg|mcl|mg/kg|mg/kg/day|mg/kg/dose|mg/kg/d|g/day	DOSE_UNIT
+g|mg|kg|lb|ml|dg|ng|mcg|mcl|mg/kg|mg/kg/day|mg/kg/dose|mg/kg/d|g/day|mcmol/g	DOSE_UNIT

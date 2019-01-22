@@ -4,7 +4,7 @@ $PARENTESIS = "/-LRB-|-RRB-/"
 $PERCENTAJE = "/%/"
 $DOSE_UNIT = "/mg|kg|lb|ml|dg|ng|mcg|mcl/"
 $DOSE_SEP = "/to|-/"
-
+$NEGATION_WORD="/no|not|neither|none/"
 //{ ruleType: "text", pattern: /\Qpotassium/creatinine ejemplo + - * [] % ( pepe ))\E/, result:  "anatomy_etox_send"}
 
 //{ ruleType: "text", pattern: /potassium \& creatinine \\ ejemplo \+ \- \* \[\] \% \( pepe \)\)  \$ \\b/, result:  "anatomy_etox_send"}
@@ -16,6 +16,9 @@ $DOSE_SEP = "/to|-/"
 {([{ ner:NO_TREATMENT_RELATED_EFFECT_DETECTED }]+) => "NO_TREATMENT_RELATED_EFFECT_DETECTED" }
 {([{ ner:ROUTE_OF_ADMINISTRATION }]+) => "ROUTE_OF_ADMINISTRATION" }
 {([{ ner:TREATMENT_RELATED_EFFECT_DETECTED }]+) => "TREATMENT_RELATED_EFFECT_DETECTED" }
+
+{ ( $NEGATION_WORD []{0,8} ([{ ner:TREATMENT_RELATED_EFFECT_DETECTED }]+)) => "NO_TREATMENT_RELATED_EFFECT_DETECTED" }
+
 
 {([{ ner:BODY_WEIGHT_DOMAIN }]+) => "BODY_WEIGHT_DOMAIN" }
 {([{ ner:BODY_WEIGHT_GAIN_DOMAIN }]+) => "BODY_WEIGHT_GAIN_DOMAIN" }

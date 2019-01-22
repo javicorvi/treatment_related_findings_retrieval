@@ -150,7 +150,7 @@ class TaggerServiceImpl implements TaggerService {
 		    generateRulesForTaggingEtoxInLifeObservation(etox_in_life_obs_dict, etox_in_life_obs_rules);
 		    
 		    String cdi_send_terminology_rules = "cdis_send_terminology_rules.txt";
-		    generateRulesForTaggingCDISEND(cdi_send_terminology_dict, cdi_send_terminology_rules);
+		    generateRulesForTaggingCDISCSEND(cdi_send_terminology_dict, cdi_send_terminology_rules);
 		    
 		    
 		    
@@ -167,9 +167,11 @@ class TaggerServiceImpl implements TaggerService {
 			//props.put("rulesFiles", "extended_rules_treatment_related_findings.rules");
 			
 			props.put("rulesFiles", "extended_rules_treatment_related_findings_plain_document.rules,"+etox_send_codelist_rules+","+
-					etox_anatomy_rules+","+
+					//etox_anatomy_rules+","+
 					etox_moa_rules+","+
-					etox_in_life_obs_rules);
+					etox_in_life_obs_rules+","+
+					cdi_send_terminology_rules+","+
+					etox_anatomy_rules);
 			
 			//props.put("rulesFiles", "etox_send_codelist_terms.txt");
 			//props.setProperty("tokenize.class", "true");
@@ -209,13 +211,13 @@ class TaggerServiceImpl implements TaggerService {
 		}
 	}
 
-	private void generateRulesForTaggingCDISEND(String cdi_send_terminology_dict, String cdi_send_terminology_rules) throws IOException {
+	private void generateRulesForTaggingCDISCSEND(String cdi_send_terminology_dict, String cdi_send_terminology_rules) throws IOException {
 		BufferedWriter termWriter = new BufferedWriter(new FileWriter(cdi_send_terminology_rules));
 		Set<String> terms = new HashSet<String>();
 		for (String line : ObjectBank.getLineIterator(cdi_send_terminology_dict, "utf-8")) {
 			if(!line.startsWith("keyword")) {
 				String[] data = line.split("\t");
-				terms.add("{ ruleType: \"text\", pattern: " + getScapedKeyWord(data[0].toLowerCase()) + ", result:  \"" +  data[1].toLowerCase()+"_cdis_send\"}\n");
+				terms.add("{ ruleType: \"text\", pattern: " + getScapedKeyWord(data[0].toLowerCase()) + ", result:  \"" +  data[1].toLowerCase()+"_cdisc_send\"}\n");
 			}
 		}
 		for (String string : terms) {
@@ -539,7 +541,7 @@ class TaggerServiceImpl implements TaggerService {
 			//String text = "* (p < 0.05) or ** (p < 0.01) peppepepepe 5 to 300 mg/kg pepepepe 87 mg  pepeep ** (p < 0.01)   ffff  10, 30, and 100 mg/kg lallal pulmonary inspection lalalla related effect found javier  compound-related effect";
 			//String text = "Neither the distribution nor the morphological appearance give any conclusions as to these being treatment-related.";
 			//String text = "+6%, p<0.05 and +31%, p<0.01";
-			//String text = "The comparison of mean values of absolute and relative organ weights of the test article treated animals to the corresponding values of the control did not reveal a clear-cut statistically significant compound-related effect.";
+			//String text = "Median Fluorescence Intensity The comparison of mean values treatment-related of absolute and relative organ weights of the test article treated animals to the corresponding values not pipo treatment-related of the control did not reveal a clear-cut statistically significant compound-related effect.";
 			long startTime = System.currentTimeMillis();
 			Annotation document = new Annotation(text_to_tag.toLowerCase());
 			//Annotation document = new Annotation(text.toLowerCase());
@@ -556,7 +558,14 @@ class TaggerServiceImpl implements TaggerService {
 	        		List<MatchedExpression> matchedExpressions = extractor.extractExpressions(document);
 			    	// print out the matched expressions
 			        for (MatchedExpression me : matchedExpressions) {
-			        	if(!(me.getText().length()< 4 && ( me.getValue().get().equals("sexpop_etox_send") || me.getValue().get().equals("lbtest_etox_send") || me.getValue().get().equals("moa_etox_send") || me.getValue().get().equals("strain_etox_send")))) {
+			        	if(!(me.getText().length()< 4 && ( me.getValue().get().equals("sexpop_etox_send") || 
+			        			me.getValue().get().equals("lbtest_etox_send") || 
+			        			me.getValue().get().toString().contains("test code") || 
+			        			me.getValue().get().toString().contains("test name") ||
+			        			me.getValue().get().toString().contains("neoplasm type") ||
+			        			me.getValue().get().equals("route of administration") || 
+			        			me.getValue().get().equals("moa_etox_send") || 
+			        			me.getValue().get().equals("strain_etox_send")))) {
 			        		//For more specification find data from dictionary
 			        		if(!StopWords.stopWordsEn.contains(me.getText())) {
 			        			String source = "";
@@ -564,6 +573,8 @@ class TaggerServiceImpl implements TaggerService {
 			        			if(me.getValue().get().toString().endsWith("_etox_send")) {
 			        				source = "ETOX";
 			        				//label = me.getValue().get().toString().replaceAll("_etox_send", "");
+			        			}else if(me.getValue().get().toString().endsWith("_cdisc_send")){
+			        				source = "CDISC";
 			        			}else {
 			        				source = "MANUAL";
 			        			}
