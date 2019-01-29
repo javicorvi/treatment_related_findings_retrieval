@@ -1,1 +1,0 @@
-{ ruleType: "text", pattern: "Globulins (calculated) (GLOB)", result:  "lbtest_etox_send"}
