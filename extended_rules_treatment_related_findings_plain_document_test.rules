@@ -1,0 +1,43 @@
+# these Java classes will be used by the rules
+ner = { type: "CLASS", value: "edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation" }
+tokens = { type: "CLASS", value: "edu.stanford.nlp.ling.CoreAnnotations$TokensAnnotation" }
+text = { type: "CLASS", value: "edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation" }
+$NEGATION_WORD="/no|not|neither|none/"
+
+ENV.defaults["stage"] = 1
+
+{ ( $NEGATION_WORD []{0,8} ([{ ner:TREATMENT_RELATED_EFFECT_DETECTED }]+)) => "NO_TREATMENT_RELATED_EFFECT_DETECTED" }
+
+{
+  ruleType: "tokens",
+  pattern: ( /pepito/ []{0,8} ([{ ner:TREATMENT_RELATED_EFFECT_DETECTED }]+)), 
+  action: Annotate($0, ner, "PEPE_NO_") 
+  
+}
+
+ENV.defaults["stage"] = 2
+{
+  ruleType: "tokens",
+  pattern: ( ([{word::IS_NUM}] ([{ner:PEPE_NO_}]+))  ), 
+  action: Annotate($0, ner, "PEPE_CON_NUMERO") , 
+  result: "PEPE_CON_NUMERO"
+}
+
+
+
+
+{ ruleType: "text", pattern: /salivary glandulaf/, result: "anatomy_etox_send_lili"}
+
+//action: Annotate($0, ner, "anatomy_etox_send"), 
+
+ENV.defaults["stage"] = 3
+
+
+
+
+{
+  ruleType: "tokens",
+  pattern:((/pepelindo/ [{ ner:anatomy_etox_send2 }]+)), 
+  action: Annotate($0, ner, "anatomy_etox_send_pepito") , 
+  result: "anatomy_etox_send_pepito"
+}

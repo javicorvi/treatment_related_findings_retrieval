@@ -207,64 +207,66 @@ public class GateServiceImpl implements GateService {
 						anniePluginService.execute();*/
 						for (String line : ObjectBank.getLineIterator(plainAnnotationsFiles, "UTF-8")) {
 							String[] data = line.split("\t");
-					    	if(data.length==6 && data[0]!=null) {
+					    	if(data.length==7 && data[0]!=null) {
 					    		try {
 					    			Long startOff = new Long(data[1]);
 						    		Long endOff =  new Long(data[2]);
-						    		String label = data[4].toLowerCase();
-						    		String source = data[5].toLowerCase();
+						    		String label = data[4];
+						    		String source = data[5];
+						    		String annotationMethod = data[6];
 						    		String text = data[3].toLowerCase();
 						    		//todo set another field and put source ?
 						    		FeatureMap features = gate.Factory.newFeatureMap();
 						    		features.put("source", source);
-						    		
-						    		if(label.contains("_domain")) {
-						    			if(label.contains("_etox_send")) {
-						    				toxicolodyReportWitAnnotations.getAnnotations("STUDY_DOMAIN").add(startOff, endOff, label.replaceAll("_etox_send", ""), features);
-						    			}else {
-						    				toxicolodyReportWitAnnotations.getAnnotations("STUDY_DOMAIN").add(startOff, endOff, label, features);
-						    			}
-						    		}else if(label.contains("_sex")  || label.contains("sexpop")) {
+						    		features.put("annotationMethod", annotationMethod);
+						    		features.put("text", text);
+						    		if(label.endsWith(AnnotationUtil.STUDY_DOMAIN_TESTCD_SUFFIX)) {
+						    			toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.STUDY_DOMAIN_TESTCD).add(startOff, endOff, label, features);
+						    		}else if(label.endsWith(AnnotationUtil.STUDY_DOMAIN_SUFFIX)) {
+						    			toxicolodyReportWitAnnotations.getAnnotations("STUDY_DOMAIN").add(startOff, endOff, label, features);
+						    		}else if(label.endsWith("_SEX")  || label.contains("SEXPOP")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations("SEX").add(startOff, endOff, label, features);
-						    		}else if(label.contains("_manifestation_finding")) {
+						    		}else if(label.endsWith("_MANIFESTATION_FINDING")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations("MANIFESTATION_OF_FINDING").add(startOff, endOff, label, features);
-						    		}else if(label.contains("route_")) {
+						    		}else if(label.contains("ROUTE")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "ROUTE_OF_ADMINISTRATION", features);
-						    		}else if(label.contains("lbtest") || label.contains("test name") || label.contains("test code")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations("TEST SHORT NAME(SRTSTCD)").add(startOff, endOff,  label.replaceAll("_cdisc_send", "").replaceAll("_etox_send", ""), features);
-						    		}else if(label.contains("neoplasm type") || label.contains("non-neoplastic finding type")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations("FINDING (SRFNDNG)").add(startOff, endOff, label.replaceAll("_cdisc_send", ""), features);
-						    		}else if(label.contains("anatomy") || label.contains("anatomical location")) {
+						    		}else if(label.contains("LBTEST") || label.endsWith("TEST NAME") || label.endsWith("TEST CODE")) {
+						    			toxicolodyReportWitAnnotations.getAnnotations("STUDY TEST CODE(SRTSTCD)").add(startOff, endOff,  label, features);//ACA deberia ponerse el TESTCODE
+						    		}else if(label.contains("NEOPLASM_TYPE") || label.contains("NON-NEOPLASTIC FINDING TYPE")) {
+						    			toxicolodyReportWitAnnotations.getAnnotations("FINDING (SRFNDNG)").add(startOff, endOff, label, features);
+						    		}else if(label.contains("ANATOMY") || label.contains("ANATOMICAL LOCATION")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "ANATOMY", features);
-						    		}else if(label.contains("specimen")) {
+						    		}else if(label.contains("SPECIMEN")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "SPECIMEN", features);
-						    		}else if(label.contains("species")) {
+						    		}else if(label.contains("SPECIES")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "SPECIES", features);
-						    		}else if(label.contains("moa")) {
+						    		}else if(label.contains("MOA")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "MODE_OF_ACTION", features);
-						    		}else if(label.contains("pkparm")) {
+						    		}else if(label.contains("PKPARM")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "PKPARM", features);
-						    		}else if(label.contains("no_treatment_related")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "NO_TREATMENT_RELATED_EFFECT_DETECTED", features);
-						    		}else if(label.equals("treatment_related_effect_detected")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "TREATMENT_RELATED_EFFECT_DETECTED", features);
-						    		}else if(label.contains("strain_")) {
+						    		}else if(label.contains(AnnotationUtil.NO_TREATMENT_RELATED_EFFECT_DETECTED)) {
+						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, label, features);
+						    		}else if(label.contains(AnnotationUtil.TREATMENT_RELATED_EFFECT_DETECTED)) {
+						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, label, features);
+						    		}else if(label.contains("STRAIN")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "STRAIN", features);
-						    		}else if(label.contains("statical_")) {
+						    		}else if(label.contains("STATICAL_")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "STATICAL_SIGNIFICANCE", features);
-						    		}else if(label.contains("dose")) {
+						    		}else if(label.contains("DOSE")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "DOSE", features);
-						    		}else if(label.contains("duration_")) {
+						    		}else if(label.contains("DURATION_")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "DURATION", features);
-						    		}else if(label.contains("risk_level")) {
+						    		}else if(label.contains("RISK_LEVEL")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations("RISK_LEVEL").add(startOff, endOff, label, features);
-						    		}else if(label.equals("tokens") || label.equals("sentences")) {
+						    		}else if(label.contains("GROUP")) {
+						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, label, features);
+						    		}else if(label.equals(AnnotationUtil.TOKENS) || label.equals(AnnotationUtil.SENTENCES)) {//review
 						    			FeatureMap features2 = gate.Factory.newFeatureMap();
 						    			features2.put("quantity", text);
-						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, (label+"_quantity").toUpperCase(), features2);
-						    		}else if(source.equals("cdisc")){
+						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, (label+"_QUANTITY").toUpperCase(), features2);
+						    		}else if(source.equals("CDISC")){
 						    			//log.error("Error reading line: \n " + line,e);
-						    			toxicolodyReportWitAnnotations.getAnnotations("CDISC").add(startOff, endOff, label.replaceAll("_cdisc_send", ""), features);
+						    			toxicolodyReportWitAnnotations.getAnnotations("CDISC").add(startOff, endOff, label, features);
 						    		}else {
 						    			//log.error("Error reading line: \n " + line,e);
 						    			toxicolodyReportWitAnnotations.getAnnotations("UNKNOW").add(startOff, endOff, label, features);
@@ -272,6 +274,8 @@ public class GateServiceImpl implements GateService {
 						    	}catch (Exception e) {
 					    			log.error("Error reading line: \n " + line,e);
 								}
+					    	}else {
+					    		log.error("Error reading line  " + line + " quantity of tabs incorrect" );
 					    	}
 					    }
 						java.io.Writer out = new java.io.BufferedWriter(new java.io.OutputStreamWriter(new FileOutputStream(new File(outPutGateFile), false)));
