@@ -1,4 +1,4 @@
-package es.bsc.inb.etransafe.treatmentfinding.util;
+package es.bsc.inb.etransafe.treatmentfindings.util;
 
 import java.util.Arrays;
 import java.util.Set;

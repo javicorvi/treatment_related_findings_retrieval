@@ -1,4 +1,4 @@
-package es.bsc.inb.etransafe.treatmentfinding.model;
+package es.bsc.inb.etransafe.treatmentfindings.model;
 
 /**
  * Domain of Finding, SEND data model

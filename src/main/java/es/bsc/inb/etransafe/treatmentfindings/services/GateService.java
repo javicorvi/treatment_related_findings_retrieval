@@ -1,4 +1,4 @@
-package es.bsc.inb.etransafe.treatmentfinding.services;
+package es.bsc.inb.etransafe.treatmentfindings.services;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 
-import es.bsc.inb.etransafe.treatmentfinding.model.AnnotationDummy;
+import es.bsc.inb.etransafe.treatmentfindings.model.AnnotationDummy;
 import gate.creole.ResourceInstantiationException;
 
 public interface GateService {

@@ -1,4 +1,4 @@
-package es.bsc.inb.etransafe.treatmentfinding.model;
+package es.bsc.inb.etransafe.treatmentfindings.model;
 
 /**
  * Treatment Related Finding model entity.  This entity describe all the data that is extracted from the 

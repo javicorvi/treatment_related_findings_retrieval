@@ -1,4 +1,4 @@
-package es.bsc.inb.etransafe.treatmentfinding.services;
+package es.bsc.inb.etransafe.treatmentfindings.services;
 
 
 import java.io.BufferedReader;
@@ -70,14 +70,14 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeCoreAnnotations.TreeAnnotation;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.ErasureUtils;
-import es.bsc.inb.etransafe.treatmentfinding.model.Domain;
-import es.bsc.inb.etransafe.treatmentfinding.model.EtoxSENDTerm;
-import es.bsc.inb.etransafe.treatmentfinding.model.Manifestation;
-import es.bsc.inb.etransafe.treatmentfinding.model.ToxicityRisk;
-import es.bsc.inb.etransafe.treatmentfinding.model.TreatmentRelatedFinding;
-import es.bsc.inb.etransafe.treatmentfinding.util.AnnotationUtil;
-import es.bsc.inb.etransafe.treatmentfinding.util.PropertiesUtil;
-import es.bsc.inb.etransafe.treatmentfinding.util.StopWords;
+import es.bsc.inb.etransafe.treatmentfindings.model.Domain;
+import es.bsc.inb.etransafe.treatmentfindings.model.EtoxSENDTerm;
+import es.bsc.inb.etransafe.treatmentfindings.model.Manifestation;
+import es.bsc.inb.etransafe.treatmentfindings.model.ToxicityRisk;
+import es.bsc.inb.etransafe.treatmentfindings.model.TreatmentRelatedFinding;
+import es.bsc.inb.etransafe.treatmentfindings.util.AnnotationUtil;
+import es.bsc.inb.etransafe.treatmentfindings.util.PropertiesUtil;
+import es.bsc.inb.etransafe.treatmentfindings.util.StopWords;
 @Service
 class TaggerServiceImpl implements TaggerService {
 
@@ -636,7 +636,7 @@ class TaggerServiceImpl implements TaggerService {
 			//String text = "14 % pepelindo salivary glandulaf - parotid right submandib + % 1.1 - ( $ * [ ] ) { } ^ lan x # ? | javi pepelindo anatomia treatment related findings 6 pepito treatment related findings  fdsfdsf Median Fluorescence Intensity no The comparison of mean values treatment-related of absolute and relative organ weights of the test article treated animals to the corresponding values not pipo treatment-related of the control did not reveal a clear-cut statistically significant compound-related effect.";
 			//String text = "fdgfdg liver/gall bladder  dfdsf pterygoid process of sphenoid bone  rr rer e parathyroid glans dfdsfdsf liver (excluding gall bladder) pepepep tibia discharge red - mouth gfdgfdgfdgfd treatment related findings";
 			
-			String text = "Group mean values which differ significantly systolic blood pressure from the control group are marked in Appendix I and in the group ab123, and of course group 1234 did not ocurr in group also. ";
+			String text = "Group Abnormal Cells mean values which differ significantly systolic blood pressure from the control group are marked in Appendix I and in the group ab123, and of course group 1234 did not ocurr in group also. ";
 					
 			
 			/*String text =  "ORGAN WEIGHTS Individual absolute and relative (related to 100 g body weight) organ weights as well as the corresponding group means with "

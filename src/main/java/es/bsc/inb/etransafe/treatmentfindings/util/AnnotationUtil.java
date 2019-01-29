@@ -1,4 +1,4 @@
-package es.bsc.inb.etransafe.treatmentfinding.util;
+package es.bsc.inb.etransafe.treatmentfindings.util;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 import edu.stanford.nlp.util.Generics;
-import es.bsc.inb.etransafe.treatmentfinding.model.AnnotationDummy;
+import es.bsc.inb.etransafe.treatmentfindings.model.AnnotationDummy;
 
 public class AnnotationUtil {
 	

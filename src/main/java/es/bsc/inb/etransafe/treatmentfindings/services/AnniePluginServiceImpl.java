@@ -1,5 +1,5 @@
 
-package es.bsc.inb.etransafe.treatmentfinding.services; 
+package es.bsc.inb.etransafe.treatmentfindings.services; 
 
 import java.io.File;
 import java.io.IOException;

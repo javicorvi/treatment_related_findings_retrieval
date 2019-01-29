@@ -1,4 +1,4 @@
-package es.bsc.inb.etransafe.treatmentfinding.services;
+package es.bsc.inb.etransafe.treatmentfindings.services;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -17,9 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.stanford.nlp.objectbank.ObjectBank;
-import es.bsc.inb.etransafe.treatmentfinding.model.AnnotationDummy;
-import es.bsc.inb.etransafe.treatmentfinding.util.AnnotationUtil;
-import es.bsc.inb.etransafe.treatmentfinding.util.PropertiesUtil;
+import es.bsc.inb.etransafe.treatmentfindings.model.AnnotationDummy;
+import es.bsc.inb.etransafe.treatmentfindings.util.AnnotationUtil;
+import es.bsc.inb.etransafe.treatmentfindings.util.PropertiesUtil;
 import gate.creole.ResourceInstantiationException;
 
 @Service

@@ -1,4 +1,4 @@
-package es.bsc.inb.etransafe.treatmentfinding.services;
+package es.bsc.inb.etransafe.treatmentfindings.services;
 
 
 import java.util.Properties;
@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import es.bsc.inb.etransafe.treatmentfinding.util.PropertiesUtil;
+import es.bsc.inb.etransafe.treatmentfindings.util.PropertiesUtil;
 @Service
 class CountAnnotationsServiceImpl implements CountAnnotationsService {
 

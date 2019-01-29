@@ -1,12 +1,12 @@
-package es.bsc.inb.etransafe.treatmentfinding.main;
+package es.bsc.inb.etransafe.treatmentfindings.main;
 
 import java.io.File;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import es.bsc.inb.etransafe.treatmentfinding.config.AppConfig;
-import es.bsc.inb.etransafe.treatmentfinding.services.ReportService;
-import es.bsc.inb.etransafe.treatmentfinding.services.TaggerService;
+import es.bsc.inb.etransafe.treatmentfindings.config.AppConfig;
+import es.bsc.inb.etransafe.treatmentfindings.services.ReportService;
+import es.bsc.inb.etransafe.treatmentfindings.services.TaggerService;
 import gate.Gate;
 import gate.util.GateException;
 /**

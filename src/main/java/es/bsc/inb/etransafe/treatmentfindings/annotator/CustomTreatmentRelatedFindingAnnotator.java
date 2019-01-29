@@ -1,4 +1,4 @@
-package es.bsc.inb.etransafe.treatmentfinding.annotator;
+package es.bsc.inb.etransafe.treatmentfindings.annotator;
 
 import java.util.Arrays;
 import java.util.Collections;
