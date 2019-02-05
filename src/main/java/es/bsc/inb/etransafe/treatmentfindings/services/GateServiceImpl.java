@@ -23,6 +23,7 @@ import es.bsc.inb.etransafe.treatmentfindings.model.AnnotationDummy;
 import es.bsc.inb.etransafe.treatmentfindings.util.AnnotationUtil;
 import gate.Annotation;
 import gate.AnnotationSet;
+import gate.Corpus;
 import gate.Factory;
 import gate.FeatureMap;
 import gate.creole.ResourceInstantiationException;
@@ -72,11 +73,32 @@ public class GateServiceImpl implements GateService {
 				if(annotationTotalResume.get(annotationType)==null) {
 					annotationTotalResume.put(annotationType,new AnnotationDummy(annotationType.toUpperCase(), "DEFAULT", "corpus"));
 				}
+				log.info("GateServiceImpl :: countAnnotationForDirectory :: annotation " +  annotationType + " quantity : " + annotationSet.size());
+				documentAnnotationMeasurement.write(report_name + "\t"+  annotationType + "\tDEFAULT\t"+  annotationSet.size()+"\n");
+				/*
 				AnnotationDummy annotationDummy = annotationTotalResume.get(annotationType);
 				annotationDummy.setQuantity(annotationDummy.getQuantity()+annotationSet.size());
 				annotationTotalResume.put(annotationType, annotationDummy);
-				log.info("GateServiceImpl :: countAnnotationForDirectory :: annotation " +  annotationType + " quantity : " + annotationSet.size());
-				documentAnnotationMeasurement.write(report_name + "\t"+  annotationType + "\tDEFAULT\t"+  annotationSet.size()+"\n");
+				*/
+				AnnotationDummy annotationDummy = annotationTotalResume.get(annotationType);
+				//All
+				annotationDummy.setQuantity(annotationDummy.getQuantity()+annotationSet.size());
+				//CDISC
+				FeatureMap features = Factory.newFeatureMap(); 
+				features.put("source", AnnotationUtil.SOURCE_CDISC);
+				annotationDummy.setQuantityCDISC(annotationDummy.getQuantityCDISC()+annotationSet.get(annotationType, features).size());
+				//ETOX
+				features = Factory.newFeatureMap(); 
+				features.put("source", AnnotationUtil.SOURCE_ETOX);
+				annotationDummy.setQuantityETOX(annotationDummy.getQuantityETOX()+annotationSet.get(annotationType, features).size());
+				//MANUAL
+				features = Factory.newFeatureMap(); 
+				features.put("source", AnnotationUtil.SOURCE_MANUAL);
+				annotationDummy.setQuantityMANUAL(annotationDummy.getQuantityMANUAL()+annotationSet.get(annotationType, features).size());
+				
+				
+				annotationTotalResume.put(annotationType, annotationDummy);
+				
 			}
 			
 			
@@ -92,11 +114,32 @@ public class GateServiceImpl implements GateService {
 				if(annotationTotalResume.get(annotationType)==null) {
 					annotationTotalResume.put(annotationType,new AnnotationDummy(annotationType.toUpperCase(), annotationSet.toUpperCase(), "corpus"));
 				}
+				log.info("GateServiceImpl :: countAnnotationForDirectory :: annotation " +  annotationType + " quantity : " + annotationSet2.size());
+				documentAnnotationMeasurement.write(report_name + "\t"+  annotationType + "\t"+ annotationSet + "\t"+ annotationSet2.size()+"\n");
+				
+				/*
 				AnnotationDummy annotationDummy = annotationTotalResume.get(annotationType);
 				annotationDummy.setQuantity(annotationDummy.getQuantity()+annotationSet2.size());
 				annotationTotalResume.put(annotationType, annotationDummy);
-				log.info("GateServiceImpl :: countAnnotationForDirectory :: annotation " +  annotationType + " quantity : " + annotationSet2.size());
-				documentAnnotationMeasurement.write(report_name + "\t"+  annotationType + "\t"+ annotationSet + "\t"+ annotationSet2.size()+"\n");
+				*/
+				AnnotationDummy annotationDummy = annotationTotalResume.get(annotationType);
+				//All
+				annotationDummy.setQuantity(annotationDummy.getQuantity()+annotationSet2.size());
+				//CDISC
+				FeatureMap features = Factory.newFeatureMap(); 
+				features.put("source", AnnotationUtil.SOURCE_CDISC);
+				annotationDummy.setQuantityCDISC(annotationDummy.getQuantityCDISC()+annotationSet2.get(annotationType, features).size());
+				//ETOX
+				features = Factory.newFeatureMap(); 
+				features.put("source", AnnotationUtil.SOURCE_ETOX);
+				annotationDummy.setQuantityETOX(annotationDummy.getQuantityETOX()+annotationSet2.get(annotationType, features).size());
+				//MANUAL
+				features = Factory.newFeatureMap(); 
+				features.put("source", AnnotationUtil.SOURCE_MANUAL);
+				annotationDummy.setQuantityMANUAL(annotationDummy.getQuantityMANUAL()+annotationSet2.get(annotationType, features).size());
+				
+				
+				annotationTotalResume.put(annotationType, annotationDummy);
 			};
 		}
 		documentAnnotationMeasurement.flush();
@@ -200,11 +243,16 @@ public class GateServiceImpl implements GateService {
 		 	try {
 					if (Files.isRegularFile(Paths.get(plainAnnotationsFiles))) {
 						gate.Document toxicolodyReportWitAnnotations = Factory.newDocument((new File(inputGATEFile)).toURI().toURL(), "UTF-8");
-						/*Corpus corpus = Factory.newCorpus("StandAloneAnnie corpus");
+						
+						/*
+						Corpus corpus = Factory.newCorpus("StandAloneAnnie corpus");
 						corpus.add(toxicolodyReportWitAnnotations);
 						anniePluginService.init();
 						anniePluginService.setCorpus(corpus);
-						anniePluginService.execute();*/
+						anniePluginService.execute();
+						*/
+						
+						
 						for (String line : ObjectBank.getLineIterator(plainAnnotationsFiles, "UTF-8")) {
 							String[] data = line.split("\t");
 					    	if(data.length==7 && data[0]!=null) {
@@ -231,7 +279,20 @@ public class GateServiceImpl implements GateService {
 						    		}else if(label.contains("ROUTE")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "ROUTE_OF_ADMINISTRATION", features);
 						    		}else if(label.contains("LBTEST") || label.endsWith("TEST NAME") || label.endsWith("TEST CODE")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations("STUDY TEST CODE(SRTSTCD)").add(startOff, endOff,  label, features);//ACA deberia ponerse el TESTCODE
+						    			if(label.endsWith("TEST CODE")) {//por aca ingresa cdisc test codes
+						    				String TESTCODE =  label.substring(0,label.indexOf("_"));//add keys features
+						    				String aux = label.substring(label.indexOf("_")+1);
+						    				String TESTCODEVALUE = 	aux.substring(0,aux.indexOf("_"));	
+						    				String TESTCODEDESCRIPTION =  aux.substring(aux.indexOf("_")+1);
+						    				String label_ = TESTCODE + "=" + TESTCODEVALUE + "("+ TESTCODEDESCRIPTION +")";
+						    				toxicolodyReportWitAnnotations.getAnnotations("STUDY TEST CODE(SRTSTCD) CDISC").add(startOff, endOff,  label_, features);
+						    			}else if(label.contains("LBTEST")){
+						    				String label_ = "LBTEST"; // LBTEST FROM ETOX
+						    				toxicolodyReportWitAnnotations.getAnnotations("STUDY TEST CODE(LBTEST) ETOX").add(startOff, endOff,  label_, features);
+						    			}else {
+						    				//String label_ = "TEST_NAME"; //TEST NAME findings ... 
+						    				toxicolodyReportWitAnnotations.getAnnotations("STUDY TEST NAME(SRTST) CDISC").add(startOff, endOff,  label, features); 
+						    			}
 						    		}else if(label.contains("NEOPLASM_TYPE") || label.contains("NON-NEOPLASTIC FINDING TYPE")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations("FINDING (SRFNDNG)").add(startOff, endOff, label, features);
 						    		}else if(label.contains("ANATOMY") || label.contains("ANATOMICAL LOCATION")) {
@@ -243,7 +304,7 @@ public class GateServiceImpl implements GateService {
 						    		}else if(label.contains("MOA")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "MODE_OF_ACTION", features);
 						    		}else if(label.contains("PKPARM")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "PKPARM", features);
+						    			toxicolodyReportWitAnnotations.getAnnotations("PKPARMCD").add(startOff, endOff, label, features);
 						    		}else if(label.contains(AnnotationUtil.NO_TREATMENT_RELATED_EFFECT_DETECTED)) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, label, features);
 						    		}else if(label.contains(AnnotationUtil.TREATMENT_RELATED_EFFECT_DETECTED)) {
@@ -254,8 +315,8 @@ public class GateServiceImpl implements GateService {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "STATICAL_SIGNIFICANCE", features);
 						    		}else if(label.contains("DOSE")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "DOSE", features);
-						    		}else if(label.contains("DURATION_")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "DURATION", features);
+						    		}else if(label.equals("DURATION_")) {
+						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "STUDY_DURATION", features);
 						    		}else if(label.contains("RISK_LEVEL")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations("RISK_LEVEL").add(startOff, endOff, label, features);
 						    		}else if(label.contains("GROUP")) {

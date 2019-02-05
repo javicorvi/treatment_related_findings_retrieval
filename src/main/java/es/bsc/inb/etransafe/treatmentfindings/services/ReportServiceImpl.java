@@ -85,7 +85,7 @@ public class ReportServiceImpl implements ReportService{
 				AnnotationUtil.order(list);
 				for (AnnotationDummy annotationDummy : list) {
 					log.info("GateServiceImpl :: countAnnotationForDirectory :: annotation " +  annotationDummy.getAnnotationType() + " quantity : " + annotationDummy.getQuantity());
-					totalAnnotationMeasurement.write(annotationDummy.getAnnotationType() + "\t"+ annotationDummy.getAnnotationSet() + "\t"+ annotationDummy.getQuantity() +"\n");
+					totalAnnotationMeasurement.write(annotationDummy.getAnnotationType() + "\t"+ annotationDummy.getAnnotationSet() + "\t"+ annotationDummy.getQuantity() + "\t"+ annotationDummy.getQuantityCDISC() + "\t"+ annotationDummy.getQuantityETOX() + "\t"+ annotationDummy.getQuantityMANUAL() +"\n");
 				}
 				totalAnnotationMeasurement.flush();
 				totalAnnotationMeasurement.close();

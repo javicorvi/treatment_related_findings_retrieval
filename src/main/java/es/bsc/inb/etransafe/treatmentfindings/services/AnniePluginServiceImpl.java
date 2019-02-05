@@ -3,6 +3,7 @@ package es.bsc.inb.etransafe.treatmentfindings.services;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 import org.springframework.stereotype.Service;
 
@@ -11,8 +12,8 @@ import gate.CorpusController;
 import gate.Factory;
 import gate.FeatureMap;
 import gate.Gate;
+import gate.LanguageAnalyser;
 import gate.ProcessingResource;
-import gate.creole.ANNIEConstants;
 import gate.creole.Plugin;
 import gate.creole.SerialAnalyserController;
 import gate.util.GateException;
@@ -85,27 +86,50 @@ public class AnniePluginServiceImpl  implements AnniePluginService{
 	    annieController.add(pr); 
 	  } // for each ANNIE PR 
 	  
-	  
 	  Gate.getCreoleRegister().registerPlugin(new Plugin.Maven( 
 			 "uk.ac.gate.plugins", "tagger-numbers", "8.5")); 
-	  
-	  
 	  Gate.getCreoleRegister().registerPlugin(new Plugin.Maven( 
 				 "uk.ac.gate.plugins", "tagger-measurements", "8.5"));
 	  
 	  ProcessingResource numbers = (ProcessingResource) 
 	  Factory.createResource("gate.creole.numbers.NumbersTagger");
 	  annieController.add(numbers);
-	  
 	  ProcessingResource measurements = (ProcessingResource) 
 	  Factory.createResource("gate.creole.measurements.MeasurementsTagger");
-	  annieController.add(measurements);
 	  
+	  annieController.add(measurements);
 	  // Tell ANNIE’s controller about the corpus you want to run on 
 	  annieController.setCorpus(this.annieController.getCorpus()); 
+	  
+	  
+	  FeatureMap params = Factory.newFeatureMap(); 
+	  try {
+		params.put("listsURL", new File("/home/jcorvi/eTRANSAFE_DATA/dictionaries/lists.def").toURL());
+	} catch (MalformedURLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	  params.put("gazetteerFeatureSeparator", "\t");
+	  ProcessingResource treatment_related_finding_gazetter = (ProcessingResource) Factory.createResource("gate.creole.gazetteer.DefaultGazetteer", params); 
+	  
+	  
+	  
+	  annieController.add(treatment_related_finding_gazetter);
+	  
+	  
+	  try {
+		LanguageAnalyser jape = (LanguageAnalyser)gate.Factory.createResource(
+		          "gate.creole.Transducer", gate.Utils.featureMap(
+		              "grammarURL", new File("/home/jcorvi/eTRANSAFE_DATA/jape_rules/STUDY_DOMAIN.jape").toURI().toURL(),
+		              "encoding", "UTF-8"));
+	} catch (MalformedURLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	  
+	  
 	  // Run ANNIE 
 	  annieController.execute();
-	  
 	  
   } 
   

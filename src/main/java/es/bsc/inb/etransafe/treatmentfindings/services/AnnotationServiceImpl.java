@@ -79,7 +79,7 @@ import es.bsc.inb.etransafe.treatmentfindings.util.AnnotationUtil;
 import es.bsc.inb.etransafe.treatmentfindings.util.PropertiesUtil;
 import es.bsc.inb.etransafe.treatmentfindings.util.StopWords;
 @Service
-class TaggerServiceImpl implements TaggerService {
+class AnnotationServiceImpl implements AnnotationService {
 
 	static final Logger log = Logger.getLogger("log");
 	
@@ -115,10 +115,6 @@ class TaggerServiceImpl implements TaggerService {
 			String etox_moa_dict = propertiesParameters.getProperty("etox_moa_dict");
 			String etox_in_life_obs_dict = propertiesParameters.getProperty("etox_in_life_obs_dict");
 			String generateGATEFormat = propertiesParameters.getProperty("generateGATEFormat");
-			
-			
-			
-			
 			String cdi_send_terminology_dict = propertiesParameters.getProperty("cdis_send_terminology_dict");
 			
 			Boolean is_sentences_classification = false;
@@ -147,51 +143,54 @@ class TaggerServiceImpl implements TaggerService {
 		    String etox_send_codelist_rules = "etox_send_codelist_rules.txt";
 		    String etox_send_codelist_ner = "etox_send_codelist_ner.txt";
 		    //generateRulesForTaggingEtoxSEND(etox_send_dict, etox_send_codelist_rules);
-		    generateNERGazzetter(etox_send_dict, etox_send_codelist_ner, AnnotationUtil.SOURCE_ETOX_SUFFIX);
+		    generateNERGazzetterWithPriority(etox_send_dict, etox_send_codelist_ner, AnnotationUtil.SOURCE_ETOX_SUFFIX, "MISC", "2.0");
 		    
 		    
 		    String etox_anatomy_rules = "etox_anatomy_rules.txt";
 		    String etox_anatomy_ner = "etox_anatomy_ner.txt";
 		    //generateRulesForTaggingEtoxAnatomy(etox_anatomy_dict, etox_anatomy_rules);
 		    //generateAnatomyNER(etox_anatomy_dict, etox_anatomy_ner);
-		    generateNERGazzetter(etox_anatomy_dict, etox_anatomy_ner, AnnotationUtil.SOURCE_ETOX_SUFFIX);
+		    generateNERGazzetterWithPriority(etox_anatomy_dict, etox_anatomy_ner, AnnotationUtil.SOURCE_ETOX_SUFFIX, "MISC", "2.0");
 		    
 		    
 		    String etox_moa_rules = "etox_moa_rules.txt";
 		    String etox_moa_ner = "etox_moa_ner.txt";
 		    //generateRulesForTaggingEtoxMOA(etox_moa_dict, etox_moa_rules);
-		    generateNERGazzetter(etox_moa_dict, etox_moa_ner, AnnotationUtil.SOURCE_ETOX_SUFFIX);
+		    generateNERGazzetterWithPriority(etox_moa_dict, etox_moa_ner, AnnotationUtil.SOURCE_ETOX_SUFFIX, "MISC", "2.0");
 		    
 		    String etox_in_life_obs_rules = "etox_in_life_obs_rules.txt";
 		    String etox_in_life_obs_ner = "etox_in_life_obs_ner.txt";
 		    //generateRulesForTaggingEtoxInLifeObservation(etox_in_life_obs_dict, etox_in_life_obs_rules);
 		    //generateInLifeObservationNER(etox_in_life_obs_dict, etox_in_life_obs_ner);
-		    generateNERGazzetter(etox_in_life_obs_dict, etox_in_life_obs_ner, AnnotationUtil.SOURCE_ETOX_SUFFIX);
+		    generateNERGazzetterWithPriority(etox_in_life_obs_dict, etox_in_life_obs_ner, AnnotationUtil.SOURCE_ETOX_SUFFIX,  "MISC", "15.0");
 		    
 		    
-		    //String cdi_send_terminology_rules = "cdis_send_terminology_rules.txt";
+		    String cdi_send_terminology_rules = "cdis_send_terminology_rules.txt";
 		    String cdi_send_terminology_ner = "cdis_send_terminology_ner.txt";
-		    //generateRulesForTaggingCDISCSEND(cdi_send_terminology_dict, cdi_send_terminology_rules);
-		    generateNERGazzetter(cdi_send_terminology_dict, cdi_send_terminology_ner, AnnotationUtil.SOURCE_CDISC_SUFFIX);
+		    generateRulesForTaggingCDISCSEND(cdi_send_terminology_dict, cdi_send_terminology_rules);
+		    //generateNERGazzetterWithPriority(cdi_send_terminology_dict, cdi_send_terminology_ner, AnnotationUtil.SOURCE_CDISC_SUFFIX, "MISC", "3.0");
 		    
 		    
 		    
 		    Properties props = new Properties();
 			props.put("annotators", "tokenize, ssplit, pos, lemma,  ner, regexner, entitymentions ");
 			//props.put("annotators", "tokenize, ssplit, pos, lemma, parse, sentiment, ner, regexner, entitymentions, coref ");
-			
+			/*Basically what you want to do is run the ner annotator, and use it's TokensRegex sub-annotator. Imagine you have some named entity rules in a file called my_ner.rules.
+			You could run a command like this:
+			java -Xmx5g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner -ner.additional.tokensregex.rules my_ner.rules -outputFormat text -file example.txt
+			 */
 			//regener is for adding tab separated tagger, this is validated in https://nlp.stanford.edu/software/regexner.html
 			//props.put("regexner.mapping", "etransafe_rules_manual_curated.txt");
 			props.put("regexner.mapping", "etransafe_rules_manual_curated.txt,"+
 			etox_anatomy_ner+","+
-			/*etox_in_life_obs_ner+","+*/
-			cdi_send_terminology_ner+","+
+			etox_in_life_obs_ner+","+
+			/*cdi_send_terminology_ner+","+*/
 			etox_send_codelist_ner+","+
 			etox_moa_ner);
 			//props.put("regexner.mapping", "etransafe_rules_manual_curated.txt,"+etox_anatomy_ner);
 			//props.put("regexner.mapping", etox_anatomy_ner);
 			props.put("regexner.posmatchtype", "MATCH_ALL_TOKENS");
-			props.put("rulesFiles", "extended_rules_treatment_related_findings_plain_document.rules");
+			props.put("rulesFiles", "extended_rules_treatment_related_findings_plain_document.rules," + cdi_send_terminology_rules);
 			
 //			props.put("rulesFiles", "extended_rules_treatment_related_findings_plain_document.rules,"+etox_send_codelist_rules+","+
 //					etox_moa_rules+","+
@@ -207,7 +206,6 @@ class TaggerServiceImpl implements TaggerService {
 			// set up the TokensRegex pipeline
 		    // get the rules files
 		    String[] rulesFiles = props.getProperty("rulesFiles").split(",");
-
 		    // set up an environment with reasonable defaults
 		    Env env = TokenSequencePattern.getNewEnv();
 		    // set to case insensitive
@@ -255,6 +253,26 @@ class TaggerServiceImpl implements TaggerService {
 	}
 	
 	
+	private void generateNERGazzetterWithPriority(String dictionaryPath, String outPutNerGazetterPath, String sourcePrefix, String tags_to_overwrite, String priority) throws IOException {
+		BufferedWriter termWriter = new BufferedWriter(new FileWriter(outPutNerGazetterPath));
+		Set<String> terms = new HashSet<String>();
+		for (String line : ObjectBank.getLineIterator(dictionaryPath, "utf-8")) {
+			if(!line.startsWith("KEYWORD")) {
+				String[] data = line.split("\t");
+				if(data[1].toUpperCase().endsWith("TEST CODE")) {
+					terms.add(getScapedKeyWordNER(data[0].toLowerCase()) + "\t" +  data[1].toUpperCase()+sourcePrefix + "\t" +  tags_to_overwrite + "\t" +  "15.0" +"\n");
+				}else {
+					terms.add(getScapedKeyWordNER(data[0].toLowerCase()) + "\t" +  data[1].toUpperCase()+sourcePrefix + "\t" +  tags_to_overwrite + "\t" +  priority +"\n");
+				}
+			}
+		}
+		for (String string : terms) {
+			termWriter.write(string);
+			termWriter.flush();
+		}
+		termWriter.close();
+	}
+	
 	private void generateAnatomyNER(String etox_anatomy_dict, String etox_anatomy_ner) throws IOException {
 		BufferedWriter termWriter = new BufferedWriter(new FileWriter(etox_anatomy_ner));
 		Set<String> terms = new HashSet<String>();
@@ -278,7 +296,11 @@ class TaggerServiceImpl implements TaggerService {
 		for (String line : ObjectBank.getLineIterator(cdi_send_terminology_dict, "utf-8")) {
 			if(!line.startsWith("KEYWORD")) {
 				String[] data = line.split("\t");
-				terms.add("{ ruleType: \"text\", pattern: " + getScapedKeyWord(data[0].toLowerCase()) + ", result:  \"" +  data[1].toUpperCase()+ AnnotationUtil.SOURCE_CDISC_SUFFIX+"\"}\n");
+				if(!data[1].endsWith("TEST NAME") && !data[1].equals("PK PARAMETERS")) {
+					terms.add("{ ruleType: \"text\", pattern: " + getScapedKeyWord(data[0].toLowerCase()) + ", result:  \"" +  data[1].toUpperCase()+ AnnotationUtil.SOURCE_CDISC_SUFFIX+"\"}\n");
+				}else {
+					log.debug("this term was not included into the rule :  " + data);
+				}
 			}
 		}
 		for (String string : terms) {
@@ -635,10 +657,7 @@ class TaggerServiceImpl implements TaggerService {
 			//String text = "+6%, p<0.05 and +31%, p<0.01";
 			//String text = "14 % pepelindo salivary glandulaf - parotid right submandib + % 1.1 - ( $ * [ ] ) { } ^ lan x # ? | javi pepelindo anatomia treatment related findings 6 pepito treatment related findings  fdsfdsf Median Fluorescence Intensity no The comparison of mean values treatment-related of absolute and relative organ weights of the test article treated animals to the corresponding values not pipo treatment-related of the control did not reveal a clear-cut statistically significant compound-related effect.";
 			//String text = "fdgfdg liver/gall bladder  dfdsf pterygoid process of sphenoid bone  rr rer e parathyroid glans dfdsfdsf liver (excluding gall bladder) pepepep tibia discharge red - mouth gfdgfdgfdgfd treatment related findings";
-			
-			String text = "Group Abnormal Cells mean values which differ significantly systolic blood pressure from the control group are marked in Appendix I and in the group ab123, and of course group 1234 did not ocurr in group also. ";
-					
-			
+			//String text = "group III Clinical Signs pappepe Accumulation Index using Lambda z pepepe food consumption pepepeppe 0.2, 2.0 mg/kg pepepepep  0.2, 2.0 and 20 mg/kg Group Abnormal Cells mean values which differ significantly systolic blood pressure from the control group are marked in Appendix I and in the group ab123, and of course group 1234 did not ocurr in group also. ";
 			/*String text =  "ORGAN WEIGHTS Individual absolute and relative (related to 100 g body weight) organ weights as well as the corresponding group means with "
 					+ " statistical information are given in Part 2 of this report. The results are presented as group means in Tables 20 and 21. Among the relative organ weights significantly "
 					+ "increased means were calculated for the heart (+12 to 14%) at 200 mg/kg as well as for the kidneys at 40 mg/kg (+11 to 15%) and 200 mg/kg (+39 to 61%) each in both sexes."
@@ -650,29 +669,22 @@ class TaggerServiceImpl implements TaggerService {
 					+ "following treatment-related findings were observed: Heart -Minimal myocardial fibrosis in one male and one female receiving 200 mg/kg."
 					+ " -An increase in myocardial mononuclear cell infiltration in both sexes of this group.";*/
 			
+			
+			
 			long startTime = System.currentTimeMillis();
-			//Annotation document = new Annotation(text_to_tag.toLowerCase());
-			
-			
-			/*PTBEscapingProcessor esc = new PTBEscapingProcessor();
-			String document2 = esc.escapeString(text.toLowerCase());*/
-			
-			
+			Annotation document = new Annotation(text_to_tag.toLowerCase());
 			List<String> previousSentencences = new ArrayList<String>();
+			//Annotation document = new Annotation(text.toLowerCase());
 			
-			Annotation document = new Annotation(text.toLowerCase());
-			
-			//run all Annotators on this text
 			pipeline.annotate(document);
 			long endTime = System.currentTimeMillis();
 			log.info(" Annotation document execution time  " + (endTime - startTime) + " milliseconds");
 	        try {	
 	        	List<CoreLabel> tokens= document.get(TokensAnnotation.class);
 			    List<CoreMap> sentences= document.get(SentencesAnnotation.class);
-			    bw.write(id + "\t0\t0\t" + tokens.size() + "\t" + AnnotationUtil.TOKENS + "\t" + AnnotationUtil.STANDFORD_CORE_NLP_SOURCE +  "\n");
-			    bw.write(id + "\t0\t0\t" + sentences.size() + "\t" + AnnotationUtil.SENTENCES+ "\t" + AnnotationUtil.STANDFORD_CORE_NLP_SOURCE + "\n");
-	        	
-			    for(CoreMap sentence: sentences) {
+			    bw.write(id + "\t0\t0\t" + tokens.size() + "\t" + AnnotationUtil.TOKENS + "\t" + AnnotationUtil.STANDFORD_CORE_NLP_SOURCE + "\t \n");
+			    bw.write(id + "\t0\t0\t" + sentences.size() + "\t" + AnnotationUtil.SENTENCES+ "\t" + AnnotationUtil.STANDFORD_CORE_NLP_SOURCE + "\t \n");
+	        	for(CoreMap sentence: sentences) {
 			    	previousSentencences.add(sentence.toString());
 			        Integer sentenceBegin = sentence.get(CharacterOffsetBeginAnnotation.class);
 			        Integer sentenceEnd = sentence.get(CharacterOffsetEndAnnotation.class);
@@ -696,9 +708,9 @@ class TaggerServiceImpl implements TaggerService {
 			        	String term = entityMention.get(TextAnnotation.class).replaceAll("\n", " ");
 			        	String label = entityMention.get(CoreAnnotations.EntityTypeAnnotation.class);
 			        	if(!StopWords.stopWordsEn.contains(term) && !AnnotationUtil.entityMentionsToDelete.contains(label)) {
-			        		int termBegin = entityMention.get(CharacterOffsetBeginAnnotation.class);
-				        	int termEnd = entityMention.get(CharacterOffsetEndAnnotation.class);
-				        	annotate(id, bw, sentence, sentenceBegin, sentenceEnd, termBegin, termEnd, term, label,"dictionary");
+			        		Integer termBegin = entityMention.get(CharacterOffsetBeginAnnotation.class);
+			        		Integer termEnd = entityMention.get(CharacterOffsetEndAnnotation.class);
+				        	annotate(id, bw, sentence, sentenceBegin, sentenceEnd, termBegin, termEnd, term, label, "dictionary");
 			        	}
 			        }
 			        List<MatchedExpression> matchedExpressionssentence = extractor.extractExpressions(sentence);
@@ -708,55 +720,12 @@ class TaggerServiceImpl implements TaggerService {
 			        		Integer termBegin = me.getAnnotation().get(CharacterOffsetBeginAnnotation.class);
 					       	Integer termEnd = me.getAnnotation().get(CharacterOffsetEndAnnotation.class);
 			        		String label = me.getValue().get().toString().toUpperCase();
-			        		annotate(id, bw, sentence, sentenceBegin, sentenceEnd, termBegin, termEnd, term, label,"rule");
-			        		/*
-			        		if(label.endsWith(AnnotationUtil.SOURCE_ETOX_SUFFIX)) {
-			        			source = AnnotationUtil.SOURCE_ETOX;
-			        			label = label.replaceAll(AnnotationUtil.SOURCE_ETOX_SUFFIX, "");
-			        		}else if(label.endsWith(AnnotationUtil.SOURCE_CDISC_SUFFIX)){
-			        			source = AnnotationUtil.SOURCE_CDISC;
-			        			label = label.replaceAll(AnnotationUtil.SOURCE_CDISC_SUFFIX, "");
-			        		}else {
-			        			source =  AnnotationUtil.SOURCE_MANUAL;
-			        		}
-			        		//Una vez que la sentencia fue hallada como no treatmente related, no analizarla nuevamente.
-				        	if(label.equals(AnnotationUtil.TREATMENT_RELATED_EFFECT_DETECTED)){
-				        		bw.write(id + "\t"+ sentenceBegin + "\t" + sentenceEnd + "\t" + sentence.toString().replaceAll("\n", " ") + "\t" + label + AnnotationUtil.SENTENCE_SUFFIX + "\t" + source + "\n");
-				        		bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + label + "\t" + source + "\n");
-				        	}else if(label.equals(AnnotationUtil.NO_TREATMENT_RELATED_EFFECT_DETECTED)){
-				        		bw.write(id + "\t"+ sentenceBegin + "\t" + sentenceEnd + "\t" + sentence.toString().replaceAll("\n", " ") + "\t" + label + AnnotationUtil.SENTENCE_SUFFIX + "\t" + source + "\n");
-				        		bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t"   + term + "\t" + label + "\t" + source + "\n");
-				        	}else if(label.equals(AnnotationUtil.GROUP)){
-				        		SemanticGraph dependencies = sentence.get(CollapsedCCProcessedDependenciesAnnotation.class);
-			        		}else if(label.contains(AnnotationUtil.STUDY_DOMAIN_SUFFIX)){
-			        			bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + label + "\t" + source + "\n");
-				        		String send_code = AnnotationUtil.SEND_DOMAIN_DESC_TO_SEND_DOMAIN_CODE.get(label);
-				        		String send_code_test = AnnotationUtil.SEND_DOMAIN_TO_DEFAULT_TESTCD.get(label);
-				        		if(send_code_test!=null) {//error with etox for example systolic blood pressure is a test of Cardiovascular and is algo a test could be annotated as test .... instead of only domain
-				        			bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + send_code_test+ AnnotationUtil.STUDY_DOMAIN_TESTCD_SUFFIX + "\t" + source + "\n");
-				        		}
-				        		
-				        	}else {
-				        		//the others modificar me.getvalue y ya setear todo mayuscula y constantes
-						       	if(!(term.length()< 4 && ( label.equals("SEXPOP_ETOX_SEND") || 
-						       			label.equals("LBTEST_ETOX_SEND") ||  label.equals("LBTEST") ||
-						       			label.contains("TEST CODE") || 
-						       			label.contains("TEST NAME") ||
-						       			label.contains("NEOPLASM TYPE") ||
-						       			label.equals("ROUTE OF ADMINISTRATION") || 
-						       			label.equals("MOA_ETOX_SEND") || 
-						       			label.equals("STRAIN_ETOX_SEND")))) {
-						        		bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + label + "\t" + source + "\n");
-						        }else {
-						        	log.debug("Not tagged : " + term + " label : " + label);
-						        }
-						        
-				        	}*/
+			        		annotate(id, bw, sentence, sentenceBegin, sentenceEnd, termBegin, termEnd, term, label, "rule");
 			        	}
 			        }
 			    }
 			     
-			        bw.flush();
+			    bw.flush();
 	    	} catch (IOException e) {
 				log.error("TaggerServiceImpl :: tagging2 :: IOException ", e);
 			}
@@ -789,19 +758,25 @@ class TaggerServiceImpl implements TaggerService {
 			}
 			//Una vez que la sentencia fue hallada como no treatmente related, no analizarla nuevamente.
 			if(label.equals(AnnotationUtil.TREATMENT_RELATED_EFFECT_DETECTED)){
-				bw.write(id + "\t"+ sentenceBegin + "\t" + sentenceEnd + "\t" + sentence.toString().replaceAll("\n", " ") + "\t" + label + AnnotationUtil.SENTENCE_SUFFIX + "\t" + source + "\t" + annotationMethod + "\n");
+				//output sentences to other file for trainning
+				bw.write(id + "\t"+ sentenceBegin + "\t" + sentenceEnd + "\t \t" + label + AnnotationUtil.SENTENCE_SUFFIX + "\t" + source + "\t" + annotationMethod + "\n");
 				bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + label + "\t" + source + "\t" + annotationMethod + "\n");
 			}else if(label.equals(AnnotationUtil.NO_TREATMENT_RELATED_EFFECT_DETECTED)){
-				bw.write(id + "\t"+ sentenceBegin + "\t" + sentenceEnd + "\t" + sentence.toString().replaceAll("\n", " ") + "\t" + label + AnnotationUtil.SENTENCE_SUFFIX + "\t" + source + "\t" + annotationMethod + "\n");
+				//output sentences to other file for trainning
+				bw.write(id + "\t"+ sentenceBegin + "\t" + sentenceEnd + "\t \t" + label + AnnotationUtil.SENTENCE_SUFFIX + "\t" + source + "\t" + annotationMethod + "\n");
 				bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t"   + term + "\t" + label + "\t" + source + "\t" + annotationMethod + "\n");
-			}else if(label.equals(AnnotationUtil.GROUP)){
-				SemanticGraph dependencies = sentence.get(CollapsedCCProcessedDependenciesAnnotation.class);
+			/*}else if(label.equals(AnnotationUtil.GROUP)){
+				//TODO GROUP
+				SemanticGraph dependencies = sentence.get(CollapsedCCProcessedDependenciesAnnotation.class);*/
 			}else if(label.contains(AnnotationUtil.STUDY_DOMAIN_SUFFIX)){
 				bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + label + "\t" + source + "\t" + annotationMethod + "\n");
 				String send_code = AnnotationUtil.SEND_DOMAIN_DESC_TO_SEND_DOMAIN_CODE.get(label);
 				String send_code_test = AnnotationUtil.SEND_DOMAIN_TO_DEFAULT_TESTCD.get(label);
+				String send_code_test_value = AnnotationUtil.SEND_DOMAIN_TO_DEFAULT_TESTCDVALUE.get(label);
 				if(send_code_test!=null) {//error with etox for example systolic blood pressure is a test of Cardiovascular and is algo a test could be annotated as test .... instead of only domain
-					bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + send_code_test+ AnnotationUtil.STUDY_DOMAIN_TESTCD_SUFFIX + "\t" + source + "\t" + annotationMethod + "\n");
+					/*bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + 
+				send_code_test+"="+ send_code_test_value + " " +  (label.substring(0,label.lastIndexOf("_"))).replaceAll("_", "") +  AnnotationUtil.STUDY_DOMAIN_TESTCD_SUFFIX + 
+				"\t" + source + "\t" + annotationMethod + "\n");*/ //do not annotate this information, this has to be set into the treatment related finding when no TESTCD is present, in that case the default is set.
 				}
 			}else {
 				//the others modificar me.getvalue y ya setear todo mayuscula y constantes
@@ -812,17 +787,20 @@ class TaggerServiceImpl implements TaggerService {
 			   			label.contains("NEOPLASM TYPE") ||
 			   			label.equals("ROUTE OF ADMINISTRATION") || 
 			   			label.equals("MOA_ETOX_SEND") || 
-			   			label.equals("STRAIN_ETOX_SEND"))) & !label.equals(AnnotationUtil.DOSE) & !label.equals(AnnotationUtil.MANIFESTATION_OF_FINDING_SUFFIX)) {
+			   			label.equals("STRAIN_ETOX_SEND")))) {
 			    		bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + label + "\t" + source + "\t" + annotationMethod + "\n");
 			    }else {
 			    	log.debug("Not tagged : " + term + " label : " + label);
 			    }
-			    
-			}
+			 }
 		}
 		
 		
-		
+	/**
+	 * 	
+	 * @param finding
+	 * @param me
+	 */
 	private void retrieveManifestationOfFinding(TreatmentRelatedFinding finding, MatchedExpression me) {
 		if(me.getValue().get().equals("INCREASE_MANIFESTATION_FINDING")){
 			finding.setManifestationOfFinding(Manifestation.INCREASE);

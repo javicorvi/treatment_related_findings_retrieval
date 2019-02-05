@@ -84,6 +84,7 @@
 		    <artifactId>log4j</artifactId>
 		    <version>1.2.17</version>
 		</dependency>
+		
 		<dependency>
 		    <groupId>uk.ac.gate</groupId>
 		    <artifactId>gate-core</artifactId>
@@ -111,7 +112,7 @@
 			                <archive>
 			                <manifest>
 			                    <mainClass>
-			                        es.bsc.inb.limtox.main.Main
+			                        es.bsc.inb.etransafe.treatmentfindings.main.Main
 			                    </mainClass>
 			                </manifest>
 			                </archive>

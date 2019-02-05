@@ -16,9 +16,9 @@ ENV.defaults["stage"] = 1
 //{([{ ner:FEMALE_SEX }]+) => "FEMALE_SEX" }
 
 //{([{ ner:TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD }]+) => "TREATMENT_RELATED_FINDING_PARTIAL_KEYWORD" }
-//{([{ ner:NO_TREATMENT_RELATED_EFFECT_DETECTED }]+) => "NO_TREATMENT_RELATED_EFFECT_DETECTED" }
+{([{ ner:NO_TREATMENT_RELATED_EFFECT_DETECTED }]+) => "NO_TREATMENT_RELATED_EFFECT_DETECTED" }
 //{([{ ner:ROUTE_OF_ADMINISTRATION }]+) => "ROUTE_OF_ADMINISTRATION" }
-//{([{ ner:TREATMENT_RELATED_EFFECT_DETECTED }]+) => "TREATMENT_RELATED_EFFECT_DETECTED" }
+{([{ ner:TREATMENT_RELATED_EFFECT_DETECTED }]+) => "TREATMENT_RELATED_EFFECT_DETECTED" }
 
 //{
 //  ruleType: "tokens",
@@ -113,14 +113,17 @@ ENV.defaults["stage"] = 3
 
 {( ([{word::IS_NUM}] ([{ner:DOSE_UNIT}]))  ) => "DOSE" }
 {( ([{word::IS_NUM}] $DOSE_SEP [{word::IS_NUM}] ([{ner:DOSE_UNIT}]))  ) => "DOSE" }
-
+//{( ( [([{word::IS_NUM}] /,/ )*] [{word::IS_NUM}] ([{ner:DOSE_UNIT}]))  ) => "DOSE_TEST" }
 
 
 {( ([{word::IS_NUM}]) ([{ner:DURATION}]+)) => "DURATION_DOSIS" }
 {( ([{ner:DURATION}]+) ([{word::IS_NUM}])) => "DURATION_DOSIS" }
 
 { (([{ word:/group/; tag:/NN.*/}] ([{ner:NUMBER }]+) ) ) => "GROUP" }
+{ (([{ word:/group/; tag:/NN.*/}] /^[mdclxvi]+$/ ) ) => "GROUP" }
 { (([{ word:/groups/; tag:/NN.*/}] ([{ner:NUMBER }]+) ) ) => "GROUP" }
 { (([{ word:/groups/; tag:/NN.*/}] ([{ner:NUMBER }]+) /and/ ([{ner:NUMBER }]+) ) ) => "GROUP" }
+{ (([{ word:/group/; tag:/NN.*/}] ([{ner:NUMBER }]+) /and/ ([{ner:NUMBER }]+) ) ) => "GROUP" }
+{ ((  [{ word:/control/}]  [{ word:/group/}]  ) ) => "GROUP" }
 //{ (([{ word:/group/; tag:/NN.*/}] ([!{tag:/VB.*|IN|JJ|TO|NN.*/ }]) ) ) => "GROUP" }
-{ (([{ word:/group/; tag:/NN.*/}] )) => "GROUP_" }
+//{ (([{ word:/group/; tag:/NN.*/}] )) => "GROUP_" }

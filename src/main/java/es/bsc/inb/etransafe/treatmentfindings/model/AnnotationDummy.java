@@ -10,7 +10,11 @@ public class AnnotationDummy {
 	
 	private String context;
 
+	private Integer quantityETOX;
 	
+	private Integer quantityCDISC;
+	
+	private Integer quantityMANUAL;
 	
 	public AnnotationDummy(String annotationType, String annotationSet, String context) {
 		super();
@@ -18,6 +22,9 @@ public class AnnotationDummy {
 		this.annotationSet = annotationSet;
 		this.context = context;
 		this.quantity=0;
+		this.quantityETOX=0;
+		this.quantityCDISC=0;
+		this.quantityMANUAL=0;
 	}
 
 	public String getAnnotationType() {
@@ -51,6 +58,32 @@ public class AnnotationDummy {
 	public void setContext(String context) {
 		this.context = context;
 	}
+
+	public Integer getQuantityETOX() {
+		return quantityETOX;
+	}
+
+	public void setQuantityETOX(Integer quantityETOX) {
+		this.quantityETOX = quantityETOX;
+	}
+
+	public Integer getQuantityCDISC() {
+		return quantityCDISC;
+	}
+
+	public void setQuantityCDISC(Integer quantityCDISC) {
+		this.quantityCDISC = quantityCDISC;
+	}
+
+	public Integer getQuantityMANUAL() {
+		return quantityMANUAL;
+	}
+
+	public void setQuantityMANUAL(Integer quantityMANUAL) {
+		this.quantityMANUAL = quantityMANUAL;
+	}
+
+	
 	
 	
 	

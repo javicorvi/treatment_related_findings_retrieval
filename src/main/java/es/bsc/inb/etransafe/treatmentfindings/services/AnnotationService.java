@@ -1,6 +1,6 @@
 package es.bsc.inb.etransafe.treatmentfindings.services;
 
-public interface TaggerService {
+public interface AnnotationService {
 
 	public void execute(String propertiesPath);
 	
