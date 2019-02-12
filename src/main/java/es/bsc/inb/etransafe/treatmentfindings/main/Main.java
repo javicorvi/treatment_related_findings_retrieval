@@ -4,6 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import es.bsc.inb.etransafe.treatmentfindings.config.AppConfig;
 import es.bsc.inb.etransafe.treatmentfindings.services.AnnotationService;
+import es.bsc.inb.etransafe.treatmentfindings.services.GateService;
 import es.bsc.inb.etransafe.treatmentfindings.services.ReportService;
 /**
  * Main entry to run the Treatment-related finding retrieval
@@ -22,6 +23,10 @@ class Main {
         
         AppConfig.initGate("/home/jcorvi/GATE_Developer_8.5.1/", "/home/jcorvi/GATE_Developer_8.5.1/");
         String properties_parameters_path = args[0];
+        
+        GateService gateService = (GateService)ctx.getBean("gateServiceImpl");
+        gateService.generatePlainText(properties_parameters_path);
+        
         AnnotationService mainService = (AnnotationService)ctx.getBean("annotationServiceImpl");
     	mainService.execute(properties_parameters_path);
         

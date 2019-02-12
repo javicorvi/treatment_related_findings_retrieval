@@ -17,4 +17,10 @@ public interface GateService {
 		
 	public void reportDocumentGateAnnotations(HashMap<String, AnnotationDummy> annotationTotalResume, BufferedWriter documentAnnotationMeasurement, File file_to_classify)
 			throws ResourceInstantiationException, MalformedURLException, IOException;
+
+	/**
+	 * Save a plain text file from the gate document.
+	 * @param properties_parameters_path
+	 */
+	public void generatePlainText(String properties_parameters_path);
 }

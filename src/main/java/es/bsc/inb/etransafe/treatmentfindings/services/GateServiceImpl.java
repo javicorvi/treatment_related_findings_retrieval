@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -26,12 +28,15 @@ import es.bsc.inb.etransafe.treatmentfindings.model.Manifestation;
 import es.bsc.inb.etransafe.treatmentfindings.model.ToxicityRisk;
 import es.bsc.inb.etransafe.treatmentfindings.model.TreatmentRelatedFinding;
 import es.bsc.inb.etransafe.treatmentfindings.util.AnnotationUtil;
+import es.bsc.inb.etransafe.treatmentfindings.util.FileUtil;
+import es.bsc.inb.etransafe.treatmentfindings.util.PropertiesUtil;
 import gate.Annotation;
 import gate.AnnotationSet;
 import gate.Corpus;
 import gate.Factory;
 import gate.FeatureMap;
 import gate.creole.ResourceInstantiationException;
+import gate.util.InvalidOffsetException;
 
 @Service
 public class GateServiceImpl implements GateService {
@@ -506,5 +511,46 @@ public class GateServiceImpl implements GateService {
 			finding.setRisk(ToxicityRisk.NOAEL);
 		}
 	}
+
+
+	/**
+	 * Save a plain text file from the gate document.
+	 * @param properties_parameters_path
+	 */
+	@Override
+	public void generatePlainText(String properties_parameters_path) {
+		log.info("GateServiceImpl::generatePlainText :: INIT ");
+		Properties propertiesParameters = PropertiesUtil.loadPropertiesParameters(properties_parameters_path);
+		String inputDirectoryPath = propertiesParameters.getProperty("inputDirectory");
+		if (java.nio.file.Files.isDirectory(Paths.get(inputDirectoryPath))) {
+			File inputDirectory = new File(inputDirectoryPath);
+			File[] files =  inputDirectory.listFiles();
+			for (File file : files) {
+				if(file.getName().endsWith(".xml")){
+					try {
+						log.info("GateServiceImpl::generatePlainText :: processing file : " + file.getAbsolutePath());
+						gate.Document toxicolodyReportWitAnnotations = Factory.newDocument(file.toURI().toURL(), "UTF-8");
+						String plainText = toxicolodyReportWitAnnotations.getContent().getContent(0l, gate.Utils.lengthLong(toxicolodyReportWitAnnotations)).toString();
+						FileUtil.createTxtFile(file.getAbsolutePath().replace(".xml", ".txt"), plainText);
+					} catch (ResourceInstantiationException e) {
+						log.error("GateServiceImpl::generatePlainText :: error with document " + file.getAbsolutePath(), e);
+					} catch (MalformedURLException e) {
+						log.error("GateServiceImpl::generatePlainText :: error with document " + file.getAbsolutePath(), e);
+					} catch (InvalidOffsetException e) {
+						log.error("GateServiceImpl::generatePlainText :: error with document " + file.getAbsolutePath(), e);
+					} catch (FileNotFoundException e) {
+						log.error("GateServiceImpl::generatePlainText :: error with document " + file.getAbsolutePath(), e);
+					} catch (IOException e) {
+						log.error("GateServiceImpl::generatePlainText :: error with document " + file.getAbsolutePath(), e);
+					}
+				}
+			}
+		}
+		log.info("GateServiceImpl::generatePlainText :: END ");
+	}
+
+
+
+	
 	
 }
