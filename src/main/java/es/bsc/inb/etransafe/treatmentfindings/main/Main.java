@@ -4,7 +4,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import es.bsc.inb.etransafe.treatmentfindings.config.AppConfig;
 import es.bsc.inb.etransafe.treatmentfindings.services.AnnotationService;
-import es.bsc.inb.etransafe.treatmentfindings.services.CountAnnotationsService;
 import es.bsc.inb.etransafe.treatmentfindings.services.ReportService;
 /**
  * Main entry to run the Treatment-related finding retrieval

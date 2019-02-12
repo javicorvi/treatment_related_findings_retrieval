@@ -14,7 +14,7 @@ public class TreatmentRelatedFinding {
 	/**
 	 * Domain, always SR: Study Report
 	 */
-	private String domain;
+	private String domain="SR";
 	/**
 	 * A toxicity risk indicator. Can be one of: NOEL, LOEL, NOAEL or LOAEL.
 	 */
@@ -59,17 +59,14 @@ public class TreatmentRelatedFinding {
 	 * Statistical significance of the observation
 	 */
 	private String statisticalSignificanceOfFinding;
-	
 	/**
 	 * Route of administration
 	 */
 	private String routeOfAdministration;
-	
 	/**
 	 * Strain of the test
 	 */
 	private String strainOfTest;
-	
 	/**
 	 * pk parameters
 	 */
@@ -82,12 +79,13 @@ public class TreatmentRelatedFinding {
 	/**
 	 * “Y” = finding is treatment-related; “N” = finding is not treatment-related; “U” = uncertain; “NA” = not applicable.
 	 */
-	private Character isTreatmentRelated;
+	private Character isTreatmentRelated='E';
 	/**
 	 * Auxiliar boolean to save finding
 	 */
 	private transient Boolean recordFounded=false;
 	
+	private String sentence_key = "";
 	
 	public String getStudyId() {
 		return studyId;
@@ -205,6 +203,15 @@ public class TreatmentRelatedFinding {
 	}
 	public void setPkParameters(String pkParameters) {
 		this.pkParameters = pkParameters;
+	}
+	
+	
+	
+	public String getSentence_key() {
+		return sentence_key;
+	}
+	public void setSentence_key(String sentence_key) {
+		this.sentence_key = sentence_key;
 	}
 	public String toString() {
 		return "studyId\t"+studyId+"\n"+

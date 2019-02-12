@@ -12,6 +12,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -20,6 +21,10 @@ import org.springframework.stereotype.Service;
 
 import edu.stanford.nlp.objectbank.ObjectBank;
 import es.bsc.inb.etransafe.treatmentfindings.model.AnnotationDummy;
+import es.bsc.inb.etransafe.treatmentfindings.model.Domain;
+import es.bsc.inb.etransafe.treatmentfindings.model.Manifestation;
+import es.bsc.inb.etransafe.treatmentfindings.model.ToxicityRisk;
+import es.bsc.inb.etransafe.treatmentfindings.model.TreatmentRelatedFinding;
 import es.bsc.inb.etransafe.treatmentfindings.util.AnnotationUtil;
 import gate.Annotation;
 import gate.AnnotationSet;
@@ -34,6 +39,7 @@ public class GateServiceImpl implements GateService {
 	static final Logger log = Logger.getLogger("log");
 	@Autowired
 	AnniePluginService anniePluginService;
+	
 	
 	
 	/**
@@ -243,7 +249,6 @@ public class GateServiceImpl implements GateService {
 		 	try {
 					if (Files.isRegularFile(Paths.get(plainAnnotationsFiles))) {
 						gate.Document toxicolodyReportWitAnnotations = Factory.newDocument((new File(inputGATEFile)).toURI().toURL(), "UTF-8");
-						
 						/*
 						Corpus corpus = Factory.newCorpus("StandAloneAnnie corpus");
 						corpus.add(toxicolodyReportWitAnnotations);
@@ -251,8 +256,6 @@ public class GateServiceImpl implements GateService {
 						anniePluginService.setCorpus(corpus);
 						anniePluginService.execute();
 						*/
-						
-						
 						for (String line : ObjectBank.getLineIterator(plainAnnotationsFiles, "UTF-8")) {
 							String[] data = line.split("\t");
 					    	if(data.length==7 && data[0]!=null) {
@@ -271,11 +274,11 @@ public class GateServiceImpl implements GateService {
 						    		if(label.endsWith(AnnotationUtil.STUDY_DOMAIN_TESTCD_SUFFIX)) {
 						    			toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.STUDY_DOMAIN_TESTCD).add(startOff, endOff, label, features);
 						    		}else if(label.endsWith(AnnotationUtil.STUDY_DOMAIN_SUFFIX)) {
-						    			toxicolodyReportWitAnnotations.getAnnotations("STUDY_DOMAIN").add(startOff, endOff, label, features);
+						    			toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.STUDY_DOMAIN).add(startOff, endOff, label, features);
 						    		}else if(label.endsWith("_SEX")  || label.contains("SEXPOP")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations("SEX").add(startOff, endOff, label, features);
-						    		}else if(label.endsWith("_MANIFESTATION_FINDING")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations("MANIFESTATION_OF_FINDING").add(startOff, endOff, label, features);
+						    		}else if(label.endsWith(AnnotationUtil.MANIFESTATION_OF_FINDING_SUFFIX)) {
+						    			toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.MANIFESTATION_OF_FINDING).add(startOff, endOff, label, features);
 						    		}else if(label.contains("ROUTE")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "ROUTE_OF_ADMINISTRATION", features);
 						    		}else if(label.contains("LBTEST") || label.endsWith("TEST NAME") || label.endsWith("TEST CODE")) {
@@ -317,14 +320,17 @@ public class GateServiceImpl implements GateService {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "DOSE", features);
 						    		}else if(label.equals("DURATION_")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, "STUDY_DURATION", features);
-						    		}else if(label.contains("RISK_LEVEL")) {
-						    			toxicolodyReportWitAnnotations.getAnnotations("RISK_LEVEL").add(startOff, endOff, label, features);
+						    		}else if(label.contains(AnnotationUtil.RISK_LEVEL)) {
+						    			toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.RISK_LEVEL).add(startOff, endOff, label, features);
 						    		}else if(label.contains("GROUP")) {
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, label, features);
 						    		}else if(label.equals(AnnotationUtil.TOKENS) || label.equals(AnnotationUtil.SENTENCES)) {//review
 						    			FeatureMap features2 = gate.Factory.newFeatureMap();
 						    			features2.put("quantity", text);
 						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, (label+"_QUANTITY").toUpperCase(), features2);
+						    		}else if(label.equals(AnnotationUtil.SENTENCES_TEXT)) {
+						    			FeatureMap features2 = gate.Factory.newFeatureMap();
+						    			toxicolodyReportWitAnnotations.getAnnotations().add(startOff, endOff, label, features2);
 						    		}else if(source.equals("CDISC")){
 						    			//log.error("Error reading line: \n " + line,e);
 						    			toxicolodyReportWitAnnotations.getAnnotations("CDISC").add(startOff, endOff, label, features);
@@ -342,6 +348,11 @@ public class GateServiceImpl implements GateService {
 						java.io.Writer out = new java.io.BufferedWriter(new java.io.OutputStreamWriter(new FileOutputStream(new File(outPutGateFile), false)));
 					    out.write(toxicolodyReportWitAnnotations.toXml());
 					    out.close();
+					///From here test to get the informatino of treatment related findings
+					    this.extractTreatmentRelatedFinding(outPutGateFile);
+					
+					
+					
 					} else {
 						log.warn("This is not a regular file " + plainAnnotationsFiles);
 					}
@@ -357,5 +368,143 @@ public class GateServiceImpl implements GateService {
 					log.error("Error Generic Exception, has to be controlled  ",e);
 				}
 	 }
+
+
+
+	private void extractTreatmentRelatedFinding(String inputGATEFile) {
+		try {
+			gate.Document toxicolodyReportWitAnnotations = Factory.newDocument((new File(inputGATEFile)).toURI().toURL(), "UTF-8");
+			//AnnotationSet annSet = toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.TREATMENT_RELATED_EFFECT_DETECTED);
+			AnnotationSet annSetDef = toxicolodyReportWitAnnotations.getAnnotations();
+			AnnotationSet annSetDefOriginalMarkups = toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.ORIGINAL_MARKUPS);
+			AnnotationSet headAnnotation = annSetDefOriginalMarkups.get(AnnotationUtil.HEAD_SECTION);
+			AnnotationSet manifestation_of_finding = toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.MANIFESTATION_OF_FINDING);
+			AnnotationSet risk_levels = toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.RISK_LEVEL);
+			AnnotationSet doses = toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.DOSE);
+			AnnotationSet sexs = toxicolodyReportWitAnnotations.getAnnotations("SEX");
+			AnnotationSet study_domains = toxicolodyReportWitAnnotations.getAnnotations(AnnotationUtil.STUDY_DOMAIN);
+			for (Annotation head : headAnnotation) {
+				if(gate.Utils.stringFor(toxicolodyReportWitAnnotations, head).equals("Description of study")) {
+					log.info("TREATMENT_RELATED_FINDING ");
+				}
+//				AnnotationSet sentences = annSetDef.get(AnnotationUtil.SENTENCES_TEXT, head.getStartNode().getOffset(), head.getEndNode().getOffset()); 
+//				for (Annotation sentence : sentences) {
+//					AnnotationSet treatment_related_effect = annSetDef.get(AnnotationUtil.TREATMENT_RELATED_EFFECT_DETECTED, sentence.getStartNode().getOffset(), sentence.getEndNode().getOffset()); 
+//					if(!treatment_related_effect.isEmpty()) {
+//						log.info("TREATMENT_RELATED_FINDING ");
+//						log.info(gate.Utils.stringFor(toxicolodyReportWitAnnotations, head) );
+//						log.info(gate.Utils.stringFor(toxicolodyReportWitAnnotations, sentence) );
+//					}
+//				}
+			}
+			Map<String, TreatmentRelatedFinding> treatmentRelatedFindings = new HashMap<String, TreatmentRelatedFinding>();
+			AnnotationSet sentences = annSetDef.get(AnnotationUtil.SENTENCES_TEXT); 
+			for (Annotation sentence : sentences) {
+				TreatmentRelatedFinding  treatmentRelatedFinding = new TreatmentRelatedFinding();
+		        String sentence_key = sentence.getStartNode().getOffset() + "_" + sentence.getEndNode().getOffset();
+		        treatmentRelatedFinding.setSentence_key(sentence_key);
+				treatmentRelatedFindings.put(sentence_key, treatmentRelatedFinding);
+		        AnnotationSet no_treatment_related_effect = annSetDef.get(AnnotationUtil.NO_TREATMENT_RELATED_EFFECT_DETECTED, sentence.getStartNode().getOffset(), sentence.getEndNode().getOffset());
+				if(no_treatment_related_effect.isEmpty()) {
+					AnnotationSet treatment_related_effect = annSetDef.get(AnnotationUtil.TREATMENT_RELATED_EFFECT_DETECTED, sentence.getStartNode().getOffset(), sentence.getEndNode().getOffset()); 
+					if(!treatment_related_effect.isEmpty()) {
+						//log.info("TREATMENT_RELATED_FINDING ");
+						//log.info(gate.Utils.stringFor(toxicolodyReportWitAnnotations, sentence));
+						if(!treatmentRelatedFinding.getIsTreatmentRelated().equals('N')) {
+							treatmentRelatedFinding.setIsTreatmentRelated('Y');
+						}
+					}
+				}else {
+					treatmentRelatedFinding.setIsTreatmentRelated('N');
+				}
+				AnnotationSet study_domains_sentence =  study_domains.get(sentence.getStartNode().getOffset(), sentence.getEndNode().getOffset());
+				for (Annotation domain : study_domains_sentence) {
+					Domain study_domain_send_code = AnnotationUtil.SEND_DOMAIN_DESC_TO_SEND_DOMAIN_CODE.get(domain.getType());
+					treatmentRelatedFinding.setDomainOfFinding(study_domain_send_code);
+				}
+				
+				AnnotationSet manifestation_of_finding_sentence =  manifestation_of_finding.get(sentence.getStartNode().getOffset(), sentence.getEndNode().getOffset());
+				for (Annotation manifestation : manifestation_of_finding_sentence) {
+					retrieveManifestationOfFinding(treatmentRelatedFinding, manifestation.getType());
+				}
+				
+				AnnotationSet risk_levels_sentence = risk_levels.get(sentence.getStartNode().getOffset(), sentence.getEndNode().getOffset());
+				for (Annotation risk_level : risk_levels_sentence) {
+					retrieveRiskOfFinding(treatmentRelatedFinding, risk_level.getType());
+				}
+				
+				AnnotationSet doses_sentence = doses.get(sentence.getStartNode().getOffset(), sentence.getEndNode().getOffset());
+				for (Annotation dose : doses_sentence) {
+					treatmentRelatedFinding.setDosis(dose.getFeatures().get("text").toString());
+				}
+				
+				AnnotationSet sexs_sentence = sexs.get(sentence.getStartNode().getOffset(), sentence.getEndNode().getOffset());
+				for (Annotation sex : sexs_sentence) {
+					if(sex.getType().equals("MALE_SEX")) {
+						treatmentRelatedFinding.setSex('M');
+					}else if(sex.getType().equals("FEMALE_SEX")) {
+						treatmentRelatedFinding.setSex('F');
+					}
+				}
+				
+				if(treatmentRelatedFinding.getIsTreatmentRelated()!='E') {
+					log.info(treatmentRelatedFinding);
+					log.info(gate.Utils.stringFor(toxicolodyReportWitAnnotations, sentence));
+					treatmentRelatedFindings.put(sentence_key, treatmentRelatedFinding);
+				}
+				
+			}
+			
+			/*AnnotationSet sentences_treatment_related_finding = annSetDef.get(AnnotationUtil.TREATMENT_RELATED_EFFECT_DETECTED+AnnotationUtil.SENTENCE_SUFFIX); 
+			for (Annotation sentence : sentences_treatment_related_finding) {
+				log.info("TREATMENT_RELATED_FINDING_SENTENCES ");
+				log.info(gate.Utils.stringFor(toxicolodyReportWitAnnotations, sentence) );
+			}*/
+			log.info("END");
+		} catch (ResourceInstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	/**
+	 * 	Manifestation of finding association
+	 * @param finding
+	 * @param me
+	 */
+	private void retrieveManifestationOfFinding(TreatmentRelatedFinding finding, String label) {
+		if(label.equals("INCREASE_MANIFESTATION_FINDING")){
+			finding.setManifestationOfFinding(Manifestation.INCREASE);
+		}else if(label.equals("DECREASE_MANIFESTATION_FINDING")){
+			finding.setManifestationOfFinding(Manifestation.DECREASE);
+		}else if(label.equals("TRANSITORY_MANIFESTATION_FINDING")){
+			finding.setManifestationOfFinding(Manifestation.TRANSITORY);
+		}else if(label.equals("REVERSIBLE_MANIFESTATION_FINDING")){
+			finding.setManifestationOfFinding(Manifestation.REVERSIBLE);
+		}else if(label.equals("JUSTPRESENT_MANIFESTATION_FINDING")){
+			finding.setManifestationOfFinding(Manifestation.PRESENT);
+		}
+	}
+	/**
+	 * Risk level association
+	 * @param finding
+	 * @param me
+	 */
+	private void retrieveRiskOfFinding(TreatmentRelatedFinding finding, String label) {
+		if(label.equals("NOEL_RISK_LEVEL")) {
+			finding.setRisk(ToxicityRisk.NOEL);
+		}else if(label.equals("LOEL_RISK_LEVEL")) {
+			finding.setRisk(ToxicityRisk.LOEL);
+		}else if(label.equals("NOAEL_RISK_LEVEL")) {
+			finding.setRisk(ToxicityRisk.NOAEL);
+		}else if(label.equals("LOAEL_RISK_LEVEL")) {
+			finding.setRisk(ToxicityRisk.NOAEL);
+		}
+	}
 	
 }

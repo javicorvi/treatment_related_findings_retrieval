@@ -463,18 +463,22 @@ class AnnotationServiceImpl implements AnnotationService {
 	}
 	
 	/**
-	 * Classify 
+	 * Process of report. 
 	 * @param file_to_classify
 	 */
 	 private Boolean process(File file_to_classify,  ColumnDataClassifier cdc , File outputDirectory, String relevantLabel, Boolean is_sentences_classification, StanfordCoreNLP pipeline, CoreMapExpressionExtractor extractor, Boolean isPlainText,Boolean generate_gate_format) {
 		 long startTime = System.currentTimeMillis();
 		 String outputFile = outputDirectory.getAbsoluteFile() + File.separator + file_to_classify.getName();
-		 
+		 String outputFileSentences = outputDirectory.getAbsoluteFile() + File.separator + file_to_classify.getName();
 		 File fout = new File(outputFile);
 		 FileOutputStream fos;
+		 File foutSentences = new File(outputFileSentences);
+		 FileOutputStream fosSentences;
 		 try {
 			 fos = new FileOutputStream(fout);
+			 fosSentences = new FileOutputStream(foutSentences);
 			 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+			 BufferedWriter bwTreatmentRelatedFindingSentences = new BufferedWriter(new OutputStreamWriter(fosSentences));
 			 log.info(" File to process " + file_to_classify.getAbsolutePath());
 			 if(!isPlainText) {
 				 for (String line : ObjectBank.getLineIterator(file_to_classify.getAbsolutePath(), "UTF-8")) {
@@ -510,7 +514,7 @@ class AnnotationServiceImpl implements AnnotationService {
 				 String id = file_to_classify.getName().substring(0, file_to_classify.getName().indexOf('.'));
 				 //tagging(pipeline, id, readFile(file_to_classify.getAbsolutePath()), file_to_classify.getName(), bw, extractor, isPlainText);
 				 //tagging2(pipeline, id, readFile(file_to_classify.getAbsolutePath()), file_to_classify.getName(), bw, extractor, isPlainText);
-				 tagging2(pipeline, id, IOUtils.slurpFile(file_to_classify.getAbsolutePath(), "UTF-8"), file_to_classify.getName(), bw, extractor, isPlainText);
+				 tagging2(pipeline, id, IOUtils.slurpFile(file_to_classify.getAbsolutePath(), "UTF-8"), file_to_classify.getName(), bw, extractor, isPlainText, bwTreatmentRelatedFindingSentences);
 			 }
 			 
 			 if(generate_gate_format) {
@@ -585,7 +589,7 @@ class AnnotationServiceImpl implements AnnotationService {
 						} 
 						
 						retrieveDomainOfStudy(finding, me);
-						retrieveRiskOfFinding(finding, me);
+						//retrieveRiskOfFinding(finding, me);
 						
 						if(me.getValue().get().equals("lbtest_etox_send")) {
 							finding.setTestShortName(me.getText());
@@ -617,7 +621,7 @@ class AnnotationServiceImpl implements AnnotationService {
 								finding.setSex('F');
 							}
 						}else if(me.getValue().get().toString().contains("_MANIFESTATION_FINDING")) {
-							retrieveManifestationOfFinding(finding, me);
+							//retrieveManifestationOfFinding(finding, me);
 						} 
 					}
 			        
@@ -648,7 +652,7 @@ class AnnotationServiceImpl implements AnnotationService {
 		 * @return
 		 * @throws MoreThanOneEntityException
 		 */
-		private void tagging2(StanfordCoreNLP pipeline, String id, String text_to_tag, String fileName, BufferedWriter bw, CoreMapExpressionExtractor extractor, Boolean isPlainText) {
+		private void tagging2(StanfordCoreNLP pipeline, String id, String text_to_tag, String fileName, BufferedWriter bw, CoreMapExpressionExtractor extractor, Boolean isPlainText, BufferedWriter bwTreatmentRelatedFindingSentences) {
 			//String text = "tyrosine protein kinase abl family subcutaneously, in the neck region potassium & creatinine \\ ejemplo + - * [] % ( pepe )) skin, hair loss, head $ \b body-weight pepepe p<0.05 or p  > 0.05, treatment related finding increase liver toxicity Urine protein/creatinine ratio (Prot-U/Cre)";
 			//String text = " * - [ ] ^ glucose (uglu body-weight-gain  xxx xxxx treatment related finding both pinnae reddened  post dose";
 			//String text = " = p = harry ** =p<001 test 5 to 300 mg/kg -11 % ( p  -0.01 ) and -9 % ( p < 0.05) test -11 % (p < 0.01)";
@@ -668,9 +672,6 @@ class AnnotationServiceImpl implements AnnotationService {
 					+ " Up to the dose of 40 mg/kg there were no toxicologically relevant morphological lesions considered to be a consequence of the treatment. At the dose of 200 mg/kg the "
 					+ "following treatment-related findings were observed: Heart -Minimal myocardial fibrosis in one male and one female receiving 200 mg/kg."
 					+ " -An increase in myocardial mononuclear cell infiltration in both sexes of this group.";*/
-			
-			
-			
 			long startTime = System.currentTimeMillis();
 			Annotation document = new Annotation(text_to_tag.toLowerCase());
 			List<String> previousSentencences = new ArrayList<String>();
@@ -682,10 +683,11 @@ class AnnotationServiceImpl implements AnnotationService {
 	        try {	
 	        	List<CoreLabel> tokens= document.get(TokensAnnotation.class);
 			    List<CoreMap> sentences= document.get(SentencesAnnotation.class);
+			    Map<String, TreatmentRelatedFinding> treatmentRelatedFindings = new HashMap<String, TreatmentRelatedFinding>();
 			    bw.write(id + "\t0\t0\t" + tokens.size() + "\t" + AnnotationUtil.TOKENS + "\t" + AnnotationUtil.STANDFORD_CORE_NLP_SOURCE + "\t \n");
 			    bw.write(id + "\t0\t0\t" + sentences.size() + "\t" + AnnotationUtil.SENTENCES+ "\t" + AnnotationUtil.STANDFORD_CORE_NLP_SOURCE + "\t \n");
 	        	for(CoreMap sentence: sentences) {
-			    	previousSentencences.add(sentence.toString());
+			    	//previousSentencences.add(sentence.toString());
 			        Integer sentenceBegin = sentence.get(CharacterOffsetBeginAnnotation.class);
 			        Integer sentenceEnd = sentence.get(CharacterOffsetEndAnnotation.class);
 			        //List<CoreMap> entityMentions2 = sentence.get(MentionsAnnotation.class);
@@ -702,15 +704,19 @@ class AnnotationServiceImpl implements AnnotationService {
 			        //Tree tree_sentiment = sentence.get(SentimentAnnotatedTree.class);
 			        //int sentiment = 0;
 			        //int sentiment = RNNCoreAnnotations.getPredictedClass(tree_sentiment);
-		            
-			        List<CoreMap> entityMentions = sentence.get(MentionsAnnotation.class);
+			        bw.write(id + "\t"+ sentenceBegin + "\t" + sentenceEnd + "\t \t" + AnnotationUtil.SENTENCES_TEXT + "\t" +  AnnotationUtil.STANDFORD_CORE_NLP_SOURCE + "\t \n");
+			        TreatmentRelatedFinding  treatmentRelatedFinding = new TreatmentRelatedFinding();
+			        String sentence_key = sentenceBegin + "_" + sentenceEnd;
+			        treatmentRelatedFinding.setSentence_key(sentence_key);
+					treatmentRelatedFindings.put(sentence_key, treatmentRelatedFinding);
+					List<CoreMap> entityMentions = sentence.get(MentionsAnnotation.class);
 			        for (CoreMap entityMention : entityMentions) {
 			        	String term = entityMention.get(TextAnnotation.class).replaceAll("\n", " ");
 			        	String label = entityMention.get(CoreAnnotations.EntityTypeAnnotation.class);
 			        	if(!StopWords.stopWordsEn.contains(term) && !AnnotationUtil.entityMentionsToDelete.contains(label)) {
 			        		Integer termBegin = entityMention.get(CharacterOffsetBeginAnnotation.class);
 			        		Integer termEnd = entityMention.get(CharacterOffsetEndAnnotation.class);
-				        	annotate(id, bw, sentence, sentenceBegin, sentenceEnd, termBegin, termEnd, term, label, "dictionary");
+				        	annotate(id, bw, sentence, sentenceBegin, sentenceEnd, termBegin, termEnd, term, label, "dictionary", bwTreatmentRelatedFindingSentences, treatmentRelatedFindings, treatmentRelatedFinding);
 			        	}
 			        }
 			        List<MatchedExpression> matchedExpressionssentence = extractor.extractExpressions(sentence);
@@ -720,7 +726,7 @@ class AnnotationServiceImpl implements AnnotationService {
 			        		Integer termBegin = me.getAnnotation().get(CharacterOffsetBeginAnnotation.class);
 					       	Integer termEnd = me.getAnnotation().get(CharacterOffsetEndAnnotation.class);
 			        		String label = me.getValue().get().toString().toUpperCase();
-			        		annotate(id, bw, sentence, sentenceBegin, sentenceEnd, termBegin, termEnd, term, label, "rule");
+			        		annotate(id, bw, sentence, sentenceBegin, sentenceEnd, termBegin, termEnd, term, label, "rule", bwTreatmentRelatedFindingSentences, treatmentRelatedFindings, treatmentRelatedFinding);
 			        	}
 			        }
 			    }
@@ -744,9 +750,11 @@ class AnnotationServiceImpl implements AnnotationService {
 		 * @param label
 		 * @throws IOException
 		 */
-		private void annotate(String id, BufferedWriter bw, CoreMap sentence, Integer sentenceBegin,
-				Integer sentenceEnd, int meBegin, int meEnd, String term, String label, String annotationMethod) throws IOException {
+		private void annotate(String id, BufferedWriter bw, CoreMap sentence, Integer sentenceBegin, Integer sentenceEnd, int meBegin, int meEnd, 
+				String term, String label, String annotationMethod, BufferedWriter bwTreatmentRelatedFindingSentences, Map<String, TreatmentRelatedFinding> treatmentRelatedFindings, TreatmentRelatedFinding treatmentRelatedFinding) throws IOException {
 			String source="";
+			String sentence_key = sentenceBegin + "_" + sentenceEnd;
+			String sentenceText =  sentence.toString().replaceAll("[\\n\\t ]", " ");
 			if(label.endsWith(AnnotationUtil.SOURCE_ETOX_SUFFIX)) {
 				source = AnnotationUtil.SOURCE_ETOX;
 				label = label.replaceAll(AnnotationUtil.SOURCE_ETOX_SUFFIX, "");
@@ -758,26 +766,22 @@ class AnnotationServiceImpl implements AnnotationService {
 			}
 			//Una vez que la sentencia fue hallada como no treatmente related, no analizarla nuevamente.
 			if(label.equals(AnnotationUtil.TREATMENT_RELATED_EFFECT_DETECTED)){
-				//output sentences to other file for trainning
 				bw.write(id + "\t"+ sentenceBegin + "\t" + sentenceEnd + "\t \t" + label + AnnotationUtil.SENTENCE_SUFFIX + "\t" + source + "\t" + annotationMethod + "\n");
 				bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + label + "\t" + source + "\t" + annotationMethod + "\n");
+				bwTreatmentRelatedFindingSentences.write("TREATMENT_RELATED_FINDING_SENTENCE\t"+sentenceText);
+				//if already is negative for now dont do anything.
+				/*if(!treatmentRelatedFinding.getIsTreatmentRelated().equals('N')) {
+					treatmentRelatedFinding.setIsTreatmentRelated('Y');
+				}*/
 			}else if(label.equals(AnnotationUtil.NO_TREATMENT_RELATED_EFFECT_DETECTED)){
 				//output sentences to other file for trainning
 				bw.write(id + "\t"+ sentenceBegin + "\t" + sentenceEnd + "\t \t" + label + AnnotationUtil.SENTENCE_SUFFIX + "\t" + source + "\t" + annotationMethod + "\n");
 				bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t"   + term + "\t" + label + "\t" + source + "\t" + annotationMethod + "\n");
-			/*}else if(label.equals(AnnotationUtil.GROUP)){
-				//TODO GROUP
-				SemanticGraph dependencies = sentence.get(CollapsedCCProcessedDependenciesAnnotation.class);*/
+				treatmentRelatedFinding.setIsTreatmentRelated('N');
 			}else if(label.contains(AnnotationUtil.STUDY_DOMAIN_SUFFIX)){
 				bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + label + "\t" + source + "\t" + annotationMethod + "\n");
-				String send_code = AnnotationUtil.SEND_DOMAIN_DESC_TO_SEND_DOMAIN_CODE.get(label);
-				String send_code_test = AnnotationUtil.SEND_DOMAIN_TO_DEFAULT_TESTCD.get(label);
-				String send_code_test_value = AnnotationUtil.SEND_DOMAIN_TO_DEFAULT_TESTCDVALUE.get(label);
-				if(send_code_test!=null) {//error with etox for example systolic blood pressure is a test of Cardiovascular and is algo a test could be annotated as test .... instead of only domain
-					/*bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + 
-				send_code_test+"="+ send_code_test_value + " " +  (label.substring(0,label.lastIndexOf("_"))).replaceAll("_", "") +  AnnotationUtil.STUDY_DOMAIN_TESTCD_SUFFIX + 
-				"\t" + source + "\t" + annotationMethod + "\n");*/ //do not annotate this information, this has to be set into the treatment related finding when no TESTCD is present, in that case the default is set.
-				}
+				Domain study_domain_send_code = AnnotationUtil.SEND_DOMAIN_DESC_TO_SEND_DOMAIN_CODE.get(label);
+				treatmentRelatedFinding.setDomainOfFinding(study_domain_send_code);
 			}else {
 				//the others modificar me.getvalue y ya setear todo mayuscula y constantes
 			   	if(!(term.length()< 4 && ( label.equals("SEXPOP_ETOX_SEND") || 
@@ -789,44 +793,65 @@ class AnnotationServiceImpl implements AnnotationService {
 			   			label.equals("MOA_ETOX_SEND") || 
 			   			label.equals("STRAIN_ETOX_SEND")))) {
 			    		bw.write(id + "\t"+ meBegin + "\t" + meEnd + "\t" + term + "\t" + label + "\t" + source + "\t" + annotationMethod + "\n");
+			    		
+			    		if(label.endsWith(AnnotationUtil.RISK_LEVEL)) {
+			    			this.retrieveRiskOfFinding(treatmentRelatedFinding, label);
+			    		}else if(label.endsWith(AnnotationUtil.MANIFESTATION_OF_FINDING)){
+			    			this.retrieveManifestationOfFinding(treatmentRelatedFinding, label);
+			    		}else if(label.endsWith("_SEX")) {
+							if(label.equals("MALE_SEX")) {
+								treatmentRelatedFinding.setSex('M');
+							}else if(label.equals("FEMALE_SEX")) {
+								treatmentRelatedFinding.setSex('F');
+							}
+						}else if(label.endsWith("TEST CODE")) {
+							String send_test_code = label.substring(label.indexOf('_')+1);
+							send_test_code = send_test_code.substring(0, send_test_code.indexOf('_'));
+							if(!label.endsWith("PHYSICAL PROPERTIES TEST CODE")) {
+								treatmentRelatedFinding.setTestShortName(send_test_code);
+							}
+							
+						}
 			    }else {
 			    	log.debug("Not tagged : " + term + " label : " + label);
 			    }
-			 }
+			}
 		}
 		
 		
 	/**
-	 * 	
+	 * 	Manifestation of finding association
 	 * @param finding
 	 * @param me
 	 */
-	private void retrieveManifestationOfFinding(TreatmentRelatedFinding finding, MatchedExpression me) {
-		if(me.getValue().get().equals("INCREASE_MANIFESTATION_FINDING")){
+	private void retrieveManifestationOfFinding(TreatmentRelatedFinding finding, String label) {
+		if(label.equals("INCREASE_MANIFESTATION_FINDING")){
 			finding.setManifestationOfFinding(Manifestation.INCREASE);
-		}else if(me.getValue().get().equals("DECREASE_MANIFESTATION_FINDING")){
+		}else if(label.equals("DECREASE_MANIFESTATION_FINDING")){
 			finding.setManifestationOfFinding(Manifestation.DECREASE);
-		}else if(me.getValue().get().equals("TRANSITORY_MANIFESTATION_FINDING")){
+		}else if(label.equals("TRANSITORY_MANIFESTATION_FINDING")){
 			finding.setManifestationOfFinding(Manifestation.TRANSITORY);
-		}else if(me.getValue().get().equals("REVERSIBLE_MANIFESTATION_FINDING")){
+		}else if(label.equals("REVERSIBLE_MANIFESTATION_FINDING")){
 			finding.setManifestationOfFinding(Manifestation.REVERSIBLE);
-		}else if(me.getValue().get().equals("JUSTPRESENT_MANIFESTATION_FINDING")){
+		}else if(label.equals("JUSTPRESENT_MANIFESTATION_FINDING")){
 			finding.setManifestationOfFinding(Manifestation.PRESENT);
 		}
 	}
-
-	private void retrieveRiskOfFinding(TreatmentRelatedFinding finding, MatchedExpression me) {
-		if(me.getValue().get().toString().endsWith("_RISK_LEVEL")) {
-			if(me.getValue().get().equals("NOEL_RISK_LEVEL")) {
-				finding.setRisk(ToxicityRisk.NOEL);
-			}else if(me.getValue().get().equals("LOEL_RISK_LEVEL")) {
-				finding.setRisk(ToxicityRisk.LOEL);
-			}else if(me.getValue().get().equals("NOAEL_RISK_LEVEL")) {
-				finding.setRisk(ToxicityRisk.NOAEL);
-			}else if(me.getValue().get().equals("LOAEL_RISK_LEVEL")) {
-				finding.setRisk(ToxicityRisk.NOAEL);
-			}
-		 }
+	/**
+	 * Risk level association
+	 * @param finding
+	 * @param me
+	 */
+	private void retrieveRiskOfFinding(TreatmentRelatedFinding finding, String label) {
+		if(label.equals("NOEL_RISK_LEVEL")) {
+			finding.setRisk(ToxicityRisk.NOEL);
+		}else if(label.equals("LOEL_RISK_LEVEL")) {
+			finding.setRisk(ToxicityRisk.LOEL);
+		}else if(label.equals("NOAEL_RISK_LEVEL")) {
+			finding.setRisk(ToxicityRisk.NOAEL);
+		}else if(label.equals("LOAEL_RISK_LEVEL")) {
+			finding.setRisk(ToxicityRisk.NOAEL);
+		}
 	}
 	
 	/**
