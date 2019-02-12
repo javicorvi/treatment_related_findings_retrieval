@@ -517,7 +517,7 @@ public class GateServiceImpl implements GateService {
 	 * Save a plain text file from the gate document.
 	 * @param properties_parameters_path
 	 */
-	@Override
+	@Override 
 	public void generatePlainText(String properties_parameters_path) {
 		log.info("GateServiceImpl::generatePlainText :: INIT ");
 		Properties propertiesParameters = PropertiesUtil.loadPropertiesParameters(properties_parameters_path);
